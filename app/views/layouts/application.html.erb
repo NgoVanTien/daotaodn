@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
     <title>DaoTao</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    <!-- custom by tien -->
+
+    <%= stylesheet_link_tag "red" %>
+    <%= stylesheet_link_tag "slide" %>
+    <%= stylesheet_link_tag "style" %>
+
+  </head>
   <body>
+  <!-- <body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper"> -->
     <%= yield %>
+  <!-- </div>
+  <!-- ./wrapper --> -->
   </body>
 </html>
