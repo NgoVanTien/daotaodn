@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require sweetalert2
+//= require sweet-alert2-rails
+//= require bootstrap-sprockets
+//= require animatedcollapse
+//= require app
+//= require ddsmoothmenu
+//= require jquery.nivo.slider
+//= require scrolltopcontrol
+//= require demo
