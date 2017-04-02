@@ -10,8 +10,13 @@ end
 gem 'rails', '~> 5.0.1'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
-gem 'tiny_tds'
-gem 'activerecord-sqlserver-adapter'
+
+# Use mysql as the database for Active Record
+gem 'mysql2', '>= 0.3.18', '< 0.5'
+
+# gem 'tiny_tds'
+# gem 'activerecord-sqlserver-adapter'
+
 gem 'ruby-odbc', '~> 0.99998'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -52,6 +57,7 @@ gem "breadcrumbs_on_rails"
 gem "kaminari"
 gem "config"
 gem 'jquery-easing-rails'
+gem "cancancan"
 
 # alert
 gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
@@ -60,6 +66,7 @@ gem 'sweet-alert2-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+
 end
 
 group :development do
@@ -69,6 +76,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "pry-rails"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

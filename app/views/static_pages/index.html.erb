@@ -94,19 +94,19 @@
 			    	<ul class="links">
 			            <li><a href="#" class="txthover">Directions</a></li>
 			            <li><a href="#" class="txthover">Volunteer</a></li>
-			        	<li><a href="javascript:animatedcollapse.toggle('jason')" class="colr">Staff Login</a></li>
+									<% if tai_khoan_signed_in? %>
+					        	<li id="login-logout">
+											<%= link_to t(".sign_out"), destroy_tai_khoan_session_path,
+		                    method: :delete, class: "txthover btn-login" %>
+										</li>
+									<% else %>
+										<li id="login-logout">
+											<%= link_to t(".sign_in"), tai_khoan_session_path, class: "txthover btn-login" %>
+										</li>
+									<% end %>
 			        </ul>
-			        <div id="jason" class="loginbox">
-			        	<h5 class="loghead backcolr">Staff Login</h5>
-			            <ul>
-			            	<li class="txt"><h6 class="colr bold">Login Id</h6></li>
-			                <li class="field"><input type="text" class="bar" /></li>
-			                <li class="txt"><h6 class="colr bold">Password</h6></li>
-			                <li class="field"><input type="password" class="bar" /></li>
-			                <li class="txt"><a href="#" class="forgot">Forgot your password?</a></li>
-			                <li class="field"><input type="submit" value="Submit" class="go backcolr" /></li>
-			            </ul>
-			        </div>
+
+
 			        <div class="clear"></div>
 			        <div class="search">
 			            <h3 class="white bold">Search</h3>

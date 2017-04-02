@@ -1,2 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.btn-login {
+  border: #e1e1e1 solid 1px;
+  background: url(buttonone.gif) repeat-x;
+  border-radius: 5px;
+}
+
+#login-logout {
+  a {
+    color: red;
+  }
+}

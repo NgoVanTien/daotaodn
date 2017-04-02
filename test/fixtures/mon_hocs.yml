@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mamonhoc: MyString
+  tenmonhoc: MyString
+  cachviettat: MyString
+  hesotinchi: 1
+  loaimonhoc: one
+  khoa: one
+
+two:
+  mamonhoc: MyString
+  tenmonhoc: MyString
+  cachviettat: MyString
+  hesotinchi: 1
+  loaimonhoc: two
+  khoa: two
