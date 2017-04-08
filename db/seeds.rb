@@ -71,12 +71,12 @@ MonHoc.create(mamonhoc: "CSNNH", tenmonhoc: "Cơ Sở Ngôn Ngữ Học",
 # Tài Khoản
 
 TaiKhoan.create(email: "admin@gmail.com", name: "Ngô Văn Tiến 5",
-  role: 5, password: "123456", password_confirmation: "123456")
-TaiKhoan.create(email: "vanphong@gmail.com", name: "Ngô Văn Tiến 4",
   role: 4, password: "123456", password_confirmation: "123456")
-TaiKhoan.create(email: "giangvu@gmail.com", name: "Ngô Văn Tiến 3",
+TaiKhoan.create(email: "vanphong@gmail.com", name: "Ngô Văn Tiến 4",
   role: 3, password: "123456", password_confirmation: "123456")
-TaiKhoan.create(email: "giangvien@gmail.com", name: "Ngô Văn Tiến 2",
+TaiKhoan.create(email: "giangvu@gmail.com", name: "Ngô Văn Tiến 3",
   role: 2, password: "123456", password_confirmation: "123456")
-TaiKhoan.create(email: "sinhvien@gmail.com", name: "Ngô Văn Tiến 1",
+TaiKhoan.create(email: "giangvien@gmail.com", name: "Ngô Văn Tiến 2",
   role: 1, password: "123456", password_confirmation: "123456")
+TaiKhoan.create(email: "sinhvien@gmail.com", name: "Ngô Văn Tiến 1",
+  role: 0, password: "123456", password_confirmation: "123456")

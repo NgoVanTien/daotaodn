@@ -12,19 +12,19 @@
 
 ActiveRecord::Schema.define(version: 20170401064559) do
 
-  create_table "khoas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "khoa", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "tenkhoa"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "loai_mon_hocs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "loai_mon_hoc", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "ten"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "mon_hocs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "mon_hoc", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "mamonhoc"
     t.string   "tenmonhoc"
     t.string   "cachviettat"
@@ -33,11 +33,11 @@ ActiveRecord::Schema.define(version: 20170401064559) do
     t.integer  "khoa_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["khoa_id"], name: "index_mon_hocs_on_khoa_id", using: :btree
-    t.index ["loai_mon_hoc_id"], name: "index_mon_hocs_on_loai_mon_hoc_id", using: :btree
+    t.index ["khoa_id"], name: "fk_rails_593db008d1", using: :btree
+    t.index ["loai_mon_hoc_id"], name: "fk_rails_440310e35f", using: :btree
   end
 
-  create_table "tai_khoans", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "tai_khoan", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "name",                   default: "", null: false
     t.integer  "role",                   default: 0,  null: false
@@ -52,10 +52,10 @@ ActiveRecord::Schema.define(version: 20170401064559) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_tai_khoans_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_tai_khoans_on_reset_password_token", unique: true, using: :btree
+    t.index ["email"], name: "index_tai_khoan_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_tai_khoan_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "mon_hocs", "khoas"
-  add_foreign_key "mon_hocs", "loai_mon_hocs"
+  add_foreign_key "mon_hoc", "khoa"
+  add_foreign_key "mon_hoc", "loai_mon_hoc"
 end
