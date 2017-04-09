@@ -15,13 +15,13 @@ body {
 	color:#666;
 	height:100%;
 	width:100%;
-	background:url(dotmap.png) no-repeat 50% 176px #fffae7;
+	background:url(dotmap.png) no-repeat 50% 0 #fffae7;
 }
 span.grung {
 	width:100%;
 	height:176px;
 	float:left;
-	background-image:url(cloud.png);
+	/*background-image:url(cloud.png);*/
 	/*background-repeat:no-repeat;*/
 	background-position:right center;
 	position:absolute;
@@ -39,7 +39,7 @@ span.whitestrip {
 	width:100%;
 	height:10px;
 	float:left;
-	background:url(nav_bg.png);
+	/*background:url(nav_bg.png);*/
 	position:absolute;
 	z-index:1;
 	margin-top:176px;

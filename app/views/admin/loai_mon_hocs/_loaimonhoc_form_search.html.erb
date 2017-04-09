@@ -1,16 +1,16 @@
-<%= search_form_for [:admin, search], remote: true do |fs| %>
-  <div class="box filtertable display-none">
+<%= search_form_for [:admin, search] do |fs| %>
+  <div class="box filtertable">
     <div class="box-header width-border">
-      <h3 class="box-title"><%= t ".header" %></h3>
+      <h3 class="box-title">Tìm kiếm loại môn học</h3>
     </div>
     <div class="box-body">
       <div class="col-md-12 form-group">
         <div class="col-md-6">
-          <%= fs.search_field :ten, class: "form-control",
+          <%= fs.search_field :ten_cont, class: "form-control",
             placeholder: "Nhập Tên Loại Môn Học" %>
         </div>
-        <%= fs.submit t(".submit"), class: "btn btn-info col-md-1" %>
-        <%= link_to t(".clear"), admin_loai_mon_hocs_path, class: "btn btn-default col-md-offset-1 col-md-1", data: {turbolinks: false} %>
+        <%= fs.submit "Tìm Kiếm", class: "btn btn-info col-md-1 search-alert" %>
+        <%= link_to "Làm mới", admin_loai_mon_hocs_path, class: "btn btn-default col-md-1 margin-left-20 bg-green", data: {turbolinks: false} %>
       </div>
     </div>
   </div>
