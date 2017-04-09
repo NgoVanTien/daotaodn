@@ -92,14 +92,21 @@
 			    </div>
 			    <div class="righthead">
 			    	<ul class="links">
-			            <li><a href="#" class="txthover">Directions</a></li>
-			            <li><a href="#" class="txthover">Volunteer</a></li>
 									<% if tai_khoan_signed_in? %>
+                    <li id="txthover">
+                      <%= link_to "Học Viên", daotao_root_path, class: "txthover" %>
+                    </li>
+                    <li id="txthover">
+                      <%= link_to "Quản Lý", admin_root_path, class: "txthover" %>
+                    </li>
 					        	<li id="login-logout">
 											<%= link_to t(".sign_out"), destroy_tai_khoan_session_path,
 		                    method: :delete, class: "txthover btn-login" %>
 										</li>
 									<% else %>
+                    <li id="txthover">
+                      <%= link_to "Học Viên", daotao_root_path, class: "txthover" %>
+                    </li>
 										<li id="login-logout">
 											<%= link_to t(".sign_in"), tai_khoan_session_path, class: "txthover btn-login" %>
 										</li>

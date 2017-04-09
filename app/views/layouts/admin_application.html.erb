@@ -16,6 +16,7 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
+    <%= stylesheet_link_tag "custom-admin" %>
     <!-- Theme style -->
     <%= stylesheet_link_tag "AdminLTE" %>
 
@@ -29,11 +30,17 @@
   <div class="wrapper">
     <%= render "layouts/header_admin" %>
     <%= render "layouts/menu_left_admin" %>
+
+    <script type="text/javascript">
+      <%= render "shared/notify.js" %>
+    </script>
+
     <div class="content-wrapper">
       <%= yield %>
     </div>
     <%= render "layouts/footer_admin" %>
     <%= render "layouts/sidebar" %>
   </div>
+  <%= content_for :specific_page_js %>
   </body>
 </html>

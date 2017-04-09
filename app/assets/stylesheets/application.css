@@ -12,5 +12,9 @@
  *
  *= require_self
  *= require style_app.css.scss
- *= require sweetalert2
+ *= require font-awesome
+ *= require material_icons
+ *= require customize_alert
+ *= require animate
+  *= require sweetalert
  */

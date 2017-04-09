@@ -1,9 +1,8 @@
 class Admin::LoaiMonHocsController < Admin::ApplicationController
   def index
-    # @loaimonhocs = LoaiMonHoc.all
-    @search = LoaiMonHoc.ransack params[:q]
+    @search = LoaiMonHoc.search params[:q]
     @search.sorts  = "created_at desc" if @search.sorts.empty?
-    @loaimonhocs = @search.result.page(params[:page]).per 10
+    @loaimonhocs = @search.result.page(params[:page]).per 5
   end
 
   def show

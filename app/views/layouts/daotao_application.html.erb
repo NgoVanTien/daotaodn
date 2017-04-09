@@ -32,14 +32,19 @@
       <div id="body-content">
         <%= render "layouts/daotao_navbar" %>
 
+        <script type="text/javascript">
+          <%= render "shared/notify.js" %>
+        </script>
+
         <section class="page container">
-            <div class="row">
+          <div class="row">
               <%= render "layouts/daotao_thongbao" %>
-      <%= yield %>
-      <%= render "layouts/daotao_footer" %>
+              <%= yield %>
+              <%= render "layouts/daotao_footer" %>
+          </div>
+        </section>
+      </div>
     </div>
-  </section>
-    </div>
-    </div>
+    <%= content_for :specific_page_js %>
   </body>
 </html>

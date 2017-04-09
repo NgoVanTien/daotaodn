@@ -15,9 +15,7 @@ gem 'rails', '~> 5.0.1'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 
 # gem 'tiny_tds'
-# gem 'activerecord-sqlserver-adapter'
-
-gem 'ruby-odbc', '~> 0.99998'
+# gem 'activerecord-sqlserver-adapter
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -60,10 +58,10 @@ gem 'jquery-easing-rails'
 gem "cancancan"
 gem "activemodel-serializers-xml"
 gem "draper", github: "audionerd/draper", branch: "rails5"
-
-# alert
-gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
-gem 'sweet-alert2-rails'
+gem "font-awesome-rails"
+gem "bootstrap-glyphicons"
+gem "material_icons"
+gem "animate-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
