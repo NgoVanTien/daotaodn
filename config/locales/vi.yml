@@ -1,2 +1,14 @@
 vi:
   hello: "Hello world"
+  devise:
+    sessions:
+      tai_khoan:
+        signed_in: Đăng Nhập Thành Công.
+        signed_out: Đăng Xuất Thành Công.
+  views:
+    pagination:
+      next: Tiếp
+      last: Cuối
+      first: Đầu
+      previous: Trước
+      truncate: ...
