@@ -1,21 +1,6 @@
 <section class="content-header">
-  <h1>
-    Dashboard
-    <small>Control panel</small>
-  </h1>
-  <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li class="active">Dashboard</li>
-  </ol>
-</section>
-<h1>Admin::LoaiMonHocs#index</h1>
-<p>Find me in app/views/admin/loai_mon_hocs/index.html.erb</p>
-
-
-
-<section class="content-header">
   <%= link_to "", data: {turbolinks: false} do %>
-    <button class="btn btn-sm btn-primary">
+    <button class="btn btn-primary">
       <%= t ".add" %> <i class="fa fa-plus"></i>
     </button>
   <% end %>
@@ -26,32 +11,18 @@
     <div class="col-xs-12">
       <div class="box box-default box-solid">
         <div class="box-header width-border">
-           <h3 class="box-title"><%= t ".header" %></h3>
-           <div class="box-tools pull-right">
+          <h3 class="box-title"><%= t ".header" %></h3>
+          <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool btn-filter">
               <i class="fa fa-search"></i>
             </button>
           </div>
         </div>
         <div class="box-body table-responsive no-padding min-height-600">
-          <% if @notifications.present? %>
-            <table class="table table-hover">
-              <tr>
-                  <th><%= sort_link @search, :id, t(".id") %></th>
-                  <th><%= t ".title" %></th>
-                  <th><%= t ".platform" %></th>
-                  <th><%= sort_link @search, :status, t(".status") %></th>
-                  <th><%= sort_link @search, :public_time, t(".public_time") %></th>
-                  <th><%= t ".edit" %></th>
-                  <th><%= sort_link @search, :total, t(".total") %></th>
-                  <th><%= sort_link @search, :rate, t(".rate") %></th>
-              </tr>
-              <%= render @notifications.decorate %>
-            </table>
-            <%= paginate @notifications %>
-          <% else %>
-            <h3><%= t ".no_result" %></h3>
-          <% end %>
+          <%= render "loaimonhoc_form_search", search: @search, form: @form %>
+          <div class="notices_result">
+            <%= render "loaimonhoc_table", loaimonhocs: @loaimonhocs, search: @search %>
+          </div>
         </div>
       </div>
     </div>

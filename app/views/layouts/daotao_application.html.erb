@@ -3,7 +3,6 @@
   <head>
     <META http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DaoTao</title>
     <%= csrf_meta_tags %>
 
@@ -22,18 +21,25 @@
     <!-- Theme skin -->
     <%= stylesheet_link_tag "_all-skins" %>
 
+    <%= stylesheet_link_tag "style_daotao" %>
+
 
   </head>
 
   <body class="hold-transition skin-blue sidebar-mini">
-  <div class="wrapper">
-    <%= render "layouts/header_admin" %>
-    <%= render "layouts/menu_left_admin" %>
-    <div class="content-wrapper">
+    <%= render "layouts/daotao_header_top" %>
+    <div id="body-container">
+      <div id="body-content">
+        <%= render "layouts/daotao_navbar" %>
+
+        <section class="page container">
+            <div class="row">
+              <%= render "layouts/daotao_thongbao" %>
       <%= yield %>
+      <%= render "layouts/daotao_footer" %>
     </div>
-    <%= render "layouts/footer_admin" %>
-    <%= render "layouts/sidebar" %>
-  </div>
+  </section>
+    </div>
+    </div>
   </body>
 </html>

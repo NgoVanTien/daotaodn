@@ -12,7 +12,7 @@ Rails.application.config.assets.version = '1.0'
 
 assets_javascripts = %w()
 
-assets_stylesheets = %w(AdminLTE.css _all-skins.css style.css red.css slide.css)
+assets_stylesheets = %w(AdminLTE.css _all-skins.css style.css red.css slide.css style_daotao.css)
 
 user_custom_js = %w()
 

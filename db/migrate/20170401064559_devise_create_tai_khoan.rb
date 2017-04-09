@@ -1,6 +1,6 @@
-class DeviseCreateTaiKhoans < ActiveRecord::Migration[5.0]
+class DeviseCreateTaiKhoan < ActiveRecord::Migration[5.0]
   def change
-    create_table :tai_khoans do |t|
+    create_table :tai_khoan do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :name,              null: false, default: ""
@@ -36,8 +36,8 @@ class DeviseCreateTaiKhoans < ActiveRecord::Migration[5.0]
       t.timestamps null: false
     end
 
-    add_index :tai_khoans, :email,                unique: true
-    add_index :tai_khoans, :reset_password_token, unique: true
+    add_index :tai_khoan, :email,                unique: true
+    add_index :tai_khoan, :reset_password_token, unique: true
     # add_index :tai_khoans, :confirmation_token,   unique: true
     # add_index :tai_khoans, :unlock_token,         unique: true
   end

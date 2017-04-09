@@ -58,6 +58,8 @@ gem "kaminari"
 gem "config"
 gem 'jquery-easing-rails'
 gem "cancancan"
+gem "activemodel-serializers-xml"
+gem "draper", github: "audionerd/draper", branch: "rails5"
 
 # alert
 gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'

@@ -1,0 +1,19 @@
+<% if loaimonhocs.present? %>
+  <table class="table table-hover notice-table">
+    <thead>
+      <th><%= sort_link search, :id, t(".priority") %></th>
+      <th><%= sort_link search, :ten, t(".begin_time") %></th>
+    </thead>
+    <tbody>
+      <%= render loaimonhocs.decorate %>
+    </tbody>
+  </table>
+  <div class="pagination_notices">
+    <%= paginate loaimonhocs %>
+  </div>
+<% else %>
+  <h3><%= t ".no_result" %></h3>
+  <div class="col-xs-12 text-center">
+    <%= link_to t(".back"), admin_notices_path, class: "btn btn-default" %>
+  </div>
+<% end %>

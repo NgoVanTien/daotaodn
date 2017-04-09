@@ -10,25 +10,20 @@ class Ability
     case tai_khoan.role
     when "admin"
       can :manage, :all
-    when "normal"
+    when "vanphong"
       can :manage, :all
       cannot :manage, Employee
       cannot :manage, Notification
       can :update, Employee, id: employee.id
-      employee.permissions.each do |permission|
-        can permission.action.to_sym, permission.subject_class.classify.safe_constantize
-      end
-    when "limited"
+    when "giangvu"
       cannot :manage, :all
       can :update, Employee, id: employee.id
-      employee.permissions.each do |permission|
-        can permission.action.to_sym, permission.subject_class.classify.safe_constantize
-      end
-      can :show, Employee, id: employee.id
-    end
-
-    unless employee.company.subdomain == Settings.origin_subdomain
-      cannot :manage, Settings.block_company_accessing.map {|c| c.classify.safe_constantize}
+    when "giangvien"
+      cannot :manage, :all
+      can :update, Employee, id: employee.id
+    when "sinhvien"
+      cannot :manage, :all
+      can :update, Employee, id: employee.id
     end
   end
 end
