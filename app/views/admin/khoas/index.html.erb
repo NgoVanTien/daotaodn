@@ -1,5 +1,5 @@
 <section class="content-header menu-header-button">
-  <%= link_to new_admin_loai_mon_hoc_path, class: "btn icon-btn btn-danger" do %>
+  <%= link_to new_admin_khoa_path, class: "btn icon-btn btn-danger" do %>
     <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-danger"></span>
     Thêm Mới
   <% end %>
@@ -31,7 +31,7 @@
     <div class="col-md-12">
       <div class="box box-info">
         <div class="box-header with-border">
-          <h3 class="box-title">Loại Môn Học</h3>
+          <h3 class="box-title">Khoa</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool btn-filter">
               <i class="fa fa-search"></i>
@@ -39,26 +39,26 @@
           </div>
         </div>
         <div class="box-body table-responsive no-padding min-height-600">
-          <%= render "loaimonhoc_form_search", search: @search, form: @form %>
+          <%= render "khoa_form_search", search: @search, form: @form %>
           <div class="notices_result">
-            <% if @loaimonhocs.any? %>
+            <% if @khoas.any? %>
               <table class="table table-hover table-striped">
                 <thead class="thead-inverse">
                   <th><%= sort_link @search, :id, "Mã" %></th>
-                  <th><%= sort_link @search, :ten, "Loại Môn Học" %></th>
+                  <th><%= sort_link @search, :ten, "Khoa" %></th>
                   <th class="tac-vu">Tác Vụ</th>
                 </thead>
                 <tbody>
-                  <%= render @loaimonhocs %>
+                  <%= render @khoas %>
                 </tbody>
               </table>
               <div class="pagination_center">
-                <%= paginate @loaimonhocs %>
+                <%= paginate @khoas %>
               </div>
             <% else %>
-              <h3 class="text-center">Không có loại môn học nào.</h3>
+              <h3 class="text-center">Không có khoa nào.</h3>
               <div class="col-xs-12 text-center margin-bottom-30">
-                <%= link_to "Trở lại", admin_loai_mon_hocs_path, class: "btn btn-default bg-red" %>
+                <%= link_to "Trở lại", admin_khoas_path, class: "btn btn-default bg-red" %>
               </div>
             <% end %>
           </div>
@@ -70,6 +70,6 @@
 
 <%= content_for :specific_page_js do %>
   <script type="text/javascript">
-    <%= render "loaimonhoc_form_search.js" %>
+    <%= render "khoa_form_search.js" %>
   </script>
 <% end %>

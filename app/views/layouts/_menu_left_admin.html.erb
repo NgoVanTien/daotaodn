@@ -5,6 +5,27 @@
       <li class="treeview">
         <a href="#">
           <i class="fa fa-pie-chart"></i>
+          <span>Phòng Ban</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+            <small class="label pull-right bg-green">new</small>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i>Phòng</a></li>
+          <li>
+            <%= link_to admin_khoas_path do %>
+              <i class="fa fa-circle-o"></i>
+              Khoa
+            <% end %>
+          </li>
+          <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Công Tác Sinh Viên</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-pie-chart"></i>
           <span>Hệ Thống</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
@@ -12,8 +33,18 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Danh Mục Môn Học</a></li>
-          <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Danh Mục Loại Môn Học</a></li>
+          <li>
+            <%= link_to admin_mon_hocs_path do %>
+              <i class="fa fa-circle-o"></i>
+              Danh Mục Môn Học
+            <% end %>
+           </li>
+          <li>
+            <%= link_to admin_loai_mon_hocs_path do %>
+              <i class="fa fa-circle-o"></i>
+              Danh Mục Loại Môn Học
+            <% end %>
+          </li>
           <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Các Công Thức Xét Duyệt</a></li>
           <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Danh Sách Lớp Chưa Nhập Điểm</a></li>
           <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Danh Sách Lớp Chưa Phân Môn</a></li>
