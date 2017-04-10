@@ -1,0 +1,7 @@
+vi:
+  activerecord:
+    attributes:
+      loai_mon_hoc:
+        ten: "Tên loại môn học"
+      khoa:
+        tenkhoa: "Tên khoa"

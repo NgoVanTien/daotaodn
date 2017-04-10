@@ -1,0 +1,14 @@
+vi:
+  activerecord:
+    errors:
+      models:
+        loai_mon_hoc:
+          attributes:
+            ten:
+              blank: "không được để trống."
+              too_short: "không được ngắn hơn %{count} ký tự."
+        khoa:
+          attributes:
+            tenkhoa:
+              blank: "không được để trống."
+              too_short: "không được ngắn hơn %{count} ký tự."
