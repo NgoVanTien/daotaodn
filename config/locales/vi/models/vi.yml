@@ -5,3 +5,24 @@ vi:
         ten: "Tên loại môn học"
       khoa:
         tenkhoa: "Tên khoa"
+      mon_hoc:
+        mamonhoc: "Mã môn học"
+        tenmonhoc: "Tên môn học"
+        cachviettat: "Cách viết tắt"
+        hesotinchi: "Hệ số tín chỉ"
+        loai_mon_hoc_id: "Loại môn học"
+        khoa_id: "Khoa"
+      khoa_hoc:
+        tenkhoahoc: "Tên khóa học"
+        nambatdau: "Năm bắt đầu"
+        namketthuc: "Năm kết thúc"
+      bac_dao_tao:
+        kyhieu: "Ký hiệu"
+        tenbacdaotao: "Tên bậc đào tạo"
+      chuong_trinh_dao_tao:
+        mactdt: "Mã chương trình đào tạo"
+        tenctdt: "Tên chương trình đào tạo"
+        sotinchi: "Số tín chỉ"
+        bac_dao_tao_id: "Bậc đào tạo"
+        khoa_hoc_id: "Khóa học"
+        khoa_id: "Khoa"

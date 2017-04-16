@@ -12,3 +12,46 @@ vi:
             tenkhoa:
               blank: "không được để trống."
               too_short: "không được ngắn hơn %{count} ký tự."
+        mon_hoc:
+          attributes:
+            mamonhoc:
+              blank: "không được để trống."
+            tenmonhoc:
+              blank: "không được để trống."
+              too_short: "không được ngắn hơn %{count} ký tự."
+            cachviettat:
+              blank: "không được để trống."
+              too_short: "không được ngắn hơn %{count} ký tự."
+            hesotinchi:
+              blank: "không được để trống."
+            loai_mon_hoc_id:
+              blank: "không được để trống."
+            khoa_id:
+              blank: "không được để trống."
+        khoa_hoc:
+          attributes:
+            tenkhoahoc:
+              blank: "không được để trống."
+            nambatdau:
+              blank: "không được để trống."
+            namketthuc:
+              blank: "không được để trống."
+        bac_dao_tao:
+          attributes:
+            kyhieu:
+              blank: "không được để trống."
+            tenbacdaotao:
+              blank: "không được để trống."
+        chuong_trinh_dao_tao:
+          attributes:
+            mactdt:
+              blank: "không được để trống."
+            tenctdt:
+              blank: "không được để trống."
+            sotinchi:
+              blank: "không được để trống."
+            bac_dao_tao_id:
+              blank: "không được để trống."
+            khoa_hoc_id:
+              blank: "không được để trống."
+            khoa_id:

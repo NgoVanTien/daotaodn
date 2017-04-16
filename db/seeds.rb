@@ -6,6 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Tài Khoản
+
+TaiKhoan.create(email: "admin@gmail.com", name: "Ngô Văn Tiến 5",
+  role: 4, password: "123456", password_confirmation: "123456")
+TaiKhoan.create(email: "vanphong@gmail.com", name: "Ngô Văn Tiến 4",
+  role: 3, password: "123456", password_confirmation: "123456")
+TaiKhoan.create(email: "giangvu@gmail.com", name: "Ngô Văn Tiến 3",
+  role: 2, password: "123456", password_confirmation: "123456")
+TaiKhoan.create(email: "giangvien@gmail.com", name: "Ngô Văn Tiến 2",
+  role: 1, password: "123456", password_confirmation: "123456")
+TaiKhoan.create(email: "sinhvien@gmail.com", name: "Ngô Văn Tiến 1",
+  role: 0, password: "123456", password_confirmation: "123456")
+
 
 # Khoa
 Khoa.create(tenkhoa: "Cơ Khí")
@@ -68,15 +81,36 @@ MonHoc.create(mamonhoc: "CSNNH", tenmonhoc: "Cơ Sở Ngôn Ngữ Học",
   cachviettat: "Ngôn Ngữ Học", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 7)
 
 
-# Tài Khoản
+# BacDaoTao
+BacDaoTao.create(kyhieu: "Nghề 1", tenbacdaotao: "Nghề Cơ Sở")
+BacDaoTao.create(kyhieu: "CĐ", tenbacdaotao: "Cao Đẳng")
+BacDaoTao.create(kyhieu: "ĐH", tenbacdaotao: "Đại Học")
+BacDaoTao.create(kyhieu: "TC", tenbacdaotao: "Trung Cấp")
+BacDaoTao.create(kyhieu: "LT", tenbacdaotao: "Liên Thông")
+BacDaoTao.create(kyhieu: "CQ", tenbacdaotao: "Chính Quy")
 
-TaiKhoan.create(email: "admin@gmail.com", name: "Ngô Văn Tiến 5",
-  role: 4, password: "123456", password_confirmation: "123456")
-TaiKhoan.create(email: "vanphong@gmail.com", name: "Ngô Văn Tiến 4",
-  role: 3, password: "123456", password_confirmation: "123456")
-TaiKhoan.create(email: "giangvu@gmail.com", name: "Ngô Văn Tiến 3",
-  role: 2, password: "123456", password_confirmation: "123456")
-TaiKhoan.create(email: "giangvien@gmail.com", name: "Ngô Văn Tiến 2",
-  role: 1, password: "123456", password_confirmation: "123456")
-TaiKhoan.create(email: "sinhvien@gmail.com", name: "Ngô Văn Tiến 1",
-  role: 0, password: "123456", password_confirmation: "123456")
+
+# KhoaHoc
+KhoaHoc.create(tenkhoahoc: "Khóa 7", nambatdau: "2007-04-10", namketthuc: "2009-04-10")
+KhoaHoc.create(tenkhoahoc: "Khóa 8", nambatdau: "2007-04-10", namketthuc: "2010-04-10")
+KhoaHoc.create(tenkhoahoc: "Khóa 9", nambatdau: "2010-04-10", namketthuc: "2011-04-10")
+KhoaHoc.create(tenkhoahoc: "Khóa 10", nambatdau: "2009-04-10", namketthuc: "2012-04-10")
+KhoaHoc.create(tenkhoahoc: "Khóa 11", nambatdau: "2011-04-10", namketthuc: "2013-04-10")
+KhoaHoc.create(tenkhoahoc: "Khóa 12", nambatdau: "2013-04-10", namketthuc: "2014-04-10")
+KhoaHoc.create(tenkhoahoc: "Khóa 13", nambatdau: "2013-04-10", namketthuc: "2015-04-10")
+KhoaHoc.create(tenkhoahoc: "Khóa 14", nambatdau: "2014-04-10", namketthuc: "2016-04-10")
+KhoaHoc.create(tenkhoahoc: "Khóa 15", nambatdau: "2015-04-10", namketthuc: "2018-04-10")
+KhoaHoc.create(tenkhoahoc: "Khóa 16", nambatdau: "2016-04-10", namketthuc: "2019-04-10")
+
+
+# ChuongTrinhDaoTao
+ChuongTrinhDaoTao.create(mactdt: "daotao1", tenctdt: "Công Nghệ Thông Tin Mạng", sotinchi: 150, bac_dao_tao_id: "1", khoa_hoc_id: "9", khoa_id: "7")
+ChuongTrinhDaoTao.create(mactdt: "daotao2", tenctdt: "Công Nghệ Thông Tin Nhúng", sotinchi: 150, bac_dao_tao_id: "1", khoa_hoc_id: "1", khoa_id: "7")
+ChuongTrinhDaoTao.create(mactdt: "daotao3", tenctdt: "Công Nghệ Thông Tin Phần Mềm", sotinchi: 150, bac_dao_tao_id: "2", khoa_hoc_id: "1", khoa_id: "7")
+ChuongTrinhDaoTao.create(mactdt: "daotao4", tenctdt: "Điện Lạnh", sotinchi: 200, bac_dao_tao_id: "2", khoa_hoc_id: "2", khoa_id: "6")
+ChuongTrinhDaoTao.create(mactdt: "daotao5", tenctdt: "Điện Lạnh Điều Hòa", sotinchi: 200, bac_dao_tao_id: "3", khoa_hoc_id: "2", khoa_id: "6")
+ChuongTrinhDaoTao.create(mactdt: "daotao6", tenctdt: "May Mặc 1", sotinchi: 200, bac_dao_tao_id: "3", khoa_hoc_id: "2", khoa_id: "6")
+ChuongTrinhDaoTao.create(mactdt: "daotao7", tenctdt: "May Mặc 2", sotinchi: 150, bac_dao_tao_id: "4", khoa_hoc_id: "3", khoa_id: "5")
+ChuongTrinhDaoTao.create(mactdt: "daotao8", tenctdt: "Ô Tô Công Nghiệp", sotinchi: 150, bac_dao_tao_id: "4", khoa_hoc_id: "3", khoa_id: "5")
+ChuongTrinhDaoTao.create(mactdt: "daotao9", tenctdt: "Ô Tô", sotinchi: 100, bac_dao_tao_id: "5", khoa_hoc_id: "4", khoa_id: "4")
+ChuongTrinhDaoTao.create(mactdt: "daotao10", tenctdt: "Lái Xe", sotinchi: 100, bac_dao_tao_id: "5", khoa_hoc_id: "5", khoa_id: "3")

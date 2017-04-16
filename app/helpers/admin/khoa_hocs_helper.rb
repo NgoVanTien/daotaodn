@@ -1,0 +1,2 @@
+module Admin::KhoaHocsHelper
+end

@@ -1,0 +1,4 @@
+vi:
+  date:
+    formats:
+      month_year: "%m/%Y"
