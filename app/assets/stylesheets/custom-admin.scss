@@ -105,3 +105,16 @@
 .tac-vu {
   text-align: center;
 }
+
+.alert.animated {
+  top: 128px !important;
+}
+
+#text-date-time {
+  .input-group {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

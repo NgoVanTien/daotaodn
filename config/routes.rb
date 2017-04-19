@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :loai_mon_hocs
     resources :khoas
     resources :mon_hocs
+    resources :khoa_hocs
+    resources :bac_dao_taos
+    resources :chuong_trinh_dao_taos
   end
 
   namespace :daotao do

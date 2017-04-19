@@ -16,5 +16,6 @@
  *= require material_icons
  *= require customize_alert
  *= require animate
-  *= require sweetalert
+ *= require sweetalert
+ *= require bootstrap-datetimepicker
  */

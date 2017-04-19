@@ -21,3 +21,5 @@
 //= require notify
 //= require bootstrap_notify
 //= require sweetalert.min
+//= require moment
+//= require bootstrap-datetimepicker

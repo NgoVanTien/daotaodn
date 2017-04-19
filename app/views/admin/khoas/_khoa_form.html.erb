@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="box-footer">
-    <%= link_to "Trở Về", :back, class: "btn btn-default btn-warning" %>
+    <%= link_to "Trở Về", admin_khoas_path, class: "btn btn-default btn-warning" %>
     <% if khoa.persisted?%>
       <%= f.submit "Chỉnh Sửa", class: "btn btn-info pull-right" %>
     <% else %>

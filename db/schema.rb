@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401064559) do
+ActiveRecord::Schema.define(version: 20170416050030) do
+
+  create_table "bac_dao_tao", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "kyhieu"
+    t.string   "tenbacdaotao"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "chuong_trinh_dao_tao", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "mactdt"
+    t.string   "tenctdt"
+    t.integer  "sotinchi"
+    t.integer  "bac_dao_tao_id"
+    t.integer  "khoa_hoc_id"
+    t.integer  "khoa_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["bac_dao_tao_id"], name: "fk_rails_c26e066803", using: :btree
+    t.index ["khoa_hoc_id"], name: "fk_rails_be0ce7369b", using: :btree
+    t.index ["khoa_id"], name: "fk_rails_284331f29e", using: :btree
+  end
 
   create_table "khoa", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "tenkhoa"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "khoa_hoc", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "tenkhoahoc"
+    t.date     "nambatdau"
+    t.date     "namketthuc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,11 +57,11 @@ ActiveRecord::Schema.define(version: 20170401064559) do
     t.string   "mamonhoc"
     t.string   "tenmonhoc"
     t.string   "cachviettat"
-    t.integer  "hesotinchi"
+    t.float    "hesotinchi",      limit: 24
     t.integer  "loai_mon_hoc_id"
     t.integer  "khoa_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.index ["khoa_id"], name: "fk_rails_593db008d1", using: :btree
     t.index ["loai_mon_hoc_id"], name: "fk_rails_440310e35f", using: :btree
   end
@@ -56,6 +85,9 @@ ActiveRecord::Schema.define(version: 20170401064559) do
     t.index ["reset_password_token"], name: "index_tai_khoan_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "chuong_trinh_dao_tao", "bac_dao_tao"
+  add_foreign_key "chuong_trinh_dao_tao", "khoa"
+  add_foreign_key "chuong_trinh_dao_tao", "khoa_hoc"
   add_foreign_key "mon_hoc", "khoa"
   add_foreign_key "mon_hoc", "loai_mon_hoc"
 end
