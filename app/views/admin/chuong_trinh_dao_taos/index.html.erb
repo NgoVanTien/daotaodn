@@ -1,5 +1,5 @@
 <section class="content-header menu-header-button">
-  <%= link_to new_admin_mon_hoc_path, class: "btn icon-btn btn-danger" do %>
+  <%= link_to new_admin_chuong_trinh_dao_tao_path, class: "btn icon-btn btn-danger" do %>
     <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-danger"></span>
     Thêm Mới
   <% end %>
@@ -31,7 +31,7 @@
     <div class="col-md-12">
       <div class="box box-info">
         <div class="box-header with-border">
-          <h3 class="box-title">Loại Môn Học</h3>
+          <h3 class="box-title">Chương Trình Đào Tạo</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool btn-filter">
               <i class="fa fa-search"></i>
@@ -39,29 +39,30 @@
           </div>
         </div>
         <div class="box-body table-responsive no-padding min-height-600">
-          <%= render "monhoc_form_search", search: @search, form: @form %>
+          <%= render "chuongtrinhdaotao_form_search", search: @search, form: @form %>
           <div class="notices_result">
-            <% if @monhocs.any? %>
+            <% if @chuongtrinhdaotaos.any? %>
               <table class="table table-hover table-striped">
                 <thead class="thead-inverse">
-                  <th><%= sort_link @search, :mamonhoc, "Mã Môn Học" %></th>
-                  <th><%= sort_link @search, :tenmonhoc, "Môn Học" %></th>
-                  <th><%= sort_link @search, :hesotinchi, "Số Tín Chỉ" %></th>
-                  <th><%= sort_link @search, :loai_mon_hoc_id, "Loại Môn Học" %></th>
+                  <th><%= sort_link @search, :mactdt, "Mã CT Đào Tạo" %></th>
+                  <th><%= sort_link @search, :tenctdt, "Tên CT Đào Tạo" %></th>
+                  <th><%= sort_link @search, :sotinchi, "Số Tín Chỉ" %></th>
+                  <th><%= sort_link @search, :bac_dao_tao_id, "Bậc Đào Tạo" %></th>
+                  <th><%= sort_link @search, :khoa_hoc_id, "Khóa Học" %></th>
                   <th><%= sort_link @search, :khoa_id, "Khoa" %></th>
                   <th class="tac-vu">Tác Vụ</th>
                 </thead>
                 <tbody>
-                  <%= render @monhocs %>
+                  <%= render @chuongtrinhdaotaos %>
                 </tbody>
               </table>
               <div class="pagination_center">
-                <%= paginate @monhocs %>
+                <%= paginate @chuongtrinhdaotaos %>
               </div>
             <% else %>
-              <h3 class="text-center">Không có loại môn học nào.</h3>
+              <h3 class="text-center">Không có chương trình đào tạo nào.</h3>
               <div class="col-xs-12 text-center margin-bottom-30">
-                <%= link_to "Trở lại", admin_mon_hocs_path, class: "btn btn-default bg-red" %>
+                <%= link_to "Trở lại", admin_chuong_trinh_dao_taos_path, class: "btn btn-default bg-red" %>
               </div>
             <% end %>
           </div>
@@ -73,6 +74,6 @@
 
 <%= content_for :specific_page_js do %>
   <script type="text/javascript">
-    <%= render "monhoc_form_search.js" %>
+    <%= render "chuongtrinhdaotao_form_search.js" %>
   </script>
 <% end %>

@@ -1,5 +1,5 @@
 <section class="content-header menu-header-button">
-  <%= link_to admin_mon_hocs_path, class: "btn icon-btn btn-warning" do %>
+  <%= link_to admin_bac_dao_taos_path, class: "btn icon-btn btn-warning" do %>
     <span class="glyphicon btn-glyphicon glyphicon-circle-arrow-left img-circle text-warning"></span>
     Trở Về
   <% end %>
@@ -27,7 +27,7 @@
         <div class="box-header with-border">
           <h3 class="box-title"><%= t ".title" %></h3>
         </div>
-        <%= render "monhoc_form", monhoc: @monhoc %>
+        <%= render "bacdaotao_form", bacdaotao: @bacdaotao %>
       </div>
     </div>
   </div>

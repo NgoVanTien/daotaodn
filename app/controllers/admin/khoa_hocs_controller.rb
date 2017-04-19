@@ -39,10 +39,11 @@ class Admin::KhoaHocsController < Admin::ApplicationController
   def update
     if @khoahoc.update_attributes khoahoc_params
       flash[:success] = "Chúc mừng bạn đả cập nhật thành công."
+      redirect_to admin_khoa_hoc_path
     else
       flash[:danger] = "Xin lỗi ! Bạn đã cập nhật không thành công."
+      render :edit
     end
-    redirect_to admin_khoa_hoc_path
   end
 
   private
