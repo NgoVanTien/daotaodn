@@ -62,9 +62,9 @@
   <div class="box-footer">
     <%= link_to "Trở Về", admin_mon_hocs_path, class: "btn btn-default btn-warning" %>
     <% if monhoc.persisted?%>
-      <%= f.submit "Chỉnh Sửa", class: "btn btn-info pull-right" %>
+      <%= f.submit "Chỉnh Sửa", class: "btn btn-info pull-right load-alert" %>
     <% else %>
-      <%= f.submit "Tạo Mới", class: "btn btn-info pull-right" %>
+      <%= f.submit "Tạo Mới", class: "btn btn-info pull-right load-alert" %>
     <% end %>
   </div>
 <% end %>
