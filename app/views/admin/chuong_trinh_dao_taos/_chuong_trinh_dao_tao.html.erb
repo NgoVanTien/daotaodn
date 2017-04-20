@@ -1,25 +1,27 @@
 <tr>
-  <td><%= mon_hoc.mamonhoc %></td>
-  <td><%= mon_hoc.tenmonhoc %></td>
-  <td><%= mon_hoc.hesotinchi %></td>
-  <td><%= mon_hoc.loai_mon_hoc.ten %></td>
-  <td><%= mon_hoc.khoa.tenkhoa %></td>
+  <td><%= chuong_trinh_dao_tao.mactdt %></td>
+  <td><%= chuong_trinh_dao_tao.tenctdt %></td>
+  <td><%= chuong_trinh_dao_tao.sotinchi %></td>
+  <td><%= chuong_trinh_dao_tao.bac_dao_tao.tenbacdaotao %></td>
+  <td><%= chuong_trinh_dao_tao.khoa_hoc.tenkhoahoc %></td>
+  <td><%= chuong_trinh_dao_tao.khoa.tenkhoa %></td>
+
   <td class="tac-vu">
-    <%= link_to admin_mon_hoc_path(mon_hoc), class: "button-show" do %>
+    <%= link_to admin_chuong_trinh_dao_tao_path(chuong_trinh_dao_tao), class: "button-show" do %>
           <span class="button-inner">
             <button class="btn button button-show-small">
               <span class="text">Chi Tiết</span>
             </button>
           </span>
     <% end %>
-    <%= link_to edit_admin_mon_hoc_path(mon_hoc), class: "button-edit" do %>
+    <%= link_to edit_admin_chuong_trinh_dao_tao_path(chuong_trinh_dao_tao), class: "button-edit" do %>
           <span class="button-inner">
             <button class="btn button button-edit-small">
               <span class="text">Chỉnh Sửa</span>
             </button>
           </span>
     <% end %>
-    <%= link_to admin_mon_hoc_path(mon_hoc),method: :delete,
+    <%= link_to admin_chuong_trinh_dao_tao_path(chuong_trinh_dao_tao),method: :delete,
       data: {confirm: "Bạn chắc chắn muốn xóa"}, class: "button-delete" do %>
           <span class="button-inner">
             <button class="btn button button-delete-small">
