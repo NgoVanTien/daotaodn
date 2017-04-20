@@ -23,3 +23,18 @@
 //= require sweetalert.min
 //= require moment
 //= require bootstrap-datetimepicker
+//= require jquery-ui
+//= require jquery-ui/widgets/sortable
+//= require jquery-ui/effects/effect-highlight
+
+
+$(document).ready(function(){
+  $(".load-alert").on("click", function(){
+    swal({
+    title: "Đang Xử Lý",
+    timer: 2000,
+    showConfirmButton: false,
+    type: "success"
+    });
+  });
+});

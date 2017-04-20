@@ -3,7 +3,7 @@ class ChuongTrinhDaoTao < ApplicationRecord
 
   belongs_to :bac_dao_tao, class_name: BacDaoTao.name
   belongs_to :khoa_hoc, class_name: KhoaHoc.name
-  belongs_to :khoas, class_name: Khoa.name
+  belongs_to :khoa, class_name: Khoa.name
 
   validates :mactdt, presence: true
   validates :tenctdt, presence: true

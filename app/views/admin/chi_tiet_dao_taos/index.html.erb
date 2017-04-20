@@ -1,5 +1,10 @@
 <section class="content-header menu-header-button">
-  <%= link_to admin_chuong_trinh_dao_taos_path, class: "btn icon-btn btn-warning" do %>
+  <%= link_to new_admin_chuong_trinh_dao_tao_chi_tiet_dao_tao_path, class: "btn icon-btn btn-danger" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-danger"></span>
+    Thêm Mới
+  <% end %>
+
+  <%= link_to admin_root_path, class: "btn icon-btn btn-warning" do %>
     <span class="glyphicon btn-glyphicon glyphicon-circle-arrow-left img-circle text-warning"></span>
     Trở Về
   <% end %>
@@ -20,15 +25,5 @@
   <% end %>
 </section>
 
-<section class="content">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="box box-info">
-        <div class="box-header with-border">
-          <h3 class="box-title"><%= t ".title" %></h3>
-        </div>
-        <%= render "chuongtrinhdaotao_form", chuongtrinhdaotao: @chuongtrinhdaotao %>
-      </div>
-    </div>
-  </div>
-</section>
+
+<%= @chuongtrinhdaotao.khoa_hoc.decorate.namdaotao_display %>

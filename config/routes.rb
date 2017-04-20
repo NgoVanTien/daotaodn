@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resources :mon_hocs
     resources :khoa_hocs
     resources :bac_dao_taos
-    resources :chuong_trinh_dao_taos
+    resources :chuong_trinh_dao_taos do
+      resources :chi_tiet_dao_taos
+    end
   end
 
   namespace :daotao do

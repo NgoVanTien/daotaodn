@@ -15,11 +15,7 @@
         <div class="input-group-addon">
           <i class="fa fa-calendar"></i>
         </div>
-        <% if khoahoc.persisted? %>
-          <%= f.text_field :nambatdau, value: I18n.l(khoahoc.nambatdau, format: :month_year), class: "form-control",  id: "datetimepicker-nambatdau", placeholder: "Nhập Năm Bắt Đầu" %>
-        <% else %>
-          <%= f.text_field :nambatdau, class: "form-control",  id: "datetimepicker-nambatdau", placeholder: "Nhập Năm Bắt Đầu" %>
-        <% end %>
+        <%= f.text_field :nambatdau, class: "form-control",  id: "datetimepicker-nambatdau", placeholder: "Nhập Năm Bắt Đầu" %>
       </div>
       <div class="col-sm-2"></div>
     </div>
@@ -30,11 +26,7 @@
         <div class="input-group-addon">
           <i class="fa fa-calendar"></i>
         </div>
-        <% if khoahoc.persisted? %>
-          <%= f.text_field :namketthuc, value: I18n.l(khoahoc.namketthuc, format: :month_year), class: "form-control",  id: "datetimepicker-namketthuc", placeholder: "Nhập Năm Kết Thúc" %>
-        <% else %>
-          <%= f.text_field :namketthuc, class: "form-control",  id: "datetimepicker-namketthuc", placeholder: "Nhập Năm Kết Thúc" %>
-        <% end %>
+        <%= f.text_field :namketthuc, class: "form-control",  id: "datetimepicker-namketthuc", placeholder: "Nhập Năm Kết Thúc" %>
       </div>
       <div class="col-sm-2"></div>
     </div>
@@ -43,10 +35,10 @@
   </div>
   <div class="box-footer">
     <%= link_to "Trở Về", admin_khoa_hocs_path, class: "btn btn-default btn-warning" %>
-    <% if khoahoc.persisted? %>
-      <%= f.submit "Chỉnh Sửa", class: "btn btn-info pull-right" %>
+    <% if khoahoc.persisted?%>
+      <%= f.submit "Chỉnh Sửa", class: "btn btn-info pull-right load-alert" %>
     <% else %>
-      <%= f.submit "Tạo Mới", class: "btn btn-info pull-right" %>
+      <%= f.submit "Tạo Mới", class: "btn btn-info pull-right load-alert" %>
     <% end %>
   </div>
 <% end %>
