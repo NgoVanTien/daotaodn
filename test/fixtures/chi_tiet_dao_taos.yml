@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kyhoc: 1
+  mon_hoc_id: 1
+  chuong_trinh_dao_tao_id: 1
+
+two:
+  kyhoc: 1
+  mon_hoc_id: 1
+  chuong_trinh_dao_tao_id: 1

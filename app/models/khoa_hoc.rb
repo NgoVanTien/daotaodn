@@ -6,4 +6,5 @@ class KhoaHoc < ApplicationRecord
   validates :tenkhoahoc, presence: true
   validates :nambatdau, presence: true
   validates :namketthuc, presence: true
+
 end

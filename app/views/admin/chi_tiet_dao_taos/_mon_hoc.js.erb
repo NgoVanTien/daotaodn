@@ -1,0 +1,65 @@
+$(document).ready(function(){
+  var hocky_items = [];
+  var list_hoc_ky = {};
+  var num_hocky = $(".hocky-items").length + 1;
+
+  for(var i=1; i < num_hocky; i++){
+  key = "hk_" + i;
+    list_hoc_ky[key] = [];
+  };
+
+  //Ham remove
+  Array.prototype.remove = function(value) {
+   this.splice(this.indexOf(value), 1);
+   return true;
+  };
+
+  $(".hocky-items").each(function(hocky) {
+    hocky_items = hocky_items + ("#items" + (hocky + 1) + ",");
+  });
+  hocky_sub = (hocky_items + "#items" + (num_hocky+1)).toString();
+  $(hocky_sub).sortable({
+    connectWith: hocky_sub,
+    start: function (event, ui) {
+      ui.item.toggleClass("highlight");
+      hoc_ky_old = ui.item.parent("ul").data("hoc-ky");
+    },
+    stop: function (event, ui) {
+      ui.item.toggleClass("highlight");
+      ma_mon_hoc = ui.item.data("ma-mon-hoc");
+      hoc_ky = ui.item.parent("ul").data("hoc-ky");
+      array_hoc_ky(ma_mon_hoc, hoc_ky, hoc_ky_old);
+    }
+  });
+  $(hocky_sub).disableSelection();
+
+
+
+  function array_hoc_ky(ma_mon_hoc, hoc_ky, hoc_ky_old) {
+    var hk_key;
+    if (hoc_ky == null && hoc_ky_old != null) {
+      hk_key = "hk_" + hoc_ky_old;
+      list_hoc_ky[hk_key].remove(ma_mon_hoc);
+    } else if (hoc_ky == null && hoc_ky_old == null) {}
+    else if (hoc_ky != null && hoc_ky == hoc_ky_old) {}
+    else if (hoc_ky != null && hoc_ky_old != null && hoc_ky != hoc_ky_old) {
+      key_old = "hk_" + hoc_ky_old;
+      key_new = "hk_" + hoc_ky;
+      list_hoc_ky[key_new].push(ma_mon_hoc);
+      list_hoc_ky[key_old].remove(ma_mon_hoc);
+    }
+    else {
+      hk_key = "hk_" + hoc_ky;
+      list_hoc_ky[hk_key].push(ma_mon_hoc);
+    }
+  };
+
+  $(".button-create-ctdt").on("click", function(){
+    var url = "<%= admin_chuong_trinh_dao_tao_chi_tiet_dao_taos_path @chuongtrinhdaotao %>";
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: list_hoc_ky,
+    });
+  })
+});

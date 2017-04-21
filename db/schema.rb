@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170416050030) do
+ActiveRecord::Schema.define(version: 20170421014957) do
 
   create_table "bac_dao_tao", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "kyhieu"
     t.string   "tenbacdaotao"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "chi_tiet_dao_tao", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "kyhoc"
+    t.integer  "mon_hoc_id"
+    t.integer  "chuong_trinh_dao_tao_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["chuong_trinh_dao_tao_id"], name: "fk_rails_e6e4df5a66", using: :btree
+    t.index ["mon_hoc_id"], name: "fk_rails_28b22654cf", using: :btree
   end
 
   create_table "chuong_trinh_dao_tao", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -85,6 +95,8 @@ ActiveRecord::Schema.define(version: 20170416050030) do
     t.index ["reset_password_token"], name: "index_tai_khoan_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "chi_tiet_dao_tao", "chuong_trinh_dao_tao"
+  add_foreign_key "chi_tiet_dao_tao", "mon_hoc"
   add_foreign_key "chuong_trinh_dao_tao", "bac_dao_tao"
   add_foreign_key "chuong_trinh_dao_tao", "khoa"
   add_foreign_key "chuong_trinh_dao_tao", "khoa_hoc"
