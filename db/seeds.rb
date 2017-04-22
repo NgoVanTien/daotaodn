@@ -46,29 +46,29 @@ LoaiMonHoc.create(ten: "Thực Tập Sản Xuất")
 MonHoc.create(mamonhoc: "CUD", tenmonhoc: "Cơ Ứng Dụng",
   cachviettat: "CUD", hesotinchi: 2, loai_mon_hoc_id: 7, khoa_id: 1)
 MonHoc.create(mamonhoc: "Asset 1", tenmonhoc: "Hệ Quản Trị CSDL Asset 1",
-  cachviettat: "HQTCSDL Asset1", hesotinchi: 3, loai_mon_hoc_id: 7, khoa_id: 7)
+  cachviettat: "HQTCSDL Asset1", hesotinchi: 3, loai_mon_hoc_id: 7, khoa_id: 1)
 MonHoc.create(mamonhoc: "Asset 2", tenmonhoc: "Hệ Quản Trị CSDL Asset 2",
-  cachviettat: "HQTCSDL Asset2", hesotinchi: 3, loai_mon_hoc_id: 7, khoa_id: 7)
+  cachviettat: "HQTCSDL Asset2", hesotinchi: 3, loai_mon_hoc_id: 7, khoa_id: 1)
 MonHoc.create(mamonhoc: "AT", tenmonhoc: "An Toàn Lao Động Điện Lạnh Và Vệ Sinh Công",
   cachviettat: "An Toàn Lao Động", hesotinchi: 1, loai_mon_hoc_id: 10, khoa_id: 2)
 MonHoc.create(mamonhoc: "ATĐ", tenmonhoc: "An Toàn Lao Động Điện Lạnh",
   cachviettat: "An Toàn Điện", hesotinchi: 3, loai_mon_hoc_id: 10, khoa_id: 6)
 MonHoc.create(mamonhoc: "AVCN", tenmonhoc: "Anh Văn Chuyên Ngành",
-  cachviettat: "AV Chuyên Ngành", hesotinchi: 2, loai_mon_hoc_id: 7, khoa_id: 7)
+  cachviettat: "AV Chuyên Ngành", hesotinchi: 2, loai_mon_hoc_id: 7, khoa_id: 6)
 MonHoc.create(mamonhoc: "AVCB", tenmonhoc: "Anh Văn Cơ Bản",
-  cachviettat: "AV Cơ Bản", hesotinchi: 2, loai_mon_hoc_id: 7, khoa_id: 7)
+  cachviettat: "AV Cơ Bản", hesotinchi: 2, loai_mon_hoc_id: 7, khoa_id: 6)
 MonHoc.create(mamonhoc: "ATTP", tenmonhoc: "Hệ Thống Phun Xăng Điện Tử",
   cachviettat: "HT Phun Xăng", hesotinchi: 2, loai_mon_hoc_id: 7, khoa_id: 5)
 MonHoc.create(mamonhoc: "CLT", tenmonhoc: "Thực Phẩm Và An Toàn Thực Phẩm",
-  cachviettat: "AT Thực Phẩm", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 8)
+  cachviettat: "AT Thực Phẩm", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 6)
 MonHoc.create(mamonhoc: "CLT", tenmonhoc: "Cơ Lý Thuyết",
   cachviettat: "Cơ LT", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 1)
 MonHoc.create(mamonhoc: "CDOT", tenmonhoc: "Chuẩn Đoán Ô Tô",
   cachviettat: "CĐ Ô Tô", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 5)
 MonHoc.create(mamonhoc: "CHM", tenmonhoc: "Cấu Hình Mạng",
-  cachviettat: "CH Mạng", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 7)
+  cachviettat: "CH Mạng", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 6)
 MonHoc.create(mamonhoc: "CNDPT", tenmonhoc: "Công Nghệ Đa Phương Tiện",
-  cachviettat: "CN Đa Phương Tiện", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 7)
+  cachviettat: "CN Đa Phương Tiện", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 6)
 MonHoc.create(mamonhoc: "CNDH", tenmonhoc: "Công Nghệ Điều Hoa Không Khí Mới",
   cachviettat: "CN Điều Hòa", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 6)
 MonHoc.create(mamonhoc: "CS", tenmonhoc: "Chống Sét Tiếp Địa",
@@ -78,7 +78,7 @@ MonHoc.create(mamonhoc: "CTPH", tenmonhoc: "Chế Tạo Phôi Hàn",
 MonHoc.create(mamonhoc: "CTM", tenmonhoc: "Chi Tiết Máy",
   cachviettat: "CT Máy", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 1)
 MonHoc.create(mamonhoc: "CSNNH", tenmonhoc: "Cơ Sở Ngôn Ngữ Học",
-  cachviettat: "Ngôn Ngữ Học", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 7)
+  cachviettat: "Ngôn Ngữ Học", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 6)
 
 
 # BacDaoTao
@@ -104,9 +104,9 @@ KhoaHoc.create(tenkhoahoc: "Khóa 16", nambatdau: "2016-04-10", namketthuc: "201
 
 
 # ChuongTrinhDaoTao
-ChuongTrinhDaoTao.create(mactdt: "daotao1", tenctdt: "Công Nghệ Thông Tin Mạng", sotinchi: 150, bac_dao_tao_id: "1", khoa_hoc_id: "9", khoa_id: "7")
-ChuongTrinhDaoTao.create(mactdt: "daotao2", tenctdt: "Công Nghệ Thông Tin Nhúng", sotinchi: 150, bac_dao_tao_id: "1", khoa_hoc_id: "1", khoa_id: "7")
-ChuongTrinhDaoTao.create(mactdt: "daotao3", tenctdt: "Công Nghệ Thông Tin Phần Mềm", sotinchi: 150, bac_dao_tao_id: "2", khoa_hoc_id: "1", khoa_id: "7")
+ChuongTrinhDaoTao.create(mactdt: "daotao1", tenctdt: "Công Nghệ Thông Tin Mạng", sotinchi: 150, bac_dao_tao_id: "1", khoa_hoc_id: "9", khoa_id: "6")
+ChuongTrinhDaoTao.create(mactdt: "daotao2", tenctdt: "Công Nghệ Thông Tin Nhúng", sotinchi: 150, bac_dao_tao_id: "1", khoa_hoc_id: "1", khoa_id: "6")
+ChuongTrinhDaoTao.create(mactdt: "daotao3", tenctdt: "Công Nghệ Thông Tin Phần Mềm", sotinchi: 150, bac_dao_tao_id: "2", khoa_hoc_id: "1", khoa_id: "1")
 ChuongTrinhDaoTao.create(mactdt: "daotao4", tenctdt: "Điện Lạnh", sotinchi: 200, bac_dao_tao_id: "2", khoa_hoc_id: "2", khoa_id: "6")
 ChuongTrinhDaoTao.create(mactdt: "daotao5", tenctdt: "Điện Lạnh Điều Hòa", sotinchi: 200, bac_dao_tao_id: "3", khoa_hoc_id: "2", khoa_id: "6")
 ChuongTrinhDaoTao.create(mactdt: "daotao6", tenctdt: "May Mặc 1", sotinchi: 200, bac_dao_tao_id: "3", khoa_hoc_id: "2", khoa_id: "6")

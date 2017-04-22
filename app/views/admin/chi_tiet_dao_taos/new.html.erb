@@ -30,6 +30,20 @@
 
 <section class="content">
   <div class="row">
+    <div class="col-md-12">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Sử Dụng Thông Tin Từ Chương Trình Đào Tạo Củ</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn icon-btn btn-danger btn-filter">
+              <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-danger"></span>
+              Sử Dụng
+            </button>
+          </div>
+        </div>
+        <%= render "chi_tiet_dao_tao_new" %>
+      </div>
+    </div>
     <div class="col-md-6">
       <div class="box box-info">
         <div class="box-header with-border">
@@ -50,10 +64,9 @@
             <h3 class="box-title">Kỳ Học <%= kyhoc %></h3>
             <div class="box-tools" style="margin-right: 60px;">
                <!-- <p class="tinchi<%= kyhoc + 1 %>">5</p> -->
-               <input class="tinchi<%= kyhoc + 1 %>" type="text" name="" value="">
             </div>
             <div class="box-tools">
-               <input type="text" name="" value="">
+               <!-- <input type="text" name="" value=""> -->
             </div>
           </div>
           <div class="box-body no-padding">
@@ -90,5 +103,6 @@
 <%= content_for :specific_page_js do %>
   <script type="text/javascript">
     <%= render "mon_hoc.js" %>
+    <%= render "chi_tiet_dao_tao_new.js" %>
   </script>
 <% end %>

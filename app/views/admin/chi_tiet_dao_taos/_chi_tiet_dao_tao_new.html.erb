@@ -1,0 +1,23 @@
+<div class="box filtertable display-none">
+  <div class="box-header width-border">
+    <h3 class="box-title">Chọn Chương Trình Đào Tạo Củ Cần Lấy Dử Liệu</h3>
+  </div>
+  <div class="box-body">
+    <div class="col-md-12 form-group">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Khoa</label>
+          <div class="col-sm-8">
+            <%= select_tag "chuong_trinh_dao_tao_backup", options_from_collection_for_select(@chuongtrinhdaotaos, "id", "tenctdt"),
+            {class: "form-control"} %>
+          </div>
+          <div class="col-md-2">
+          </div>
+        </div>
+      </div>
+      <%= link_to "#", class: "btn icon-btn btn-danger button-create-ctdt-backup" do %>
+        <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-danger"></span>
+        Lưu Lại
+      <% end %>
+  </div>
+</div>
