@@ -1,13 +1,8 @@
 <section class="content-header menu-header-button col-md-12" style=" text-align: -webkit-right !important; ">
 
-  <%= link_to "", class: "btn icon-btn btn-danger button-create-ctdt" do %>
+  <%= link_to "#", class: "btn icon-btn btn-danger button-create-ctdt" do %>
     <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-danger"></span>
-    Thêm Mới
-  <% end %>
-
-  <%= link_to new_admin_chuong_trinh_dao_tao_chi_tiet_dao_tao_path, class: "btn icon-btn btn-danger" do %>
-    <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-danger"></span>
-    Thêm Mới
+    Lưu Lại
   <% end %>
 
   <%= link_to admin_root_path, class: "btn icon-btn btn-warning" do %>
@@ -42,7 +37,7 @@
         </div>
         <div class="box-body no-padding">
           <ul id="items1" class="nav nav-pills nav-stacked min-height-200">
-            <%= render partial: "mon_hoc", collection: @monhocs  %>
+            <%= render partial: "mon_hoc", collection: @monhoc_daluu %>
           </ul>
         </div>
       </div>
@@ -53,10 +48,35 @@
         <div class="box box-info" id="<%= kyhoc %>">
           <div class="box-header with-border">
             <h3 class="box-title">Kỳ Học <%= kyhoc %></h3>
+            <div class="box-tools" style="margin-right: 60px;">
+               <!-- <p class="tinchi<%= kyhoc + 1 %>">5</p> -->
+               <input class="tinchi<%= kyhoc + 1 %>" type="text" name="" value="">
+            </div>
+            <div class="box-tools">
+               <input type="text" name="" value="">
+            </div>
           </div>
           <div class="box-body no-padding">
             <ul id="items<%= kyhoc + 1 %>" data-hoc-ky="<%= "#{kyhoc}" %>" class="hocky-items nav nav-pills nav-stacked min-height-200">
-
+              <% if @chitietdaotaos.present? %>
+                <% @chitietdaotaos.each do |ctdt| %>
+                  <% if ctdt.kyhoc == kyhoc %>
+                    <% @monhocs.each do |monhoc| %>
+                      <% if monhoc.id == ctdt.mon_hoc_id %>
+                        <li class="active" data-ma-mon-hoc="<%= "#{ monhoc.id }" %>" data-so-tin-chi="<%= "#{ monhoc.hesotinchi.to_i }" %>">
+                          <a href="#">
+                            <i class="fa fa-inbox"></i>
+                              <%= monhoc.tenmonhoc %>
+                            <span class="label label-primary pull-right">
+                              Số Tín Chỉ : <%= monhoc.hesotinchi.to_i %>
+                            </span>
+                          </a>
+                        </li>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              <% end %>
             </ul>
           </div>
         </div>

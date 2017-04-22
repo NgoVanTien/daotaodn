@@ -2,11 +2,40 @@ $(document).ready(function(){
   var hocky_items = [];
   var list_hoc_ky = {};
   var num_hocky = $(".hocky-items").length + 1;
+  var tong_sotinchi;
+
 
   for(var i=1; i < num_hocky; i++){
   key = "hk_" + i;
     list_hoc_ky[key] = [];
   };
+
+  $(".hocky-items").each(function(hocky) {
+    items = "#items" + (hocky + 2);
+    $('ul'+ items + " " + "li").each(function(i, monhoc) {
+      var val_monhoc = $(monhoc).data("ma-mon-hoc")
+      key = "hk_" + (hocky + 1);
+      list_hoc_ky[key].push(val_monhoc);
+    });
+  });
+
+  $(".hocky-items").each(function(hocky) {
+    items = "#items" + (hocky + 2);
+    tinchi = "#tinchi" + (hocky + 2);
+    var val_sotinchi;
+    var sotinchi_kyhoc = 0;
+
+    $('ul'+ items + " " + "li").each(function(i, monhoc) {
+      val_sotinchi = parseInt($(monhoc).data("so-tin-chi"))
+
+      sotinchi_kyhoc = sotinchi_kyhoc + val_sotinchi
+    });
+    console.log(sotinchi_kyhoc);
+    // debugger;
+    $(tinchi).setAttribute('value',sotinchi_kyhoc);
+  });
+
+
 
   //Ham remove
   Array.prototype.remove = function(value) {
@@ -29,6 +58,7 @@ $(document).ready(function(){
       ma_mon_hoc = ui.item.data("ma-mon-hoc");
       hoc_ky = ui.item.parent("ul").data("hoc-ky");
       array_hoc_ky(ma_mon_hoc, hoc_ky, hoc_ky_old);
+      console.log(list_hoc_ky);
     }
   });
   $(hocky_sub).disableSelection();
@@ -54,12 +84,28 @@ $(document).ready(function(){
     }
   };
 
-  $(".button-create-ctdt").on("click", function(){
+
+  $(".button-create-ctdt").on("click", function(e){
+    swal({
+    title: "Đang Xử Lý",
+    timer: 1000,
+    showConfirmButton: false,
+    type: "success"
+    },
+    function(){
+      setTimeout(function(){
+        swal("Bạn Đã Lưu Thành Công.");
+      }, 200);
+    });
+
     var url = "<%= admin_chuong_trinh_dao_tao_chi_tiet_dao_taos_path @chuongtrinhdaotao %>";
     $.ajax({
       type: "POST",
       url: url,
-      data: list_hoc_ky,
+      data: {
+        list_hoc_ky: list_hoc_ky,
+        num_hocky: num_hocky
+      }
     });
   })
 });
