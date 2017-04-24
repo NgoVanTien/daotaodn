@@ -1,0 +1,49 @@
+<%= form_for [:admin, giaovien], html: {class: "form-horizontal"} do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="box-body">
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Tên Giáo Viên</label>
+      <div class="col-sm-8">
+        <%= f.text_field :tengiaovien, class: "form-control", placeholder: "Nhập Tên Giáo Viên" %>
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+
+    <div class="form-group" id="text-date-time">
+      <label for="inputEmail3" class="col-sm-2 control-label">Năm Sinh</label>
+      <div class="col-md-8 input-group date">
+        <div class="input-group-addon">
+          <i class="fa fa-calendar"></i>
+        </div>
+        <%= f.text_field :namsinh, class: "form-control",  id: "datetimepicker-namsinh", placeholder: "Chọn Năm Sinh" %>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Tên Loại Môn Học</label>
+      <div class="col-sm-8">
+        <%= f.select :khoa_id, @khoas.collect {|lmh| [lmh.tenkhoa, lmh.id]},
+        {include_blank: "Chọn khoa"}, {class: "form-control"} %>
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+
+  </div>
+  <div class="box-footer">
+    <%= link_to "Trở Về", admin_giao_viens_path, class: "btn btn-default btn-warning" %>
+    <% if giaovien.persisted?%>
+      <%= f.submit "Chỉnh Sửa", class: "btn btn-info pull-right load-alert" %>
+    <% else %>
+      <%= f.submit "Tạo Mới", class: "btn btn-info pull-right load-alert" %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= content_for :specific_page_js do %>
+  <script type="text/javascript">
+    <%= render "giaovien_form.js" %>
+  </script>
+<% end %>

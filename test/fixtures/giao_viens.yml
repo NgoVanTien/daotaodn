@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tengiaovien: MyString
+  namsinh: 2017-04-24
+  khoa_id: 1
+
+two:
+  tengiaovien: MyString
+  namsinh: 2017-04-24
+  khoa_id: 1

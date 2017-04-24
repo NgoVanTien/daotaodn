@@ -1,20 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'lops/index'
-  end
-
-  namespace :admin do
-    get 'lops/show'
-  end
-
-  namespace :admin do
-    get 'lops/new'
-  end
-
-  namespace :admin do
-    get 'lops/edit'
-  end
-
   devise_for :tai_khoans, controllers: {sessions: "tai_khoans/sessions", registrations: "tai_khoans/registrations"}
 
   namespace :admin do
@@ -28,6 +12,9 @@ Rails.application.routes.draw do
       resources :chi_tiet_dao_taos
     end
     resources :lops
+    resources :giao_viens
+    resources :chuyen_mons
+    resources :phan_mons
   end
 
   namespace :daotao do
