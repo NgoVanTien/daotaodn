@@ -1,0 +1,32 @@
+<%= form_for [:admin, lop], html: {class: "form-horizontal"} do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="box-body">
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Tên Lớp</label>
+      <div class="col-sm-8">
+        <%= f.text_field :tenlop, class: "form-control", placeholder: "Nhập Tên Lớp" %>
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Tên Loại Môn Học</label>
+      <div class="col-sm-8">
+        <%= f.select :chuong_trinh_dao_tao_id, @chuongtrinhdaotaos.collect {|ctdt| [ctdt.tenctdt, ctdt.id]},
+        {include_blank: "Chọn chương trình đào tạo"}, {class: "form-control"} %>
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+
+  </div>
+  <div class="box-footer">
+    <%= link_to "Trở Về", admin_lops_path, class: "btn btn-default btn-warning" %>
+    <% if lop.persisted?%>
+      <%= f.submit "Chỉnh Sửa", class: "btn btn-info pull-right load-alert" %>
+    <% else %>
+      <%= f.submit "Tạo Mới", class: "btn btn-info pull-right load-alert" %>
+    <% end %>
+  </div>
+<% end %>

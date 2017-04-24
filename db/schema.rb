@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170421014957) do
+ActiveRecord::Schema.define(version: 20170424095949) do
 
   create_table "bac_dao_tao", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "kyhieu"
@@ -63,11 +63,21 @@ ActiveRecord::Schema.define(version: 20170421014957) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "lop", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "tenlop"
+    t.integer  "chuong_trinh_dao_tao_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["chuong_trinh_dao_tao_id"], name: "fk_rails_950eef82e3", using: :btree
+  end
+
   create_table "mon_hoc", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "mamonhoc"
     t.string   "tenmonhoc"
     t.string   "cachviettat"
     t.float    "hesotinchi",      limit: 24
+    t.integer  "sotietlythuyet"
+    t.integer  "sotietthuchanh"
     t.integer  "loai_mon_hoc_id"
     t.integer  "khoa_id"
     t.datetime "created_at",                 null: false
@@ -100,6 +110,7 @@ ActiveRecord::Schema.define(version: 20170421014957) do
   add_foreign_key "chuong_trinh_dao_tao", "bac_dao_tao"
   add_foreign_key "chuong_trinh_dao_tao", "khoa"
   add_foreign_key "chuong_trinh_dao_tao", "khoa_hoc"
+  add_foreign_key "lop", "chuong_trinh_dao_tao"
   add_foreign_key "mon_hoc", "khoa"
   add_foreign_key "mon_hoc", "loai_mon_hoc"
 end
