@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424095949) do
+ActiveRecord::Schema.define(version: 20170424141507) do
 
   create_table "bac_dao_tao", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "kyhieu"
@@ -41,6 +41,25 @@ ActiveRecord::Schema.define(version: 20170424095949) do
     t.index ["bac_dao_tao_id"], name: "fk_rails_c26e066803", using: :btree
     t.index ["khoa_hoc_id"], name: "fk_rails_be0ce7369b", using: :btree
     t.index ["khoa_id"], name: "fk_rails_284331f29e", using: :btree
+  end
+
+  create_table "chuyen_mon", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "chuyenmon"
+    t.integer  "giao_vien_id"
+    t.integer  "mon_hoc_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["giao_vien_id"], name: "fk_rails_9d254a250e", using: :btree
+    t.index ["mon_hoc_id"], name: "fk_rails_18bcc98659", using: :btree
+  end
+
+  create_table "giao_vien", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "tengiaovien"
+    t.date     "namsinh"
+    t.integer  "khoa_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["khoa_id"], name: "fk_rails_d58f30666d", using: :btree
   end
 
   create_table "khoa", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -110,6 +129,9 @@ ActiveRecord::Schema.define(version: 20170424095949) do
   add_foreign_key "chuong_trinh_dao_tao", "bac_dao_tao"
   add_foreign_key "chuong_trinh_dao_tao", "khoa"
   add_foreign_key "chuong_trinh_dao_tao", "khoa_hoc"
+  add_foreign_key "chuyen_mon", "giao_vien"
+  add_foreign_key "chuyen_mon", "mon_hoc"
+  add_foreign_key "giao_vien", "khoa"
   add_foreign_key "lop", "chuong_trinh_dao_tao"
   add_foreign_key "mon_hoc", "khoa"
   add_foreign_key "mon_hoc", "loai_mon_hoc"

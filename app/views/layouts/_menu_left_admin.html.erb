@@ -44,9 +44,14 @@
               <i class="fa fa-circle-o"></i>
               Lớp
             <% end %>
+          </li>
+          <li>
+            <%= link_to admin_giao_viens_path do %>
+              <i class="fa fa-circle-o"></i>
+              Giáo Viên
+            <% end %>
            </li>
 
-          </li>
           <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Các Công Thức Xét Duyệt</a></li>
           <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Danh Sách Lớp Chưa Nhập Điểm</a></li>
           <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Danh Sách Lớp Chưa Phân Môn</a></li>
@@ -106,7 +111,18 @@
               Danh Mục Loại Môn Học
             <% end %>
           </li>
-
+          <li>
+            <%= link_to admin_chuyen_mons_path do %>
+              <i class="fa fa-circle-o"></i>
+              Chuyên Môn
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_phan_mons_path do %>
+              <i class="fa fa-circle-o"></i>
+              Phân Môn
+            <% end %>
+          </li>
         </ul>
       </li>
       <li class="treeview">

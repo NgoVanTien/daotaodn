@@ -1,0 +1,29 @@
+<tr>
+  <td><%= giao_vien.tengiaovien %></td>
+  <td><%= giao_vien.namsinh %></td>
+  <td><%= giao_vien.khoa.tenkhoa %></td>
+  <td class="tac-vu">
+    <%= link_to admin_giao_vien_path(giao_vien), class: "button-show" do %>
+          <span class="button-inner">
+            <button class="btn button button-show-small">
+              <span class="text">Chi Tiết</span>
+            </button>
+          </span>
+    <% end %>
+    <%= link_to edit_admin_giao_vien_path(giao_vien), class: "button-edit" do %>
+          <span class="button-inner">
+            <button class="btn button button-edit-small">
+              <span class="text">Chỉnh Sửa</span>
+            </button>
+          </span>
+    <% end %>
+    <%= link_to admin_giao_vien_path(giao_vien),method: :delete,
+      data: {confirm: "Bạn chắc chắn muốn xóa"}, class: "button-delete" do %>
+          <span class="button-inner">
+            <button class="btn button button-delete-small">
+              <span class="text">Xóa</span>
+            </button>
+          </span>
+    <% end %>
+  </td>
+</tr>
