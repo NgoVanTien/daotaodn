@@ -26,6 +26,7 @@
 //= require jquery-ui
 //= require jquery-ui/widgets/sortable
 //= require jquery-ui/effects/effect-highlight
+//= require select2-full
 
 
 $(document).ready(function(){

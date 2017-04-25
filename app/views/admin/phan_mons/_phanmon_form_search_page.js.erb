@@ -1,0 +1,69 @@
+$(document).ready(function(){
+  $(".btn-filter").on("click", function(){
+    if($(".filtertable").css("display") == "none"){
+      $(".filtertable").slideDown();
+    }
+    else {
+      $(".filtertable").slideUp();
+    }
+  });
+
+  $(".search-alert").on("click", function(){
+    swal({
+    title: "Đang Tìm Kiếm",
+    timer: 2000,
+    showConfirmButton: false,
+    type: "success"
+    });
+  });
+
+  $("#ten_khoa").on("change", function(){
+    if($("#ten_khoa").val() == ""){
+      $(".filter_tenctdt").slideUp();
+    }
+    else {
+      $(".filter_tenctdt").slideDown();
+    }
+
+    let item = $("#ten_khoa").data("khoa")
+    let data = get_form_data(item);
+    let form = $(this).closest("form");
+    submit_search_form(form, data);
+  });
+
+  $("#q_tenlop_cont").on("keyup", function(){
+    let item = $("#q_tenlop_cont").data("lop")
+    let data = get_form_data(item);
+    let form = $(this).closest("form");
+    submit_search_form(form, data);
+  });
+
+  // $("#ten_ctdt").on("change", function(){
+  //   if($("#ten_khoa").val() == ""){
+  //     $(".filter_lop").slideUp();
+  //   }
+  //   else {
+  //     $(".filter_lop").slideDown();
+  //   }
+  // });
+
+  function submit_search_form(form, data) {
+    $.get("/admin/phan_mons", data, null, "script");
+    return false;
+  }
+
+  function get_form_data(item) {
+    return {
+      info: {
+        ten_khoa: $("#ten_khoa").val(),
+        ten_ctdt: $("#ten_ctdt").val(),
+        lop_phanmon: $("#lop_phanmon").val(),
+        lop_chua_phanmon: $("#lop_chua_phanmon").val(),
+        item: item
+      },
+      q: {
+        tenlop_cont: $("#q_tenlop_cont").val()
+      }
+    };
+  }
+});

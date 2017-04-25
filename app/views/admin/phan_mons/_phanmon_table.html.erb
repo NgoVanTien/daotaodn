@@ -1,0 +1,34 @@
+<% if lops.any? %>
+  <table class="table table-hover table-striped">
+    <thead class="thead-inverse">
+      <th><%= sort_link search, :tenlop, "Lớp" %></th>
+      <th><%= sort_link search, :chuong_trinh_dao_tao_id, "Chương Trình Đào Tạo" %></th>
+      <th class="tac-vu">Tác Vụ</th>
+    </thead>
+    <tbody>
+      <% lops.each do |lop| %>
+        <tr>
+          <td><%= lop.tenlop %></td>
+          <td><%= lop.chuong_trinh_dao_tao.tenctdt %></td>
+          <td class="tac-vu">
+            <%= link_to new_admin_phan_mon_path(lop: lop), class: "button-edit" do %>
+              <span class="button-inner">
+                <button class="btn button button-edit-small">
+                  <span class="text">Chỉnh Sửa</span>
+                </button>
+              </span>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="pagination_center">
+    <%= paginate lops %>
+  </div>
+<% else %>
+  <h3 class="text-center">Không có loại môn học nào.</h3>
+  <div class="col-xs-12 text-center margin-bottom-30">
+    <%= link_to "Trở lại", admin_mon_hocs_path, class: "btn btn-default bg-red" %>
+  </div>
+<% end %>

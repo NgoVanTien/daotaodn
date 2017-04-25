@@ -1,0 +1,37 @@
+<li class="active" data-ma-mon-hoc="<%= "#{ monhoc_chitietdaotao.mon_hoc.id }" %>" style=" height: 70px; ">
+  <a href="#">
+    <i class="fa fa-inbox"></i>
+    <%= monhoc_chitietdaotao.mon_hoc.tenmonhoc %>
+    <br>
+    <span class="label label-success  ">
+      Số Tín Chỉ : <%= monhoc_chitietdaotao.mon_hoc.hesotinchi.to_i %>
+    </span>
+    <span class="label label-primary pull-right" style=" margin-left: 20px; margin-top: -20px; ">
+      Nhập Số Tiết Dạy
+      <%= number_field_tag :so_tiet_day, nil, class: "form-control form-in-li" %>
+    </span>
+    <span class="label label-primary pull-right" style=" margin-left: 20px; margin-top: -20px; ">
+      Chọn Giáo Viên
+      <% if @giaoviens.present? %>
+        <%= select_tag :chuong_trinh_dao_tao_lop, options_from_collection_for_select(@giaoviens, "id", "tengiaovien"),
+        include_blank: "", class: "form-control select-2" %>
+      <% else %>
+        khoong cos giaos vien
+      <% end %>
+    </span>
+
+  </a>
+</li>
+
+<style media="screen">
+.form-in-li {
+  width: 175px;
+  height: 33px;
+  color: red;
+  font-size: 18px;
+  text-align: center;
+}
+.select2-container {
+  width: 200px;
+}
+</style>
