@@ -1,0 +1,50 @@
+<% if params[:info][:item] == "1" %>
+  $(".notices_result").html("<%= j render 'phanmon_table', lops: @lops, search: @search %>");
+  $(".ten_ctdt_result").html("<%= j render 'ten_ctdt_search', search: @search, form: @form, khoas: @khoas, chuongtrinhdaotaos: @chuongtrinhdaotaos %>");
+<% end %>
+<% if params[:info][:item] == "2" %>
+  $(".notices_result").html("<%= j render 'phanmon_table', lops: @lops, search: @search %>");
+<% end %>
+<% if params[:info][:item] == "3" %>
+  $(".notices_result").html("<%= j render 'phanmon_table', lops: @lops, search: @search %>");
+<% end %>
+
+
+if($("#ten_khoa").val() == ""){
+  $(".filter_tenctdt").slideUp();
+}
+else {
+  $(".filter_tenctdt").slideDown();
+}
+
+$("#ten_ctdt").on("change", function(){
+  let item = $("#ten_ctdt").data("ctdt")
+  let data = get_form_data(item);
+  let form = $(this).closest("form");
+  submit_search_form(form, data);
+});
+
+function submit_search_form(form, data) {
+  $.get("/admin/phan_mons", data, null, "script");
+  return false;
+}
+
+function get_form_data(item) {
+  return {
+    info: {
+      ten_khoa: $("#ten_khoa").val(),
+      ten_ctdt: $("#ten_ctdt").val(),
+      lop_phanmon: $("#lop_phanmon").val(),
+      lop_chua_phanmon: $("#lop_chua_phanmon").val(),
+      item: item
+    },
+    q: {
+      tenlop_cont: $("#q_tenlop_cont").val()
+    }
+  };
+}
+
+
+$("#per").change(function() {
+  $(this).closest("form").submit();
+});

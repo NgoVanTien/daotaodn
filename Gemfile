@@ -64,6 +64,7 @@ gem "material_icons"
 gem "animate-rails"
 gem 'momentjs-rails', '~> 2.17', '>= 2.17.1'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.42'
+gem "select2-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

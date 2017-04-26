@@ -19,4 +19,6 @@
  *= require sweetalert
  *= require bootstrap-datetimepicker
  *= require jquery-ui
+ *= require select2
+ *= require select2-bootstrap
  */

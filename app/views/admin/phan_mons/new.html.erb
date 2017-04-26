@@ -1,0 +1,51 @@
+<section class="content-header menu-header-button   col-md-12" style=" text-align: -webkit-right !important; ">
+  <%= link_to admin_mon_hocs_path, class: "btn icon-btn btn-warning" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-circle-arrow-left img-circle text-warning"></span>
+    Trở Về
+  <% end %>
+
+  <%= link_to admin_root_path, class: "btn icon-btn btn-primary" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-primary"></span>
+    Trang Quản Lý
+  <% end %>
+
+  <%= link_to "", class: "btn icon-btn btn-success" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-open-file img-circle text-success"></span>
+    Nhập Từ Excel
+  <% end %>
+
+  <%= link_to "", class: "btn icon-btn btn-info" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-paste img-circle text-info"></span>
+    Xuất Excel
+  <% end %>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Môn Học Dự Kiến</h3>
+        </div>
+        <div class="box-body no-padding">
+          <ul id="items1" class="nav nav-pills nav-stacked min-height-200">
+            <%= render partial: "monhoc_chitietdaotao", collection: @chitietdaotaos %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+
+
+
+      
+    </div>
+  </div>
+</section>
+
+<%= content_for :specific_page_js do %>
+  <script type="text/javascript">
+    <%= render "monhoc_chitietdaotao.js" %>
+  </script>
+<% end %>
