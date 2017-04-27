@@ -1,3 +1,67 @@
-$( ".select-2" ).select2({
-  theme: "bootstrap"
+$(document).ready(function(){
+  var id_ky_hoc;
+
+  $( ".select-2" ).select2({
+    theme: "bootstrap"
+  });
+
+
+
+  var items_kyhoc =  document.querySelector('.hocky-items').id
+  id_ky_hoc = ("#items1" + ",#" + items_kyhoc)
+  console.log(id_ky_hoc);
+  $(id_ky_hoc).sortable({
+    connectWith: id_ky_hoc,
+    start: function (event, ui) {
+      ui.item.toggleClass("highlight");
+
+    },
+    stop: function (event, ui) {
+      ui.item.toggleClass("highlight");
+
+    }
+  });
+  $(id_ky_hoc).disableSelection();
+
+
+
+  $(".button-create-phan-mon").on("click", function(){
+    var list_mon_hoc = {};
+    var list_thong_tin = [];
+    $("ul" + "#" + items_kyhoc + " " + "li").each(function(i, monhoc){
+      var id_monhoc = $(monhoc).data("ma-mon-hoc");
+      var dulieu_class = "dulieu-" + id_monhoc
+      var id_giaovien = $("li" + "." + dulieu_class).find(".giaovien").val()
+      var so_tiet = $("li" + "." + dulieu_class).find(".sotiet").val()
+
+      list_mon_hoc[dulieu_class] = [id_monhoc, id_giaovien, so_tiet]
+    });
+    console.log(list_mon_hoc);
+
+    list_thong_tin = ["<%= @chuongtrinhdaotao.id %>","<%= @lop.id %>" , "<%= @kyhoc %>"]
+    console.log(list_thong_tin);
+
+    var url = "<%= admin_phan_mons_path %>";
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: {
+        list_mon_hoc: list_mon_hoc,
+        list_thong_tin: list_thong_tin
+      }
+    });
+
+    swal({
+    title: "Đang Xử Lý",
+    timer: 1000,
+    showConfirmButton: false,
+    type: "success"
+    },
+    function(){
+      setTimeout(function(){
+        swal("Bạn Đã Lưu Thành Công.");
+      }, 200);
+    });
+
+  });
 });

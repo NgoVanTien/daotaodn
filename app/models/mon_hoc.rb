@@ -3,6 +3,7 @@ class MonHoc < ApplicationRecord
   belongs_to :loai_mon_hoc, class_name: LoaiMonHoc.name
   belongs_to :khoa, class_name: Khoa.name
   has_many :chi_tiet_dao_taos, class_name: ChiTietDaoTao.name
+  has_many :phan_mon, class_name: PhanMon.name
 
   validates :khoa_id, presence: true
   validates :loai_mon_hoc_id, presence: true

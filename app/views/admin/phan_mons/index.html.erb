@@ -40,6 +40,24 @@
         </div>
         <div class="box-body table-responsive no-padding min-height-600 form_search_result">
           <%= render "phanmon_form_search", search: @search, form: @form, khoas: @khoas, chuongtrinhdaotaos: @chuongtrinhdaotaos %>
+          <div class="box-body">
+            Ghi Chú :
+            <%= link_to "#", class: "button-edit" do %>
+              <span class="button-inner">
+                <button class="btn button button-edit-small">
+                  <span class="text">Nút hiển thị học kỳ chưa phân môn</span>
+                </button>
+              </span>
+            <% end %>
+
+            <%= link_to "#", class: "button-show" do %>
+                  <span class="button-inner">
+                    <button class="btn button button-show-small">
+                      <span class="text">Nút hiển thị học kỳ đã phân môn</span>
+                    </button>
+                  </span>
+            <% end %>
+          </div>
           <div class="notices_result">
             <%= render "phanmon_table", lops: @lops, search: @search  %>
           </div>

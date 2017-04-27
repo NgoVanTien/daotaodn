@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hocky: 1
+  giao_vien_id: 1
+  chi_tiet_dao_tao_id: 1
+  mon_hoc_id: 1
+  sotiet: 1
+
+two:
+  hocky: 1
+  giao_vien_id: 1
+  chi_tiet_dao_tao_id: 1
+  mon_hoc_id: 1
+  sotiet: 1

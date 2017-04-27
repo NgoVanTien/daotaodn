@@ -36,6 +36,7 @@ class Admin::ChiTietDaoTaosController < Admin::ApplicationController
     #   end
     # end
 
+
     select_val = params[:select_val]
     if select_val.present?
       ChiTietDaoTao.where(chuong_trinh_dao_tao_id: select_val).each do |ctdt_old|

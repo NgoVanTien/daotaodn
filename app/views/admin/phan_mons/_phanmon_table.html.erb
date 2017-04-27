@@ -10,13 +10,15 @@
         <tr>
           <td><%= lop.tenlop %></td>
           <td><%= lop.chuong_trinh_dao_tao.tenctdt %></td>
-          <td class="tac-vu">
-            <%= link_to new_admin_phan_mon_path(lop: lop), class: "button-edit" do %>
-              <span class="button-inner">
-                <button class="btn button button-edit-small">
-                  <span class="text">Chỉnh Sửa</span>
-                </button>
-              </span>
+          <td class="tac-vu" style=" float: left; ">
+            <% (1..lop.chuong_trinh_dao_tao.khoa_hoc.decorate.namdaotao_display*2).each do |kyhoc| %>
+              <%= link_to new_admin_phan_mon_path(lop: lop, kyhoc: kyhoc ), class: "button-#{lop.decorate.display_button_kyhoc lop, kyhoc}" do %>
+                <span class="button-inner">
+                  <button class="btn button button-<%= "#{lop.decorate.display_button_kyhoc lop, kyhoc}" %>-small">
+                    <span class="text">Kỳ <%= kyhoc %></span>
+                  </button>
+                </span>
+              <% end %>
             <% end %>
           </td>
         </tr>
