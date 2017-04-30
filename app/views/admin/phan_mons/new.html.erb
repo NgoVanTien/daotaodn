@@ -1,4 +1,9 @@
 <section class="content-header menu-header-button   col-md-12" style=" text-align: -webkit-right !important; ">
+  <%= link_to "#", class: "btn icon-btn btn-danger button-create-phan-mon" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-danger"></span>
+    Lưu Lại
+  <% end %>
+
   <%= link_to admin_mon_hocs_path, class: "btn icon-btn btn-warning" do %>
     <span class="glyphicon btn-glyphicon glyphicon-circle-arrow-left img-circle text-warning"></span>
     Trở Về
@@ -25,6 +30,55 @@
     <div class="col-md-6">
       <div class="box box-info">
         <div class="box-header with-border">
+          <h3 class="box-title">Thông Tin Về Chương Trình Đào Tạo</h3>
+        </div>
+        <div class="box-body with-border">
+          <div class="col-md-6" style="text-align: -webkit-right;">
+            <h4>Chương trình đào tạo :</h4>
+            <h4>Bắt đầu vào tháng :</h4>
+            <h4>Thời gian kỳ học hiện tại :</h4>
+          </div>
+          <div class="col-md-6">
+            <h4 style="color: red;" ><%= @chuongtrinhdaotao.tenctdt %></h4>
+            <h4 style="color: red;" ><%= I18n.l @chuongtrinhdaotao.khoa_hoc.nambatdau, format: :month_year %></h4>
+            <h4 style="color: red;" >
+              <% if Time.zone.now.to_date > @chuongtrinhdaotao.khoa_hoc.namketthuc.to_date %>
+                Đã hết thời gian học
+              <% else %>
+                <%= (((Time.zone.now.to_date.year*12 + Time.zone.now.to_date.month) - (@chuongtrinhdaotao.khoa_hoc.nambatdau.to_date.year.to_i*12 + @chuongtrinhdaotao.khoa_hoc.nambatdau.to_date.month.to_i))/6).to_i %>
+              <% end %>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Thông Tin Về Lớp</h3>
+        </div>
+        <div class="box-body with-border">
+          <div class="col-md-6" style="text-align: -webkit-right;">
+            <h4>Tên Lớp :</h4>
+            <h4>Bậc Đào Tạo :</h4>
+            <h4>Khoa :</h4>
+          </div>
+          <div class="col-md-6">
+            <h4 style="color: red;" ><%= @lop.tenlop %></h4>
+            <h4 style="color: red;" ><%= @lop.chuong_trinh_dao_tao.bac_dao_tao.tenbacdaotao %></h4>
+            <h4 style="color: red;" ><%= @lop.chuong_trinh_dao_tao.khoa.tenkhoa %></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="box box-info">
+        <div class="box-header with-border">
           <h3 class="box-title">Môn Học Dự Kiến</h3>
         </div>
         <div class="box-body no-padding">
@@ -37,9 +91,58 @@
 
     <div class="col-md-6">
 
+        <div class="box box-info" id="<%= @kyhoc %>">
+          <div class="box-header with-border">
+            <h3 class="box-title">Kỳ Học <%= @kyhoc %></h3>
+            <div class="box-tools" style="margin-right: 60px;">
+            </div>
+            <div class="box-tools">
+            </div>
+          </div>
+          <div class="box-body no-padding">
+            <ul id="items<%= @kyhoc.to_i + 1 %>" data-hoc-ky="<%= "#{@kyhoc}" %>" class="hocky-items nav nav-pills nav-stacked min-height-200">
 
 
-      
+              <% if @all_phanmon_cualop.present? %>
+                <% @all_phanmon_cualop.each do |phanmon| %>
+
+                  <li class="active dulieu-<%= "#{ phanmon.mon_hoc_id }" %>" data-ma-mon-hoc="<%= "#{ phanmon.mon_hoc_id }" %>" style=" height: 100px; ">
+                      <div class="col-md-12" style=" height: 50px; ">
+                        <i class="fa fa-inbox"></i>
+                        <%= phanmon.mon_hoc.tenmonhoc %>
+                        <span class="label label-success pull-right ">
+                          Số Tín Chỉ : <%= phanmon.mon_hoc.hesotinchi.to_i %>
+                        </span>
+                      </div>
+
+                      <div class="col-md-12">
+                        <span class="label label-primary pull-right" style=" margin-left: 20px; margin-top: -20px; ">
+                          Nhập Số Tiết Dạy
+                          <% if @giaoviens.present? %>
+                            <%= number_field_tag :so_tiet_day, nil,value: phanmon.sotiet, class: "form-control form-in-li sotiet" %>
+                          <% else %>
+                             <br> Không có giáo viên nào thuộc khoa này.
+                          <% end %>
+                        </span>
+                        <span class="label label-primary pull-right" style=" margin-left: 20px; margin-top: -20px; ">
+                          Chọn Giáo Viên
+                          <% if @giaoviens.present? %>
+                            <%= select_tag :giao_vien, options_from_collection_for_select(@giaoviens, "id", "tengiaovien", phanmon.giao_vien_id),
+                            include_blank: "", class: "form-control select-2 giaovien" %>
+                          <% else %>
+                             <br> Không có giáo viên nào thuộc khoa này.
+                          <% end %>
+                        </span>
+                      </div>
+                  </li>
+                <% end %>
+              <% end %>
+
+            </ul>
+          </div>
+        </div>
+
+
     </div>
   </div>
 </section>
