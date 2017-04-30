@@ -1,0 +1,14 @@
+<tr>
+  <td><%= lop_table.id %>.</td>
+  <td><%= lop_table.tenlop %></td>
+  <td><%= lop_table.sinh_viens.size %></td>
+  <td>
+    <%= link_to admin_quyens_path(lop_table.id, params_lop: lop_table.id), method: :post, class: "button-show load-alert" do %>
+      <span class="button-inner">
+        <button class="btn button button-show-small">
+          <span class="text">Cập Nhật</span>
+        </button>
+      </span>
+    <% end %>
+  </td>
+</tr>

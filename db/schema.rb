@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427165336) do
+ActiveRecord::Schema.define(version: 20170501064135) do
 
   create_table "bac_dao_tao", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "kyhieu"
@@ -116,10 +116,22 @@ ActiveRecord::Schema.define(version: 20170427165336) do
     t.datetime "updated_at",              null: false
   end
 
+  create_table "sinh_vien", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "tensinhvien"
+    t.date     "namsinh"
+    t.integer  "lop_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["lop_id"], name: "fk_rails_1bd546070b", using: :btree
+  end
+
   create_table "tai_khoan", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
+    t.string   "username",               default: "", null: false
     t.string   "name",                   default: "", null: false
     t.integer  "role",                   default: 0,  null: false
+    t.integer  "giao_vien_id"
+    t.integer  "sinh_vien_id"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -146,4 +158,5 @@ ActiveRecord::Schema.define(version: 20170427165336) do
   add_foreign_key "lop", "chuong_trinh_dao_tao"
   add_foreign_key "mon_hoc", "khoa"
   add_foreign_key "mon_hoc", "loai_mon_hoc"
+  add_foreign_key "sinh_vien", "lop"
 end

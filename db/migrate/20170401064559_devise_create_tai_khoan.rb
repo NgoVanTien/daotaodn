@@ -3,8 +3,11 @@ class DeviseCreateTaiKhoan < ActiveRecord::Migration[5.0]
     create_table :tai_khoan do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
+      t.string :username,           null: false, default: ""
       t.string :name,              null: false, default: ""
       t.integer :role,              null: false, default: 0
+      t.integer :giao_vien_id
+      t.integer :sinh_vien_id
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable

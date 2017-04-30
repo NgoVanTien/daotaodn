@@ -1,0 +1,130 @@
+<section class="content-header menu-header-button   col-md-12" style=" text-align: -webkit-right !important; ">
+  <%= link_to "#", class: "btn icon-btn btn-danger button-create-phan-mon" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-danger"></span>
+    Lưu Lại
+  <% end %>
+
+  <%= link_to admin_mon_hocs_path, class: "btn icon-btn btn-warning" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-circle-arrow-left img-circle text-warning"></span>
+    Trở Về
+  <% end %>
+
+  <%= link_to admin_root_path, class: "btn icon-btn btn-primary" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-primary"></span>
+    Trang Quản Lý
+  <% end %>
+
+  <%= link_to "", class: "btn icon-btn btn-success" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-open-file img-circle text-success"></span>
+    Nhập Từ Excel
+  <% end %>
+
+  <%= link_to "", class: "btn icon-btn btn-info" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-paste img-circle text-info"></span>
+    Xuất Excel
+  <% end %>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Tạo Thủ Công</h3>
+        </div>
+        <div class="box-body no-padding">
+          <ul id="items1" class="nav nav-pills nav-stacked min-height-200">
+            <%= render "quyen_form", taikhoan: @taikhoan, giaoviens: @giaoviens %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="col-md-12">
+
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Tạo tài khoản giáo viên theo Khoa</h3>
+              <div class="box-tools" style="margin-right: 60px;">
+              </div>
+              <div class="box-tools">
+              </div>
+            </div>
+            <div class="box-body no-padding min-height-200">
+
+              <table class="table table-bordered table-fixed">
+                <thead>
+                  <tr>
+                    <th style="width: 10px">TT</th>
+                    <th>Tên Khoa</th>
+                    <th>Số Giaos Viên</th>
+                    <th style="width: 100px">Tác Vụ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%= render partial: "khoa_table", collection: @khoas %>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+      </div>
+      <div class="col-md-12">
+
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Tạo tài khoản sinh viên theo Lớp</h3>
+              <div class="box-tools" style="margin-right: 60px;">
+              </div>
+              <div class="box-tools">
+              </div>
+            </div>
+            <div class="box-body no-padding min-height-200">
+              <table class="table table-bordered table-fixed">
+                <thead>
+                  <tr>
+                    <th style="width: 10px">TT</th>
+                    <th>Tên Lớp</th>
+                    <th>Số Sinh Viên</th>
+                    <th style="width: 100px">Tác Vụ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%= render partial: "lop_table", collection: @lops %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style media="screen">
+
+.table-fixed{
+tbody{
+  height:200px;
+  overflow-y:auto;
+  width: 100%;
+  }
+thead,tbody,tr,td,th{
+  display:block;
+}
+tbody{
+  td{
+    float:left;
+  }
+}
+thead {
+  tr{
+    th{
+      float:left;
+     background-color: #f39c12;
+     border-color:#e67e22;
+    }
+  }
+}
+}
+
+</style>

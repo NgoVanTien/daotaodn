@@ -30,8 +30,9 @@ class Admin::PhanMonsController < Admin::ApplicationController
     @kyhoc = params[:kyhoc]
 
     @all_phanmon_cualop = PhanMon.where(hocky: @kyhoc, chuong_trinh_dao_tao_id: @chuongtrinhdaotao, lop_id: @lop)
+    @all_phanmon_cualop_cachocky = PhanMon.where(chuong_trinh_dao_tao_id: @chuongtrinhdaotao, lop_id: @lop)
 
-    chitietdaotaos_daphanmon = ChiTietDaoTao.where(chuong_trinh_dao_tao_id: @chuongtrinhdaotao, mon_hoc_id: @all_phanmon_cualop.pluck(:mon_hoc_id))
+    chitietdaotaos_daphanmon = ChiTietDaoTao.where(chuong_trinh_dao_tao_id: @chuongtrinhdaotao, mon_hoc_id: @all_phanmon_cualop_cachocky.pluck(:mon_hoc_id))
 
     @chitietdaotaos = @chitietdaotaos - chitietdaotaos_daphanmon
   end
