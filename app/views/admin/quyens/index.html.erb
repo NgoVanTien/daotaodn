@@ -1,0 +1,195 @@
+<section class="content-header menu-header-button   col-md-12" style=" text-align: -webkit-right !important; ">
+  <%= link_to new_admin_quyen_path, class: "btn icon-btn btn-danger button-create-phan-mon" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-danger"></span>
+    Ủy Quyền
+  <% end %>
+
+  <%= link_to admin_mon_hocs_path, class: "btn icon-btn btn-warning" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-circle-arrow-left img-circle text-warning"></span>
+    Trở Về
+  <% end %>
+
+  <%= link_to admin_root_path, class: "btn icon-btn btn-primary" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-primary"></span>
+    Trang Quản Lý
+  <% end %>
+
+  <%= link_to "", class: "btn icon-btn btn-success" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-open-file img-circle text-success"></span>
+    Nhập Từ Excel
+  <% end %>
+
+  <%= link_to "", class: "btn icon-btn btn-info" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-paste img-circle text-info"></span>
+    Xuất Excel
+  <% end %>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Tài Khoản Giáo Viên</h3>
+        </div>
+        <div class="box-body no-padding">
+          <ul id="items1" class="nav nav-pills nav-stacked min-height-200">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <th style="width: 10px"></th>
+                    <th>Email</th>
+                    <th>Tên</th>
+                    <th style="width: 100px">Tác Vụ</th>
+                  </tr>
+                  <% @taikhoan_giaovien.each_with_index do |giaovien, index| %>
+                    <tr>
+                      <td><%= index + 1 %>.</td>
+                      <td><%= giaovien.email %></td>
+                      <td><%= giaovien.name %></td>
+                      <td>
+                        <%= link_to edit_admin_quyen_path(giaovien.id), class: "button-show" do %>
+                            <span class="button-inner">
+                              <button class="btn button button-show-small">
+                                <span class="text">Chỉnh Sửa</span>
+                              </button>
+                            </span>
+                        <% end %>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="col-md-12">
+
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Tài Khoản Admin</h3>
+              <div class="box-tools" style="margin-right: 60px;">
+              </div>
+              <div class="box-tools">
+              </div>
+            </div>
+            <div class="box-body no-padding min-height-200">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <th style="width: 10px"></th>
+                    <th>Email</th>
+                    <th>Tên</th>
+                    <th style="width: 100px">Tác Vụ</th>
+                  </tr>
+                  <% @taikhoan_admin.each_with_index do |admin, index| %>
+                    <tr>
+                      <td><%= index + 1 %>.</td>
+                      <td><%= admin.email %></td>
+                      <td><%= admin.name %></td>
+                      <td>
+                        <% if current_tai_khoan == admin %>
+                          <!-- Tài khoản của tôi -->
+                          <span class="badge bg-red">Tài Khoản Của Tôi</span>
+                        <% else %>
+                          <%= link_to edit_admin_quyen_path(admin.id), class: "button-show" do %>
+                              <span class="button-inner">
+                                <button class="btn button button-show-small">
+                                  <span class="text">Chỉnh Sửa</span>
+                                </button>
+                              </span>
+                          <% end %>
+                        <% end %>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-12">
+
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Tài Khoản Giảng Vụ</h3>
+              <div class="box-tools" style="margin-right: 60px;">
+              </div>
+              <div class="box-tools">
+              </div>
+            </div>
+            <div class="box-body no-padding min-height-200">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <th style="width: 10px"></th>
+                    <th>Email</th>
+                    <th>Tên</th>
+                    <th style="width: 100px">Tác Vụ</th>
+                  </tr>
+                  <% @taikhoan_giangvu.each_with_index do |giangvu, index| %>
+                    <tr>
+                      <td><%= index + 1 %>.</td>
+                      <td><%= giangvu.email %></td>
+                      <td><%= giangvu.name %></td>
+                      <td>
+                        <%= link_to edit_admin_quyen_path(giangvu.id), class: "button-show" do %>
+                            <span class="button-inner">
+                              <button class="btn button button-show-small">
+                                <span class="text">Chỉnh Sửa</span>
+                              </button>
+                            </span>
+                        <% end %>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-12">
+
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Tài Khoản Văn Phòng</h3>
+              <div class="box-tools" style="margin-right: 60px;">
+              </div>
+              <div class="box-tools">
+              </div>
+            </div>
+            <div class="box-body no-padding min-height-200">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <th style="width: 10px"></th>
+                    <th>Email</th>
+                    <th>Tên</th>
+                    <th style="width: 100px">Tác Vụ</th>
+                  </tr>
+                  <% @taikhoan_vanphong.each_with_index do |vanphong, index| %>
+                    <tr>
+                      <td><%= index + 1 %>.</td>
+                      <td><%= vanphong.email %></td>
+                      <td><%= vanphong.name %></td>
+                      <td>
+                        <%= link_to edit_admin_quyen_path(vanphong.id), class: "button-show" do %>
+                            <span class="button-inner">
+                              <button class="btn button button-show-small">
+                                <span class="text">Chỉnh Sửa</span>
+                              </button>
+                            </span>
+                        <% end %>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

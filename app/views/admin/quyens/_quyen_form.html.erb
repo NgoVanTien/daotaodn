@@ -1,0 +1,79 @@
+<%= form_for [:admin, taikhoan],:url => admin_quyens_path, html: {class: "form-horizontal"} do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="box-body">
+
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
+        <div class="col-sm-8">
+          <%= f.text_field :email, autofocus: true, class: "form-control", placeholder: "Email Cá Nhân" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-4 control-label">Mã</label>
+        <div class="col-sm-8">
+          <%= f.text_field :username, autofocus: true, class: "form-control", placeholder: "Mã Cá Nhân",readonly: :true %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-4 control-label">Tên</label>
+        <div class="col-sm-8">
+          <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "Tên người dùng" %>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-4 control-label">Chọn Quyền</label>
+        <div class="col-sm-8">
+          <%= f.collection_select :role, taikhoan.decorate.quyen_display, :last, :first,
+            {include_blank: "Chọn quyền"}, {class: "form-control select-2"} %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-4 control-label">Giáo Viên Ủy Quyền</label>
+        <div class="col-sm-8">
+          <%= f.select :giao_vien_id, giaoviens.collect {|gv| [gv.tengiaovien, gv.id]},
+          {include_blank: "Tìm kiếm giáo viên"}, {class: "form-control select-2"} %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-4 control-label">Nhập Mật Khẩu</label>
+        <div class="col-sm-8">
+          <% if @minimum_password_length %>
+          <em>(Tối thiểu <%= @minimum_password_length %> ký tự)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Mật Khẩu" %>
+          <span class="glyphicon glyphicon-lock form-control-feedback icon-pass"></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-4 control-label">Nhập Lại Mật Khẩu</label>
+        <div class="col-sm-8">
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Nhập Lại Mật Khẩu" %>
+          <span class="glyphicon glyphicon-lock form-control-feedback icon-pass-bottom"></span>
+        </div>
+      </div>
+  </div>
+  <div class="box-footer">
+    <%= link_to "Trở Về", admin_quyens_path, class: "btn btn-default btn-warning" %>
+    <% if taikhoan.persisted?%>
+      <%= f.submit "Chỉnh Sửa", class: "btn btn-info pull-right load-alert" %>
+    <% else %>
+      <%= f.submit "Tạo Mới", class: "btn btn-info pull-right load-alert" %>
+    <% end %>
+  </div>
+<% end %>
+
+
+<script type="text/javascript">
+$( ".select-2" ).select2({
+  theme: "bootstrap"
+});
+
+</script>

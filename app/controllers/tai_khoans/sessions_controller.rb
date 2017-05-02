@@ -1,18 +1,4 @@
 class TaiKhoans::SessionsController < Devise::SessionsController
-# before_action :configure_sign_in_params, only: [:create]
-  # after_action :check_tai_khoan
-  #
-  # def check_tai_khoan
-  #   binding.pry
-  #   if current_tai_khoan.present? && current_sinh_vien?
-  #     render daotao_root_path
-  #   elsif
-  #     render root_path
-  #   else
-  #     render admin_root_path
-  #   end
-  # end
-
 
 
   # GET /resource/sign_in

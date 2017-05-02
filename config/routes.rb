@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :giao_viens
     resources :chuyen_mons
     resources :phan_mons
+    resources :sinh_viens
+    resources :quyens
   end
 
   namespace :daotao do

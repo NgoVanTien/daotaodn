@@ -1,0 +1,198 @@
+<aside class="main-sidebar">
+  <section class="sidebar">
+    <ul class="sidebar-menu">
+      <li class="header">Menu Hệ Thống Quản Trị Viên</li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-pie-chart"></i>
+          <span>Phòng Ban</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+            <small class="label pull-right bg-green">new</small>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <%= link_to "" do %>
+              <i class="fa fa-circle-o"></i>
+              Ngành Nghề
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_khoas_path do %>
+              <i class="fa fa-circle-o"></i>
+              Khoa
+            <% end %>
+          </li>
+          <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i>Phòng</a></li>
+          <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Công Tác Sinh Viên</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-pie-chart"></i>
+          <span>Hệ Thống</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+            <small class="label pull-right bg-green">new</small>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <%= link_to admin_lops_path do %>
+              <i class="fa fa-circle-o"></i>
+              Lớp
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_giao_viens_path do %>
+              <i class="fa fa-circle-o"></i>
+              Giáo Viên
+            <% end %>
+           </li>
+           <li>
+             <%= link_to admin_sinh_viens_path do %>
+               <i class="fa fa-circle-o"></i>
+               Sinh Viên
+             <% end %>
+            </li>
+            <li>
+              <%= link_to admin_quyens_path do %>
+                <i class="fa fa-circle-o"></i>
+                Ủy Quyền
+              <% end %>
+             </li>
+
+          <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Các Công Thức Xét Duyệt</a></li>
+          <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Danh Sách Lớp Chưa Nhập Điểm</a></li>
+          <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Danh Sách Lớp Chưa Phân Môn</a></li>
+          <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Theo Giỏi Dử Liệu Thay Đổi</a></li>
+          <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Đăng Ký Coi Thi</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-pie-chart"></i>
+          <span>Lập Kế Hoạch Đào Tạo</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <%= link_to admin_khoa_hocs_path do %>
+              <i class="fa fa-circle-o"></i>
+              Khóa Học
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_bac_dao_taos_path do %>
+              <i class="fa fa-circle-o"></i>
+              Bậc Đào Tạo
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_chuong_trinh_dao_taos_path do %>
+              <i class="fa fa-circle-o"></i>
+              Chương Trình Đào Tạo
+            <% end %>
+          </li>
+
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-laptop"></i>
+          <span>Phân Môn Học</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <%= link_to admin_mon_hocs_path do %>
+              <i class="fa fa-circle-o"></i>
+              Danh Mục Môn Học
+            <% end %>
+           </li>
+          <li>
+            <%= link_to admin_loai_mon_hocs_path do %>
+              <i class="fa fa-circle-o"></i>
+              Danh Mục Loại Môn Học
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_chuyen_mons_path do %>
+              <i class="fa fa-circle-o"></i>
+              Chuyên Môn
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_phan_mons_path do %>
+              <i class="fa fa-circle-o"></i>
+              Phân Môn
+            <% end %>
+          </li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-edit"></i> <span>Lịch Báo Giảng</span>
+          <!-- <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span> -->
+        </a>
+        <!-- <ul class="treeview-menu">
+          <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
+          <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+          <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+        </ul> -->
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-table"></i> <span>Nhập Điểm</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
+          <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="pages/calendar.html">
+          <i class="fa fa-calendar"></i> <span>Xét Duyệt</span>
+          <span class="pull-right-container">
+            <small class="label pull-right bg-red">3</small>
+            <small class="label pull-right bg-blue">17</small>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="pages/mailbox/mailbox.html">
+          <i class="fa fa-envelope"></i> <span>Tốt Nghiệp</span>
+          <span class="pull-right-container">
+            <small class="label pull-right bg-yellow">12</small>
+            <small class="label pull-right bg-green">16</small>
+            <small class="label pull-right bg-red">5</small>
+          </span>
+        </a>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-table"></i> <span>Báo Cáo Tổng Kết</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
+          <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</aside>
