@@ -12,6 +12,8 @@ class MonHoc < ApplicationRecord
   validates :cachviettat, presence: true, length: {maximum: 20}
   validates :hesotinchi, presence: true
 
+  enum loai: {lythuyet_thuchanh: 0, lythuyet: 1, thuchanh:2}
+
   scope :mon_thuoc_khoa, -> id_ctdt do
     where(khoa_id: ChuongTrinhDaoTao.where(id: id_ctdt).first.khoa_id)
   end

@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'lich_giangs/index'
+  end
+
+  namespace :admin do
+    get 'lich_giangs/show'
+  end
+
+  namespace :admin do
+    get 'lich_giangs/new'
+  end
+
+  namespace :admin do
+    get 'lich_giangs/edit'
+  end
+
   devise_for :tai_khoans, controllers: {sessions: "tai_khoans/sessions", registrations: "tai_khoans/registrations"}
 
   namespace :admin do
@@ -17,6 +33,7 @@ Rails.application.routes.draw do
     resources :phan_mons
     resources :sinh_viens
     resources :quyens
+    resources :lich_giangs
   end
 
   namespace :daotao do

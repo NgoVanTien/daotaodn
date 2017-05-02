@@ -1,0 +1,41 @@
+<%= search_form_for [:admin, search], remote: true do |fs| %>
+  <div class="box filtertable">
+    <div class="box-header width-border">
+      <h3 class="box-title">Tìm kiếm loại môn học</h3>
+    </div>
+    <div class="box-body">
+      <div class="col-md-12 form-group">
+        <div class="col-md-6">
+          <%= select_tag :ten_khoa, options_from_collection_for_select(@khoas, "id", "tenkhoa"), class: "form-control",
+            placeholder: "Chọn Khoa", include_blank: "Chọn Khoa", data: {khoa: "1"} %>
+        </div>
+
+        <div class="col-md-6">
+          <%= fs.search_field :tenlop_cont, class: "form-control",
+            placeholder: "Nhập Tên Lớp", data: {lop: "2"} %>
+        </div>
+      </div>
+
+      <div class="ten_ctdt_result">
+        <%= render "ten_ctdt_search", chuongtrinhdaotaos: @chuongtrinhdaotaos %>
+      </div>
+
+      <div class="filter_lop display-none">
+        <div class="col-md-12 form-group">
+          <div class="col-md-6">
+            <%= select_tag :lop_phanmon, options_from_collection_for_select(@chuongtrinhdaotaos, "id", "tenctdt"), class: "form-control",
+              placeholder: "Chọn Chương Trình Đào Tạo", include_blank: "Chọn CTĐT" %>
+          </div>
+        </div>
+
+        <div class="col-md-12 form-group filter_tenctdt display-none">
+          <div class="col-md-6">
+            <%= select_tag :lop_chua_phanmon, options_from_collection_for_select(@chuongtrinhdaotaos, "id", "tenctdt"), class: "form-control",
+              placeholder: "Chọn Chương Trình Đào Tạo", include_blank: "Chọn CTĐT" %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<% end %>

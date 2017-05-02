@@ -31,54 +31,55 @@ Khoa.create(tenkhoa: "Hệ Thống Thông Tin")
 Khoa.create(tenkhoa: "Đầu Bếp")
 
 # LoaiMonHoc
+LoaiMonHoc.create(ten: "Môn Chung")
+LoaiMonHoc.create(ten: "Môn Chuyên Nghành")
+LoaiMonHoc.create(ten: "Môn Học Ngoại Khóa")
+LoaiMonHoc.create(ten: "Môn Lý Thuyết")
 LoaiMonHoc.create(ten: "Môn Học Ngoại Khóa")
 LoaiMonHoc.create(ten: "Giáo Dục Thể Chất")
 LoaiMonHoc.create(ten: "Giáo Dục Quốc Phòng")
 LoaiMonHoc.create(ten: "Thực Tập Tốt Nghiệp")
 LoaiMonHoc.create(ten: "Sinh Hoạt Chủ Nhiệm")
-LoaiMonHoc.create(ten: "Coi Thi")
-LoaiMonHoc.create(ten: "Môn Chung")
-LoaiMonHoc.create(ten: "Môn Chuyên Nghành")
 LoaiMonHoc.create(ten: "Môn Cơ Sở")
 LoaiMonHoc.create(ten: "Thực Tập Sản Xuất")
 
 #MonHoc
 MonHoc.create(mamonhoc: "CUD", tenmonhoc: "Cơ Ứng Dụng",
-  cachviettat: "CUD", hesotinchi: 2, loai_mon_hoc_id: 7, khoa_id: 1)
+  cachviettat: "CUD", hesotinchi: 2, loai_mon_hoc_id: 1, khoa_id: 1, loai: 1)
 MonHoc.create(mamonhoc: "Asset 1", tenmonhoc: "Hệ Quản Trị CSDL Asset 1",
-  cachviettat: "HQTCSDL Asset1", hesotinchi: 3, loai_mon_hoc_id: 7, khoa_id: 5)
+  cachviettat: "HQTCSDL Asset1", hesotinchi: 3, loai_mon_hoc_id: 3, khoa_id: 5, loai: 2)
 MonHoc.create(mamonhoc: "Asset 2", tenmonhoc: "Hệ Quản Trị CSDL Asset 2",
-  cachviettat: "HQTCSDL Asset2", hesotinchi: 3, loai_mon_hoc_id: 7, khoa_id: 5)
+  cachviettat: "HQTCSDL Asset2", hesotinchi: 3, loai_mon_hoc_id: 3, khoa_id: 5, loai: 0)
 MonHoc.create(mamonhoc: "AT", tenmonhoc: "An Toàn Lao Động Điện Lạnh Và Vệ Sinh Công",
-  cachviettat: "An Toàn Lao Động", hesotinchi: 1, loai_mon_hoc_id: 10, khoa_id: 2)
+  cachviettat: "An Toàn Lao Động", hesotinchi: 1, loai_mon_hoc_id: 1, khoa_id: 2, loai: 0)
 MonHoc.create(mamonhoc: "ATĐ", tenmonhoc: "An Toàn Lao Động Điện Lạnh",
-  cachviettat: "An Toàn Điện", hesotinchi: 3, loai_mon_hoc_id: 10, khoa_id: 4)
+  cachviettat: "An Toàn Điện", hesotinchi: 3, loai_mon_hoc_id: 3, khoa_id: 4, loai: 1)
 MonHoc.create(mamonhoc: "AVCN", tenmonhoc: "Anh Văn Chuyên Ngành",
-  cachviettat: "AV Chuyên Ngành", hesotinchi: 2, loai_mon_hoc_id: 7, khoa_id: 5)
+  cachviettat: "AV Chuyên Ngành", hesotinchi: 2, loai_mon_hoc_id: 3, khoa_id: 5, loai: 1)
 MonHoc.create(mamonhoc: "AVCB", tenmonhoc: "Anh Văn Cơ Bản",
-  cachviettat: "AV Cơ Bản", hesotinchi: 2, loai_mon_hoc_id: 7, khoa_id: 5)
+  cachviettat: "AV Cơ Bản", hesotinchi: 2, loai_mon_hoc_id: 1, khoa_id: 5, loai: 2)
 MonHoc.create(mamonhoc: "ATTP", tenmonhoc: "Hệ Thống Phun Xăng Điện Tử",
-  cachviettat: "HT Phun Xăng", hesotinchi: 2, loai_mon_hoc_id: 7, khoa_id: 3)
+  cachviettat: "HT Phun Xăng", hesotinchi: 2, loai_mon_hoc_id: 2, khoa_id: 3, loai: 2)
 MonHoc.create(mamonhoc: "CLT", tenmonhoc: "Thực Phẩm Và An Toàn Thực Phẩm",
-  cachviettat: "AT Thực Phẩm", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 6)
+  cachviettat: "AT Thực Phẩm", hesotinchi: 2, loai_mon_hoc_id: 3, khoa_id: 6, loai: 2)
 MonHoc.create(mamonhoc: "CLT", tenmonhoc: "Cơ Lý Thuyết",
-  cachviettat: "Cơ LT", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 1)
+  cachviettat: "Cơ LT", hesotinchi: 2, loai_mon_hoc_id: 3, khoa_id: 1, loai: 2)
 MonHoc.create(mamonhoc: "CDOT", tenmonhoc: "Chuẩn Đoán Ô Tô",
-  cachviettat: "CĐ Ô Tô", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 3)
+  cachviettat: "CĐ Ô Tô", hesotinchi: 2, loai_mon_hoc_id: 1, khoa_id: 3, loai: 0)
 MonHoc.create(mamonhoc: "CHM", tenmonhoc: "Cấu Hình Mạng",
-  cachviettat: "CH Mạng", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 5)
+  cachviettat: "CH Mạng", hesotinchi: 2, loai_mon_hoc_id: 1, khoa_id: 5, loai: 0)
 MonHoc.create(mamonhoc: "CNDPT", tenmonhoc: "Công Nghệ Đa Phương Tiện",
-  cachviettat: "CN Đa Phương Tiện", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 5)
+  cachviettat: "CN Đa Phương Tiện", hesotinchi: 2, loai_mon_hoc_id: 2, khoa_id: 5, loai: 1)
 MonHoc.create(mamonhoc: "CNDH", tenmonhoc: "Công Nghệ Điều Hoa Không Khí Mới",
-  cachviettat: "CN Điều Hòa", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 4)
+  cachviettat: "CN Điều Hòa", hesotinchi: 2, loai_mon_hoc_id: 2, khoa_id: 4, loai: 1)
 MonHoc.create(mamonhoc: "CS", tenmonhoc: "Chống Sét Tiếp Địa",
-  cachviettat: "Chống Sét TĐ", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 2)
+  cachviettat: "Chống Sét TĐ", hesotinchi: 2, loai_mon_hoc_id: 3, khoa_id: 2, loai: 0)
 MonHoc.create(mamonhoc: "CTPH", tenmonhoc: "Chế Tạo Phôi Hàn",
-  cachviettat: "CT Phôi Hàn", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 1)
+  cachviettat: "CT Phôi Hàn", hesotinchi: 2, loai_mon_hoc_id: 1, khoa_id: 1, loai: 0)
 MonHoc.create(mamonhoc: "CTM", tenmonhoc: "Chi Tiết Máy",
-  cachviettat: "CT Máy", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 1)
+  cachviettat: "CT Máy", hesotinchi: 2, loai_mon_hoc_id: 2, khoa_id: 1, loai: 2)
 MonHoc.create(mamonhoc: "CSNNH", tenmonhoc: "Cơ Sở Ngôn Ngữ Học PassCan",
-  cachviettat: "Ngôn Ngữ Học", hesotinchi: 2, loai_mon_hoc_id: 8, khoa_id: 5)
+  cachviettat: "Ngôn Ngữ Học", hesotinchi: 2, loai_mon_hoc_id: 1, khoa_id: 5, loai: 2)
 
 
 # BacDaoTao
@@ -132,38 +133,38 @@ GiaoVien.create(tengiaovien: "Nguyễn Văn M", namsinh: "1972-02-08", khoa_id: 
 GiaoVien.create(tengiaovien: "Nguyễn Văn N", namsinh: "1972-02-08", khoa_id: 1)
 
 GiaoVien.create(tengiaovien: "Nguyễn Văn Nguyên", namsinh: "1972-02-08", khoa_id: 5)
-GiaoVien.create(tengiaovien: "Lê Lộc", namsinh: "1972-02-08", khoa_id: 5)
+GiaoVien.create(tengiaovien: "Lê Đức Lộc", namsinh: "1972-02-08", khoa_id: 5)
 GiaoVien.create(tengiaovien: "Huỳnh Hữu Hưng", namsinh: "1972-02-08", khoa_id: 5)
 GiaoVien.create(tengiaovien: "Trần Thế Vũ", namsinh: "1972-02-08", khoa_id: 5)
-GiaoVien.create(tengiaovien: "Mỹ Hạnh", namsinh: "1972-02-08", khoa_id: 5)
-GiaoVien.create(tengiaovien: "Khắc Duy", namsinh: "1972-02-08", khoa_id: 5)
-GiaoVien.create(tengiaovien: "Trọng Tấn", namsinh: "1972-02-08", khoa_id: 5)
-GiaoVien.create(tengiaovien: "Ngọc Hải", namsinh: "1972-02-08", khoa_id: 5)
-GiaoVien.create(tengiaovien: "Đức Mạnh", namsinh: "1972-02-08", khoa_id: 5)
-GiaoVien.create(tengiaovien: "Tấn Trường", namsinh: "1972-02-08", khoa_id: 5)
-GiaoVien.create(tengiaovien: "Duy Khôi", namsinh: "1972-02-08", khoa_id: 5)
-GiaoVien.create(tengiaovien: "Ngọc Anh", namsinh: "1972-02-08", khoa_id: 5)
+GiaoVien.create(tengiaovien: "Mỹ Đức Hạnh", namsinh: "1972-02-08", khoa_id: 5)
+GiaoVien.create(tengiaovien: "Khắc Đức Duy", namsinh: "1972-02-08", khoa_id: 5)
+GiaoVien.create(tengiaovien: "Trọng Tấn Đức", namsinh: "1972-02-08", khoa_id: 5)
+GiaoVien.create(tengiaovien: "Ngọc Hải Đức", namsinh: "1972-02-08", khoa_id: 5)
+GiaoVien.create(tengiaovien: "Đức Mạnh Đức", namsinh: "1972-02-08", khoa_id: 5)
+GiaoVien.create(tengiaovien: "Tấn Trường Đức", namsinh: "1972-02-08", khoa_id: 5)
+GiaoVien.create(tengiaovien: "Duy Khôi Đức", namsinh: "1972-02-08", khoa_id: 5)
+GiaoVien.create(tengiaovien: "Ngọc Anh Đức", namsinh: "1972-02-08", khoa_id: 5)
 GiaoVien.create(tengiaovien: "Đinh Mạnh Ninh", namsinh: "1972-02-08", khoa_id: 5)
 GiaoVien.create(tengiaovien: "Mai Văn Hà", namsinh: "1972-02-08", khoa_id: 5)
-GiaoVien.create(tengiaovien: "Bảo Châu", namsinh: "1972-02-08", khoa_id: 5)
-GiaoVien.create(tengiaovien: "Ngọc Quyên", namsinh: "1972-02-08", khoa_id: 5)
-GiaoVien.create(tengiaovien: "Khắc Đạo", namsinh: "1972-02-08", khoa_id: 5)
-GiaoVien.create(tengiaovien: "Tấn Trường", namsinh: "1972-02-08", khoa_id: 5)
-GiaoVien.create(tengiaovien: "Đổ Mạnh", namsinh: "1972-02-08", khoa_id: 5)
+GiaoVien.create(tengiaovien: "Bảo Đức Châu", namsinh: "1972-02-08", khoa_id: 5)
+GiaoVien.create(tengiaovien: "Ngọc Đức Quyên", namsinh: "1972-02-08", khoa_id: 5)
+GiaoVien.create(tengiaovien: "Khắc Đức Đạo", namsinh: "1972-02-08", khoa_id: 5)
+GiaoVien.create(tengiaovien: "Tấn Đức Trường", namsinh: "1972-02-08", khoa_id: 5)
+GiaoVien.create(tengiaovien: "Đổ Mạnh Đức", namsinh: "1972-02-08", khoa_id: 5)
 
-GiaoVien.create(tengiaovien: "Nguyễn Không", namsinh: "1972-02-08", khoa_id: 6)
-GiaoVien.create(tengiaovien: "Nguyễn Hoàng", namsinh: "1972-02-08", khoa_id: 6)
+GiaoVien.create(tengiaovien: "Nguyễn Đức Không", namsinh: "1972-02-08", khoa_id: 6)
+GiaoVien.create(tengiaovien: "Nguyễn Đức Hoàng", namsinh: "1972-02-08", khoa_id: 6)
 GiaoVien.create(tengiaovien: "Nguyễn Việt Đức", namsinh: "1972-02-08", khoa_id: 6)
 GiaoVien.create(tengiaovien: "Nguyễn Ngọc Châu", namsinh: "1972-02-08", khoa_id: 6)
 GiaoVien.create(tengiaovien: "Nguyễn Đức Phát", namsinh: "1972-02-08", khoa_id: 6)
 GiaoVien.create(tengiaovien: "Nguyễn Hồng Diệu", namsinh: "1972-02-08", khoa_id: 6)
-GiaoVien.create(tengiaovien: "Nguyễn CC", namsinh: "1972-02-08", khoa_id: 6)
-GiaoVien.create(tengiaovien: "Nguyễn AA", namsinh: "1972-02-08", khoa_id: 6)
-GiaoVien.create(tengiaovien: "Nguyễn BB", namsinh: "1972-02-08", khoa_id: 6)
-GiaoVien.create(tengiaovien: "Nguyễn DD", namsinh: "1972-02-08", khoa_id: 6)
-GiaoVien.create(tengiaovien: "Nguyễn EE", namsinh: "1972-02-08", khoa_id: 6)
-GiaoVien.create(tengiaovien: "Nguyễn GGG", namsinh: "1972-02-08", khoa_id: 6)
-GiaoVien.create(tengiaovien: "Nguyễn FFFF", namsinh: "1972-02-08", khoa_id: 6)
+GiaoVien.create(tengiaovien: "Nguyễn Đức CC", namsinh: "1972-02-08", khoa_id: 6)
+GiaoVien.create(tengiaovien: "Nguyễn Đức AA", namsinh: "1972-02-08", khoa_id: 6)
+GiaoVien.create(tengiaovien: "Nguyễn Đức BB", namsinh: "1972-02-08", khoa_id: 6)
+GiaoVien.create(tengiaovien: "Nguyễn Đức DD", namsinh: "1972-02-08", khoa_id: 6)
+GiaoVien.create(tengiaovien: "Nguyễn Đức EE", namsinh: "1972-02-08", khoa_id: 6)
+GiaoVien.create(tengiaovien: "Nguyễn Đức GGG", namsinh: "1972-02-08", khoa_id: 6)
+GiaoVien.create(tengiaovien: "Nguyễn Đức FFFF", namsinh: "1972-02-08", khoa_id: 6)
 
 GiaoVien.create(tengiaovien: "Nguyễn Xuaan Vủ", namsinh: "1972-02-08", khoa_id: 3)
 GiaoVien.create(tengiaovien: "Nguyễn Bá Đạo", namsinh: "1972-02-08", khoa_id: 3)
@@ -171,8 +172,8 @@ GiaoVien.create(tengiaovien: "Nguyễn Đương Nhiên", namsinh: "1972-02-08", 
 GiaoVien.create(tengiaovien: "Nguyễn Thế Hoa", namsinh: "1972-02-08", khoa_id: 3)
 GiaoVien.create(tengiaovien: "Nguyễn Trà Linh", namsinh: "1972-02-08", khoa_id: 3)
 GiaoVien.create(tengiaovien: "Nguyễn Mỹ Duyên", namsinh: "1972-02-08", khoa_id: 3)
-GiaoVien.create(tengiaovien: "Nguyễn Hải", namsinh: "1972-02-08", khoa_id: 3)
-GiaoVien.create(tengiaovien: "Nguyễn Đức", namsinh: "1972-02-08", khoa_id: 3)
+GiaoVien.create(tengiaovien: "Nguyễn Hải Đức", namsinh: "1972-02-08", khoa_id: 3)
+GiaoVien.create(tengiaovien: "Nguyễn Đức Đức", namsinh: "1972-02-08", khoa_id: 3)
 GiaoVien.create(tengiaovien: "Nguyễn Văn Tuyền", namsinh: "1972-02-08", khoa_id: 3)
 GiaoVien.create(tengiaovien: "Nguyễn Văn Mạnh", namsinh: "1972-02-08", khoa_id: 3)
 GiaoVien.create(tengiaovien: "Nguyễn Văn Hồng", namsinh: "1972-02-08", khoa_id: 3)
@@ -185,6 +186,7 @@ GiaoVien.create(tengiaovien: "Nguyễn Văn Tọng", namsinh: "1972-02-08", khoa
 (1..58).each do |giaovien|
   ChuyenMon.create(chuyenmon: rand(0..2), giao_vien_id: giaovien, mon_hoc_id: rand(1..18))
 end
+ChuyenMon.create(chuyenmon: 0, giao_vien_id: 27, mon_hoc_id: 12)
 
 #Lop
 Lop.create(tenlop: "12T4", chuong_trinh_dao_tao_id: 1)

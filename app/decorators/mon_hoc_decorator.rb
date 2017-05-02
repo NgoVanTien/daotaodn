@@ -1,6 +1,14 @@
 class MonHocDecorator < Draper::Decorator
   delegate_all
 
+  def monhoc_display
+    {
+      "Lý Thuyết Và Thục Hành": "lythuyet_thuchanh",
+      "Lý Thuyết": "lythuyet",
+      "Thực Hành": "thuchanh"
+    }
+  end
+
   def hesotinchi_display
     {
       "0.5": "0.5",

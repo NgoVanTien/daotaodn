@@ -45,7 +45,7 @@
               <% if Time.zone.now.to_date > @chuongtrinhdaotao.khoa_hoc.namketthuc.to_date %>
                 Đã hết thời gian học
               <% else %>
-                <%= (((Time.zone.now.to_date.year*12 + Time.zone.now.to_date.month) - (@chuongtrinhdaotao.khoa_hoc.nambatdau.to_date.year.to_i*12 + @chuongtrinhdaotao.khoa_hoc.nambatdau.to_date.month.to_i))/6).to_i %>
+                <%= (((Time.zone.now.to_date.year*12 + Time.zone.now.to_date.month) - (@chuongtrinhdaotao.khoa_hoc.nambatdau.to_date.year.to_i*12 + @chuongtrinhdaotao.khoa_hoc.nambatdau.to_date.month.to_i))/6).to_i + 1 %>
               <% end %>
             </h4>
           </div>
@@ -103,11 +103,11 @@
             <ul id="items<%= @kyhoc.to_i + 1 %>" data-hoc-ky="<%= "#{@kyhoc}" %>" class="hocky-items nav nav-pills nav-stacked min-height-200">
 
 
-              <% if @all_phanmon_cualop.present? %>
-                <% @all_phanmon_cualop.each do |phanmon| %>
+              <% if @all_phanmon_cualop_chuan.present? %>
+                <% @all_phanmon_cualop_chuan.each do |phanmon| %>
 
-                  <li class="active dulieu-<%= "#{ phanmon.mon_hoc_id }" %>" data-ma-mon-hoc="<%= "#{ phanmon.mon_hoc_id }" %>" style=" height: 100px; ">
-                      <div class="col-md-12" style=" height: 50px; ">
+                  <li class="active dulieu-<%= "#{ phanmon.mon_hoc_id }" %>" data-ma-mon-hoc="<%= "#{ phanmon.mon_hoc_id }" %>" style=" height: auto; min-height: 110px; ">
+                      <div class="col-md-12" style=" height: 50px; padding-bottom: 10px; padding-top: 10px; ">
                         <i class="fa fa-inbox"></i>
                         <%= phanmon.mon_hoc.tenmonhoc %>
                         <span class="label label-success pull-right ">
@@ -127,8 +127,8 @@
                         <span class="label label-primary pull-right" style=" margin-left: 20px; margin-top: -20px; ">
                           Chọn Giáo Viên
                           <% if @giaoviens.present? %>
-                            <%= select_tag :giao_vien, options_from_collection_for_select(@giaoviens, "id", "tengiaovien", phanmon.giao_vien_id),
-                            include_blank: "", class: "form-control select-2 giaovien" %>
+                            <%= select_tag :giao_vien, options_from_collection_for_select(GiaoVien.where(id: ChuyenMon.where(mon_hoc_id: phanmon.mon_hoc_id).pluck(:giao_vien_id)), "id", "tengiaovien", phanmon.ma_giao_vien.tr('[]', '').split(',').map(&:to_i)),
+                            include_blank: "", class: "form-control select-2 giaovien", multiple: "true" %>
                           <% else %>
                              <br> Không có giáo viên nào thuộc khoa này.
                           <% end %>
@@ -138,9 +138,9 @@
                 <% end %>
               <% end %>
 
-            </ul>
+              </ul>
+            </div>
           </div>
-        </div>
 
 
     </div>

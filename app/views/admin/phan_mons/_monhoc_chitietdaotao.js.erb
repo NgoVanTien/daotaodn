@@ -28,13 +28,15 @@ $(document).ready(function(){
   $(".button-create-phan-mon").on("click", function(){
     var list_mon_hoc = {};
     var list_thong_tin = [];
-    $("ul" + "#" + items_kyhoc + " " + "li").each(function(i, monhoc){
+    $("ul" + "#" + items_kyhoc + " " + "li.active").each(function(i, monhoc){
       var id_monhoc = $(monhoc).data("ma-mon-hoc");
       var dulieu_class = "dulieu-" + id_monhoc
-      var id_giaovien = $("li" + "." + dulieu_class).find(".giaovien").val()
+      var id_giaovien = $("li" + "." + dulieu_class).find(".giaovien").val().toString();
       var so_tiet = $("li" + "." + dulieu_class).find(".sotiet").val()
-
+      console.log(id_giaovien);
+      console.log(so_tiet);
       list_mon_hoc[dulieu_class] = [id_monhoc, id_giaovien, so_tiet]
+      console.log(list_mon_hoc[dulieu_class]);
     });
     console.log(list_mon_hoc);
 
