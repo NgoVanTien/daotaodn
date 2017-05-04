@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   namespace :admin do
     get 'lich_giangs/index'
   end
@@ -34,6 +35,7 @@ Rails.application.routes.draw do
     resources :sinh_viens
     resources :quyens
     resources :lich_giangs
+    resources :thong_baos
   end
 
   namespace :daotao do

@@ -12,3 +12,15 @@ vi:
       first: Đầu
       previous: Trước
       truncate: ...
+  time:
+    formats:
+      default: "%d/%m/%Y"
+  thongbao:
+    type:
+      tip1: tip1
+      tip2: tip2
+      tip3: tip3
+      tip4: tip4
+      tip5: tip5
+      tip6: tip6
+
