@@ -45,7 +45,7 @@ gem 'jbuilder', '~> 2.5'
 gem "bootstrap-sass", "~> 3.3.6"
 gem "ransack", github: "activerecord-hackery/ransack"
 gem "bootstrap3-datetimepicker-rails", '~> 4.17.42'
-gem "ckeditor", "4.2.0"
+gem "ckeditor", "4.2.2"
 gem "devise"
 gem "chartkick"
 gem "highcharts-rails"

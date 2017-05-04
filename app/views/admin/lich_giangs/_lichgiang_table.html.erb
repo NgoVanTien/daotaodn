@@ -1,30 +1,82 @@
 <% if phanmons.any? %>
   <table class="table table-hover table-striped">
-    <thead class="thead-inverse">
+    <thead class="thead-inverse" style=" background-color: rgba(0, 166, 90, 0.27); ">
       <th><%= sort_link search, :lop_id, "Lớp" %></th>
       <th><%= sort_link search, :mon_id, "Môn" %></th>
       <th><%= sort_link search, :sotiet, "Số Tiết" %></th>
       <th><%= sort_link search, :hocky, "Học Kỳ" %></th>
       <th><%= sort_link search, :chuong_trinh_dao_tao_id, "Chương Trình Đào Tạo" %></th>
       <th class="tac-vu">Tác Vụ</th>
+      <th></th>
     </thead>
     <tbody>
       <% phanmons.each do |phanmon| %>
-        <tr>
-          <td><%= phanmon.lop.tenlop %></td>
+        <tr style="border-top:3px solid green;">
+          <td style=" background-color: rgba(0, 192, 239, 0.59); "><%= phanmon.lop.tenlop %></td>
           <td><%= phanmon.mon_hoc.tenmonhoc %></td>
           <td><%= phanmon.sotiet %></td>
           <td><%= phanmon.hocky %></td>
           <td><%= phanmon.chuong_trinh_dao_tao.tenctdt %></td>
           <td class="tac-vu">
-            <%= link_to new_admin_lich_giang_path(phanmon: phanmon), class: "button-show" do %>
-                  <span class="button-inner">
-                    <button class="btn button button-show-small">
-                      <span class="text">Tạo Báo Giảng</span>
-                    </button>
-                  </span>
+            <% if current_tai_khoan.role == "giangvu" %>
+
+            <% else %>
+              <%= link_to new_admin_lich_giang_path(phanmon: phanmon), class: "button-show" do %>
+                    <span class="button-inner">
+                      <button class="btn button button-show-small">
+                        <span class="text">Tạo Báo Giảng</span>
+                      </button>
+                    </span>
+              <% end %>
             <% end %>
           </td>
+          <td></td>
+        </tr>
+        <tr>
+
+          <tr>
+            <th style="width: 80px">Lịch &#x02935;</th>
+            <th>Ngày Dạy</th>
+            <th>Phòng Học</th>
+            <th>Tiết Bắt Đầu</th>
+            <th>Tiết Kết Thúc</th>
+            <th>Nội Dung Dạy</th>
+            <th>Đánh Giá</th>
+          </tr>
+          <% phanmon.lich_giangs.each do |lich| %>
+            <tr>
+              <td> </td>
+              <td> <%= lich.ngayday %> </td>
+              <td> <%= lich.phonghoc %></td>
+              <td> <%= lich.tietbatday %></td>
+              <td> <%= lich.tietketthuc %></td>
+              <td> <%= lich.noidungday %></td>
+              <td>
+                <% if current_tai_khoan.role == "giangvu" %>
+
+                  <% if lich.danhgia == nil %>
+                    <%= link_to edit_admin_lich_giang_path(id: lich.id, phanmon: phanmon.id), class: "button-show" do %>
+                    <span class="button-inner">
+                      <button class="btn button button-show-small">
+                        <span class="text">Đánh Giá</span>
+                      </button>
+                    </span>
+                    <% end %>
+                  <% else %>
+                    <%= lich.decorate.danhgia_style_display %>
+                  <% end %>
+                <% else %>
+                  <%= lich.decorate.danhgia_style_display %>
+<!-- 
+                  <div class="progress progress-xs">
+                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                  </div> -->
+                <% end %>
+
+              </td>
+              <!-- <td><span clas s="badge bg-red">55%</span></td> -->
+            </tr>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

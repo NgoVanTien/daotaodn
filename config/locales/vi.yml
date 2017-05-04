@@ -15,12 +15,12 @@ vi:
   time:
     formats:
       default: "%d/%m/%Y"
+      short: "%HH:%mm:%ss"
   thongbao:
     type:
-      tip1: tip1
-      tip2: tip2
-      tip3: tip3
-      tip4: tip4
-      tip5: tip5
-      tip6: tip6
-
+      tip1: Trang Chủ - Thông Báo
+      tip2: Trang Chủ - Sự Kiện
+      tip3: Sinh Viên - Thông Báo
+      tip4: Sinh Viên - Sự Kiện
+      tip5: Sinh Viên - Nhắc Nhở
+      tip6: Sinh Viên - Lịch Thi

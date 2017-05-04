@@ -48,24 +48,28 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <div class="box box-info">
-        <div class="box-header with-border">
-          <h3 class="box-title">Các Lớp Quá Hoặc Chưa Đến Thời Gian</h3>
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool btn-filter">
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
-        </div>
-        <div class="box-body table-responsive no-padding min-height-600 form_search_result">
+  <% if current_tai_khoan.role == "giangvu" %>
 
-          <div class="notices_result">
-            <%= render "lichgiang_hethan_table", phanmon_hetthoigian: @phanmon_hetthoigian, search: @search  %>
+  <% else %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box box-info">
+          <div class="box-header with-border">
+            <h3 class="box-title">Các Lớp Quá Hoặc Chưa Đến Thời Gian</h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool btn-filter">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+          <div class="box-body table-responsive no-padding min-height-600 form_search_result">
+
+            <div class="notices_result">
+              <%= render "lichgiang_hethan_table", phanmon_hetthoigian: @phanmon_hetthoigian, search: @search  %>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </section>

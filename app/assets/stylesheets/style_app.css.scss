@@ -30,3 +30,140 @@
 .margin-left-20 {
   margin-left: 20px;
 }
+
+
+.mini-submenu{
+  display:none;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+  padding: 9px;
+  /*position: relative;*/
+  width: 42px;
+
+}
+
+.mini-submenu:hover{
+  cursor: pointer;
+}
+
+.mini-submenu .icon-bar {
+  border-radius: 1px;
+  display: block;
+  height: 2px;
+  width: 22px;
+  margin-top: 3px;
+}
+
+.mini-submenu .icon-bar {
+  background-color: #000;
+}
+
+#slide-submenu{
+  background: rgba(0, 0, 0, 0.45);
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.list-group-item:first-child {
+  z-index: 2;
+  color: #fff;
+  background-color: rgb(0, 127, 73);
+  border-color: #337ab7;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 900;
+}
+
+.list-group-item {
+  font-size: 13px
+
+}
+
+#contentsec {
+  .inner {
+    background-color: #ffffff;
+  }
+  .notification {
+    width: 1000px;
+    height: 35px;
+    #slider1 {
+      position: relative;
+      overflow: hidden;
+      width: 980px;
+      height: 37px;
+      padding-left: 25px;
+      float: left;
+      background: url(infoicon.png) no-repeat;
+      background-size: 18px 18px;
+    }
+  }
+
+  a, a:visited {
+  	color:#555 !important;
+  	text-decoration:none;
+  }
+
+  .columns {
+    .ban_smal {
+      height: auto;
+      width: 485px;
+      border: #e0e0e0 solid 0px;
+    }
+  }
+
+  .facebookwidget {
+    img {
+      width: 235px;
+    }
+  }
+}
+
+#footer {
+  .inner {
+    background-color: #ffffff;
+  }
+  .spnscrousal {
+    width: 1000px;
+    border-radius: 0px;
+  }
+}
+
+#copyright {
+  background: url(admin/icon-bottom.png)
+}
+
+#slider1 {
+  h3 {
+    font-size: 14px;
+  }
+}
+
+.title-item {
+  z-index: 2;
+  color: #fff;
+  background-color: rgb(0, 127, 73) !important;
+  border-color: #337ab7;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 900;
+}
+
+#post {
+  img {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+#img-show-index {
+  img {
+    max-width: 483px;
+  }
+
+  table {
+    max-width: 483px;
+  }
+}

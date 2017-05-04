@@ -140,15 +140,20 @@
       <li class="treeview">
         <a href="#">
           <i class="fa fa-edit"></i> <span>Lịch Báo Giảng</span>
-          <!-- <span class="pull-right-container">
+          <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
-          </span> -->
+          </span>
         </a>
-        <!-- <ul class="treeview-menu">
-          <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
+        <ul class="treeview-menu">
+          <li>
+            <%= link_to admin_lich_giangs_path do %>
+              <i class="fa fa-circle-o"></i>
+              Lịch Giảng
+            <% end %>
+          </li>
           <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
           <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-        </ul> -->
+        </ul>
       </li>
       <li class="treeview">
         <a href="#">

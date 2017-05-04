@@ -1,7 +1,9 @@
-<tr>
+<tr id="post">
   <td><%= thong_bao.id %></td>
   <td><%= thong_bao.tieu_de %></td>
-  <td><%= thong_bao.type %></td>
+  <td><%= thong_bao.noi_dung_khai_quat.html_safe %></td>
+  <td><img src="<%= thong_bao.anh %>" alt=""></td>
+  <td><%= thong_bao.loai_hien_thi %></td>
   <td><%= I18n.l thong_bao.created_at, format: :default %></td>
   <td class="tac-vu">
     <%= link_to admin_thong_bao_path(thong_bao), class: "button-show" do %>

@@ -1,20 +1,5 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
-  namespace :admin do
-    get 'lich_giangs/index'
-  end
-
-  namespace :admin do
-    get 'lich_giangs/show'
-  end
-
-  namespace :admin do
-    get 'lich_giangs/new'
-  end
-
-  namespace :admin do
-    get 'lich_giangs/edit'
-  end
 
   devise_for :tai_khoans, controllers: {sessions: "tai_khoans/sessions", registrations: "tai_khoans/registrations"}
 
@@ -42,4 +27,5 @@ Rails.application.routes.draw do
     root "static_pages#index"
   end
   root "static_pages#index"
+  resources :static_pages, only: [:show, :index]
 end

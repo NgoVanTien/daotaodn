@@ -22,4 +22,15 @@ class MonHocDecorator < Draper::Decorator
       "10": "10"
     }
   end
+
+  def chuyenmon_show_display
+    if loai == "lythuyet_thuchanh"
+      "Lý Thuyết Và Thực Hành"
+    elsif loai == "lythuyet"
+      "Lý Thuyết"
+    elsif loai == "thuchanh"
+      "Thực Hành"
+    end
+  end
+
 end

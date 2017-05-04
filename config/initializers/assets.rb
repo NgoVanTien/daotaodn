@@ -10,6 +10,8 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 
+Rails.application.config.assets.precompile += %w(ckeditor/config.js)
+
 assets_javascripts = %w(moment.js bootstrap-datetimepicker.js)
 
 assets_stylesheets = %w(AdminLTE.css _all-skins.css style.css red.css slide.css style_daotao.css custom-login.css custom-admin.css)
