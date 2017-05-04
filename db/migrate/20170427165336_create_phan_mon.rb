@@ -7,6 +7,9 @@ class CreatePhanMon < ActiveRecord::Migration[5.0]
       t.integer :chuong_trinh_dao_tao_id
       t.integer :mon_hoc_id
       t.integer :lop_id
+      t.integer :thuchanh
+      t.date :ngaybatdau
+      t.date :ngayketthuc
 
       t.timestamps
     end

@@ -1,0 +1,90 @@
+<section class="content-header menu-header-button   col-md-12" style=" text-align: -webkit-right !important; ">
+  <%= link_to "#", class: "btn icon-btn btn-danger button-create-phan-mon" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-danger"></span>
+    Lưu Lại
+  <% end %>
+
+  <%= link_to admin_mon_hocs_path, class: "btn icon-btn btn-warning" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-circle-arrow-left img-circle text-warning"></span>
+    Trở Về
+  <% end %>
+
+  <%= link_to admin_root_path, class: "btn icon-btn btn-primary" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-primary"></span>
+    Trang Quản Lý
+  <% end %>
+
+  <%= link_to "", class: "btn icon-btn btn-success" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-open-file img-circle text-success"></span>
+    Nhập Từ Excel
+  <% end %>
+
+  <%= link_to "", class: "btn icon-btn btn-info" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-paste img-circle text-info"></span>
+    Xuất Excel
+  <% end %>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="col-md-12">
+        <div class="box box-info">
+          <div class="box-header with-border">
+            <h3 class="box-title">Thông Tin Về Phân Môn Cần Báo Giảng</h3>
+          </div>
+          <div class="box-body with-border">
+            <div class="col-md-6" style="text-align: -webkit-right;">
+              <h4>Chương trình đào tạo :</h4>
+              <h4>Học Kỳ hiện tại :</h4>
+              <h4>Ngày Bắt Đầu Của Kỳ :</h4>
+              <h4>Ngày Kết Thúc Kỳ :</h4>
+            </div>
+            <div class="col-md-6">
+              <h4 style="color: red;" ><%= @phanmon.chuong_trinh_dao_tao.tenctdt %></h4>
+              <h4 style="color: red;" ><%= @phanmon.hocky %></h4>
+              <h4 style="color: red;" ><%= I18n.l @phanmon.ngaybatdau, format: :day_month_year %></h4>
+              <h4 style="color: red;" ><%= I18n.l @phanmon.ngayketthuc, format: :day_month_year %></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="box box-info">
+          <div class="box-header with-border">
+            <h3 class="box-title">Thông Tin Về Lớp Và Môn Học</h3>
+          </div>
+          <div class="box-body with-border">
+            <div class="col-md-6" style="text-align: -webkit-right;">
+              <h4>Tên Lớp :</h4>
+              <h4>Tên Môn Học :</h4>
+              <h4>Loại Môn Học :</h4>
+              <h4>Số Tiết Dạy Trong 1 Tuần :</h4>
+            </div>
+            <div class="col-md-6">
+              <h4 style="color: red;" ><%= @phanmon.lop.tenlop %></h4>
+              <h4 style="color: red;" ><%= @phanmon.mon_hoc.tenmonhoc %></h4>
+              <h4 style="color: red;" ><%= @phanmon.mon_hoc.loai_mon_hoc.ten %></h4>
+              <h4 style="color: red;" ><%= @phanmon.sotiet %></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="col-md-12">
+        <div class="box box-info">
+          <div class="box-header with-border">
+            <h3 class="box-title">Tạo Báo Giảng</h3>
+          </div>
+          <div class="box-body no-padding">
+            <ul id="items1" class="nav nav-pills nav-stacked min-height-200">
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

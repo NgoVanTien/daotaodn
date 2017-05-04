@@ -39,16 +39,6 @@
     </div>
 
     <div class="form-group">
-      <label for="inputEmail3" class="col-sm-2 control-label">Đặc Tính Môn Học</label>
-      <div class="col-sm-8">
-        <%= f.collection_select :loai, monhoc.decorate.monhoc_display, :last, :first,
-          {include_blank: "Chọn đặc tính môn học"}, {class: "form-control"} %>
-      </div>
-      <div class="col-md-2">
-      </div>
-    </div>
-
-    <div class="form-group">
       <label for="inputEmail3" class="col-sm-2 control-label">Tên Loại Môn Học</label>
       <div class="col-sm-8">
         <%= f.select :loai_mon_hoc_id, @loaimonhocs.collect {|lmh| [lmh.ten, lmh.id]},

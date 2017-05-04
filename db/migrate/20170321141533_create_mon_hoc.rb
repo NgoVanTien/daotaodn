@@ -5,8 +5,7 @@ class CreateMonHoc < ActiveRecord::Migration[5.0]
       t.string :tenmonhoc
       t.string :cachviettat
       t.float :hesotinchi
-      t.integer :sotietlythuyet
-      t.integer :sotietthuchanh
+      t.integer :loai
       t.integer :loai_mon_hoc_id
       t.integer :khoa_id
 

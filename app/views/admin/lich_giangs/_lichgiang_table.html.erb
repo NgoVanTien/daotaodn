@@ -1,0 +1,40 @@
+<% if phanmons.any? %>
+  <table class="table table-hover table-striped">
+    <thead class="thead-inverse">
+      <th><%= sort_link search, :lop_id, "Lớp" %></th>
+      <th><%= sort_link search, :mon_id, "Môn" %></th>
+      <th><%= sort_link search, :sotiet, "Số Tiết" %></th>
+      <th><%= sort_link search, :hocky, "Học Kỳ" %></th>
+      <th><%= sort_link search, :chuong_trinh_dao_tao_id, "Chương Trình Đào Tạo" %></th>
+      <th class="tac-vu">Tác Vụ</th>
+    </thead>
+    <tbody>
+      <% phanmons.each do |phanmon| %>
+        <tr>
+          <td><%= phanmon.lop.tenlop %></td>
+          <td><%= phanmon.mon_hoc.tenmonhoc %></td>
+          <td><%= phanmon.sotiet %></td>
+          <td><%= phanmon.hocky %></td>
+          <td><%= phanmon.chuong_trinh_dao_tao.tenctdt %></td>
+          <td class="tac-vu">
+            <%= link_to new_admin_lich_giang_path(phanmon: phanmon), class: "button-show" do %>
+                  <span class="button-inner">
+                    <button class="btn button button-show-small">
+                      <span class="text">Tạo Báo Giảng</span>
+                    </button>
+                  </span>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="pagination_center">
+    <%= paginate phanmons %>
+  </div>
+<% else %>
+  <h3 class="text-center">Kỳ này không dạy môn nào.</h3>
+  <div class="col-xs-12 text-center margin-bottom-30">
+    <%= link_to "Trở lại", admin_mon_hocs_path, class: "btn btn-default bg-red" %>
+  </div>
+<% end %>

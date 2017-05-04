@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501064135) do
+ActiveRecord::Schema.define(version: 20170502121847) do
 
   create_table "bac_dao_tao", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "kyhieu"
@@ -76,6 +76,19 @@ ActiveRecord::Schema.define(version: 20170501064135) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "lich_giang", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.date     "ngayday"
+    t.string   "phonghoc"
+    t.integer  "tietbatday"
+    t.integer  "tietketthuc"
+    t.text     "noidungday",  limit: 65535
+    t.integer  "danhgia"
+    t.integer  "phan_mon_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["phan_mon_id"], name: "fk_rails_af86e017e4", using: :btree
+  end
+
   create_table "loai_mon_hoc", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "ten"
     t.datetime "created_at", null: false
@@ -95,8 +108,7 @@ ActiveRecord::Schema.define(version: 20170501064135) do
     t.string   "tenmonhoc"
     t.string   "cachviettat"
     t.float    "hesotinchi",      limit: 24
-    t.integer  "sotietlythuyet"
-    t.integer  "sotietthuchanh"
+    t.integer  "loai"
     t.integer  "loai_mon_hoc_id"
     t.integer  "khoa_id"
     t.datetime "created_at",                 null: false
@@ -112,6 +124,9 @@ ActiveRecord::Schema.define(version: 20170501064135) do
     t.integer  "chuong_trinh_dao_tao_id"
     t.integer  "mon_hoc_id"
     t.integer  "lop_id"
+    t.integer  "thuchanh"
+    t.date     "ngaybatdau"
+    t.date     "ngayketthuc"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
@@ -155,6 +170,7 @@ ActiveRecord::Schema.define(version: 20170501064135) do
   add_foreign_key "chuyen_mon", "giao_vien"
   add_foreign_key "chuyen_mon", "mon_hoc"
   add_foreign_key "giao_vien", "khoa"
+  add_foreign_key "lich_giang", "phan_mon"
   add_foreign_key "lop", "chuong_trinh_dao_tao"
   add_foreign_key "mon_hoc", "khoa"
   add_foreign_key "mon_hoc", "loai_mon_hoc"

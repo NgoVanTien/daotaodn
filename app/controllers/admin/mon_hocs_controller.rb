@@ -58,7 +58,7 @@ class Admin::MonHocsController < Admin::ApplicationController
   private
   def monhoc_params
     current_params = params.require(:mon_hoc).permit(:mamonhoc, :tenmonhoc, :cachviettat,
-      :hesotinchi, :khoa_id, :loai_mon_hoc_id)
+      :hesotinchi, :khoa_id, :loai_mon_hoc_id, :loai)
   end
 
   def load_mon_hoc

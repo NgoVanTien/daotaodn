@@ -1,5 +1,5 @@
-<li class="active dulieu-<%= "#{ monhoc_chitietdaotao.mon_hoc.id }" %>" data-ma-mon-hoc="<%= "#{ monhoc_chitietdaotao.mon_hoc.id }" %>" style=" height: 100px; ">
-    <div class="col-md-12" style=" height: 50px; ">
+<li class="active dulieu-<%= "#{ monhoc_chitietdaotao.mon_hoc.id }" %>" data-ma-mon-hoc="<%= "#{ monhoc_chitietdaotao.mon_hoc.id }" %>" style=" height: auto; ">
+    <div class="col-md-12" style=" height: 50px; padding-bottom: 10px; padding-top: 10px; ">
       <i class="fa fa-inbox"></i>
       <%= monhoc_chitietdaotao.mon_hoc.tenmonhoc %>
       <span class="label label-success pull-right ">
@@ -22,8 +22,8 @@
       <span class="label label-primary pull-right" style=" margin-left: 20px; margin-top: -20px; ">
         Chọn Giáo Viên
         <% if @giaoviens.present? %>
-          <%= select_tag :giao_vien, options_from_collection_for_select(@giaoviens, "id", "tengiaovien"),
-          include_blank: "", class: "form-control select-2 giaovien" %>
+          <%= select_tag :giao_vien, options_from_collection_for_select(GiaoVien.where(id: ChuyenMon.where(mon_hoc_id: monhoc_chitietdaotao.mon_hoc_id).pluck(:giao_vien_id)), "id", "tengiaovien"),
+          include_blank: "", class: "form-control select-2 giaovien", multiple: "true" %>
         <% else %>
           <br> Không có giáo viên nào thuộc khoa này.
         <% end %>
