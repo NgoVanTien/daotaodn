@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170502121847) do
+ActiveRecord::Schema.define(version: 20170505105152) do
 
   create_table "bac_dao_tao", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "kyhieu"
@@ -51,6 +51,21 @@ ActiveRecord::Schema.define(version: 20170502121847) do
     t.datetime "updated_at",   null: false
     t.index ["giao_vien_id"], name: "fk_rails_9d254a250e", using: :btree
     t.index ["mon_hoc_id"], name: "fk_rails_18bcc98659", using: :btree
+  end
+
+  create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+    t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
   end
 
   create_table "giao_vien", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -160,6 +175,15 @@ ActiveRecord::Schema.define(version: 20170502121847) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_tai_khoan_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_tai_khoan_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "thong_bao", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "tieu_de"
+    t.text     "noi_dung",   limit: 65535
+    t.string   "anh"
+    t.integer  "type"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_foreign_key "chi_tiet_dao_tao", "chuong_trinh_dao_tao"

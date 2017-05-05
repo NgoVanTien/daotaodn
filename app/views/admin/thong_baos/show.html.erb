@@ -1,0 +1,54 @@
+<section class="content-header menu-header-button">
+  <%= link_to new_admin_thong_bao_path, class: "btn icon-btn btn-danger" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-danger"></span>
+    Thêm Mới
+  <% end %>
+
+  <%= link_to admin_root_path, class: "btn icon-btn btn-warning" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-circle-arrow-left img-circle text-warning"></span>
+    Trở Về
+  <% end %>
+
+  <%= link_to admin_root_path, class: "btn icon-btn btn-primary" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-primary"></span>
+    Trang Quản Lý
+  <% end %>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <div class="box box-default box-solid">
+        <div class="box-header width-border">
+          <h3 class="box-title">Chi Tiết Thông Báo</h3>
+          <div class="box-tools pull-right"></div>
+        </div>
+        <div class="box-body body-notice-box">
+          <div class="col-md-12">
+            <div class="form-group">
+              <h2><%= @thongbao.tieu_de %></h2>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= @thongbao.noi_dung.html_safe %>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= image_tag @thongbao.anh.to_s %>
+            </div>
+          </div>
+        </div>
+        <div class="box-footer">
+          <div class="col-md-12">
+            <%= link_to t(".back"), admin_thong_baos_path, class: "btn btn-info pull-right" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 text-center"></div>
+  </div>
+</section>

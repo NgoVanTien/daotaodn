@@ -16,4 +16,4 @@ assets_stylesheets = %w(AdminLTE.css _all-skins.css style.css red.css slide.css 
 
 user_custom_js = %w()
 
-Rails.application.config.assets.precompile += assets_javascripts + assets_stylesheets + user_custom_js
+Rails.application.config.assets.precompile += assets_javascripts + assets_stylesheets + user_custom_js + %w( ckeditor/filebrowser/images/gal_del.png )

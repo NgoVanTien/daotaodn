@@ -1,0 +1,30 @@
+<tr>
+  <td><%= thong_bao.id %></td>
+  <td><%= thong_bao.tieu_de %></td>
+  <td><%= thong_bao.type %></td>
+  <td><%= I18n.l thong_bao.created_at, format: :default %></td>
+  <td class="tac-vu">
+    <%= link_to admin_thong_bao_path(thong_bao), class: "button-show" do %>
+          <span class="button-inner">
+            <button class="btn button button-show-small">
+              <span class="text">Chi Tiết</span>
+            </button>
+          </span>
+    <% end %>
+    <%= link_to edit_admin_thong_bao_path(thong_bao), class: "button-edit" do %>
+          <span class="button-inner">
+            <button class="btn button button-edit-small">
+              <span class="text">Chỉnh Sửa</span>
+            </button>
+          </span>
+    <% end %>
+    <%= link_to admin_thong_bao_path(thong_bao),method: :delete,
+      data: {confirm: "Bạn chắc chắn muốn xóa"}, class: "button-delete" do %>
+          <span class="button-inner">
+            <button class="btn button button-delete-small">
+              <span class="text">Xóa</span>
+            </button>
+          </span>
+    <% end %>
+  </td>
+</tr>

@@ -1,0 +1,24 @@
+<section class="content-header menu-header-button">
+  <%= link_to admin_thong_baos_path, class: "btn icon-btn btn-warning" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-circle-arrow-left img-circle text-warning"></span>
+    Trở Về
+  <% end %>
+
+  <%= link_to admin_root_path, class: "btn icon-btn btn-primary" do %>
+    <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-primary"></span>
+    Trang Quản Lý
+  <% end %>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Tạo Thông Báo Mới</h3>
+        </div>
+        <%= render "thong_bao_form", thongbao: @thongbao, form: @form %>
+      </div>
+    </div>
+  </div>
+</section>

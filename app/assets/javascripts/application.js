@@ -27,6 +27,7 @@
 //= require jquery-ui/widgets/sortable
 //= require jquery-ui/effects/effect-highlight
 //= require select2-full
+//= require ckeditor/init
 
 
 $(document).ready(function(){
