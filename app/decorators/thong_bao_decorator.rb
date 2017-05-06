@@ -11,4 +11,11 @@ class ThongBaoDecorator < Draper::Decorator
       "Sinh Viên - Lịch Thi": "sinhvien_lichthi"
     }
   end
+
+  def guiden_display
+    {
+      "Lớp Học Phần": "lop_hoc_phan",
+      "Sinh Viên Khóa Mới": "sinh_vien_khoa_moi"
+    }
+  end
 end

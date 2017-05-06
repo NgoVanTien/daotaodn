@@ -1,47 +1,96 @@
 <%= form_for [:admin, thongbao], html: {class: "form-horizontal", multipart: true, id: "post"} do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <div class="box-body">
-    <div class="form-group">
-      <label for="inputEmail3" class="col-sm-2 control-label">Tiêu Đề</label>
-      <div class="col-sm-10">
-        <%= f.text_field :tieu_de, class: "form-control", placeholder: "Nhập Tiêu Đề Thông Báo" %>
-      </div>
-    </div>
 
-    <div class="form-group">
-      <label for="inputEmail3" class="col-sm-2 control-label">Trạng Thái</label>
-      <div class="col-sm-10">
-        <%= f.collection_select :loai_hien_thi, thongbao.decorate.thongbao_display, :last, :first,
-          {include_blank: "Chọn Loại Thông Báo"}, {class: "form-control"} %>
-      </div>
-    </div>
 
-    <div class="form-group">
-      <label for="inputEmail3" class="col-sm-2 control-label">Nội Dung Khái Quát</label>
-      <div class="col-sm-10">
-        <%= f.text_area :noi_dung_khai_quat, class: "form-control ckeditor", placeholder: "Nhập Nội Khái Quát" %>
+    <% if current_tai_khoan.role == "admin" %>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Tiêu Đề</label>
+        <div class="col-sm-10">
+          <%= f.text_field :tieu_de, class: "form-control", placeholder: "Nhập Tiêu Đề Thông Báo" %>
+        </div>
       </div>
 
-    </div>
+      <div class="form-group" id="text-date-time">
+        <label for="inputEmail3" class="col-sm-2 control-label">Ngày Có Hiệu Lực</label>
+        <div class="col-md-8 input-group date">
+          <div class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+          </div>
+          <%= f.text_field :ngay_thong_bao, class: "form-control",  id: "datetimepicker-namsinh", placeholder: "Chọn Ngày Hiệu Lực" %>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Trạng Thái</label>
+        <div class="col-sm-10">
+          <%= f.collection_select :loai_hien_thi, thongbao.decorate.thongbao_display, :last, :first,
+            {include_blank: "Chọn Loại Thông Báo"}, {class: "form-control"} %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Ảnh</label>
+        <div class="col-sm-10">
+          <%= f.file_field :anh, class: "form-control" %>
+          <% if thongbao.persisted? %>
+            <div>
+              <%= image_tag thongbao.anh.to_s %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Nội Dung Khái Quát</label>
+        <div class="col-sm-10">
+          <%= f.text_area :noi_dung_khai_quat, class: "form-control ckeditor", placeholder: "Nhập Nội Khái Quát" %>
+        </div>
+
+      </div>
+    <% elsif current_tai_khoan.role == "giangvien" %>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Tên Lớp</label>
+        <div class="col-sm-10">
+          <%= f.text_field :tieu_de, class: "form-control", placeholder: "Nhập Lớp" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Trạng Thái</label>
+        <div class="col-sm-10">
+          <%= f.collection_select :gui_den, thongbao.decorate.guiden_display, :last, :first,
+            {include_blank: "Gửi Đến"}, {class: "form-control"} %>
+        </div>
+      </div>
+
+      <div class="form-group" id="text-date-time">
+        <label for="inputEmail3" class="col-sm-2 control-label">Ngày Có Hiệu Lực</label>
+        <div class="col-md-8 input-group date">
+          <div class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+          </div>
+          <%= f.text_field :ngay_thong_bao, class: "form-control",  id: "datetimepicker-namsinh", placeholder: "Chọn Ngày Hiệu Lực" %>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+      
+      <%= f.hidden_field :giao_vien_id, value: current_tai_khoan.giao_vien_id, class: "form-control", placeholder: "Nhập Tên Viết Tắt", readonly: true %>
+
+    <% end %>
+
+
+
     <div class="form-group">
       <label for="inputEmail3" class="col-sm-2 control-label">Nội Dung Chính</label>
       <div class="col-sm-10">
         <%= f.text_area :noi_dung, class: "form-control ckeditor", placeholder: "Nhập Nội Dung Thông Báo" %>
       </div>
-
     </div>
 
-    <div class="form-group">
-      <label for="inputEmail3" class="col-sm-2 control-label">Ảnh</label>
-      <div class="col-sm-10">
-        <%= f.file_field :anh, class: "form-control" %>
-      <% if thongbao.persisted? %>
-        <div>
-          <%= image_tag thongbao.anh.to_s %>
-        </div>
-      <% end %>
-    </div>
-  </div>
   <div class="box-footer">
     <%= link_to "Trở Về", admin_thong_baos_path, class: "btn btn-default btn-warning" %>
     <% if thongbao.persisted?%>

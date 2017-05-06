@@ -183,8 +183,12 @@ ActiveRecord::Schema.define(version: 20170505105152) do
     t.text     "noi_dung",           limit: 16777215
     t.string   "anh"
     t.integer  "loai_hien_thi"
+    t.date     "ngay_thong_bao"
+    t.integer  "gui_den"
+    t.integer  "giao_vien_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.index ["giao_vien_id"], name: "fk_rails_aeef83050a", using: :btree
   end
 
   add_foreign_key "chi_tiet_dao_tao", "chuong_trinh_dao_tao"
@@ -200,4 +204,5 @@ ActiveRecord::Schema.define(version: 20170505105152) do
   add_foreign_key "mon_hoc", "khoa"
   add_foreign_key "mon_hoc", "loai_mon_hoc"
   add_foreign_key "sinh_vien", "lop"
+  add_foreign_key "thong_bao", "giao_vien"
 end

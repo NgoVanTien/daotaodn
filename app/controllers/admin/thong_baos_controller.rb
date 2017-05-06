@@ -3,7 +3,11 @@ class Admin::ThongBaosController < Admin::ApplicationController
 
 
   def index
-    @search = ThongBao.search params[:q]
+    if current_tai_khoan.role == "admin"
+      @search = ThongBao.where(loai_hien_thi: [0,1,2,3,4,5,6]).search params[:q]
+    else
+      @search = ThongBao.where(giao_vien_id: current_tai_khoan.giao_vien_id).search params[:q]
+    end
     @search.sorts = "created_at desc" if @search.sorts.empty?
     @thongbaos = @search.result.page(params[:page]).per 5
   end
@@ -50,7 +54,7 @@ class Admin::ThongBaosController < Admin::ApplicationController
   private
 
   def thongbao_params
-    current_params = params.require(:thong_bao).permit(:tieu_de, :noi_dung_khai_quat, :noi_dung, :anh, :loai_hien_thi)
+    current_params = params.require(:thong_bao).permit(:tieu_de, :noi_dung_khai_quat, :noi_dung, :anh, :loai_hien_thi, :giao_vien_id, :gui_den, :ngay_thong_bao)
   end
 
   def load_thongbao

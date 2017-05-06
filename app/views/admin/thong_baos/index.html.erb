@@ -33,15 +33,24 @@
           <div class="notices_result">
             <% if @thongbaos.any? %>
               <table class="table table-hover table-striped">
+                <% if current_tai_khoan.role == "admin" %>
+                  <thead class="thead-inverse">
+                    <th><%= sort_link @search, :id, "Mã" %></th>
+                    <th><%= sort_link @search, :tieu_de, "Tiêu Đề" %></th>
+                    <th>Ảnh</th>
+                    <th>Loại Hiển Thị</th>
+                    <th class="tac-vu">Tác Vụ</th>
+                  </thead>
+                <% else %>
                 <thead class="thead-inverse">
                   <th><%= sort_link @search, :id, "Mã" %></th>
                   <th><%= sort_link @search, :tieu_de, "Tiêu Đề" %></th>
-                  <th>Nội Dung Khái Quát</th>
-                  <th>Ảnh</th>
-                  <th>Loại Hiển Thị</th>
-                  <th><%= sort_link @search, :created_at, "Ngày Tạo" %></th>
+                  <th><%= sort_link @search, :gui_den, "Gửi Đến" %></th>
+                  <th><%= sort_link @search, :ngay_thong_bao, "Ngày Thực Hiện" %></th>
+                  <th>Nội Dung</th>
                   <th class="tac-vu">Tác Vụ</th>
                 </thead>
+                <% end %>
                 <tbody>
                   <%= render @thongbaos %>
                 </tbody>
