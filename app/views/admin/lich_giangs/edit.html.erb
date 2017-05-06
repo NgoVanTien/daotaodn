@@ -25,15 +25,88 @@
   <% end %>
 </section>
 
-<section class="content">
+<section class="content" style=" min-height: 0px; ">
   <div class="row">
     <div class="col-md-12">
       <div class="box box-info">
         <div class="box-header with-border">
-          <h3 class="box-title"><%= t ".title" %></h3>
+          <h3 class="box-title">Đánh Giá Lịch Báo Giảng</h3>
         </div>
-        <%= render "monhoc_form", monhoc: @monhoc %>
+        <!-- <%= render "lichgiang_form", lichgiang: @lichgiang %> -->
       </div>
     </div>
   </div>
 </section>
+
+
+<section class="content">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="col-md-12">
+        <div class="box box-info">
+          <div class="box-header with-border">
+            <h3 class="box-title">Thông Tin Về Phân Môn Cần Báo Giảng</h3>
+          </div>
+          <div class="box-body with-border">
+            <div class="col-md-6" style="text-align: -webkit-right;">
+              <h4>Chương trình đào tạo :</h4>
+              <h4>Học Kỳ hiện tại :</h4>
+              <h4>Ngày Bắt Đầu Của Kỳ :</h4>
+              <h4>Ngày Kết Thúc Kỳ :</h4>
+            </div>
+            <div class="col-md-6">
+              <h4 style="color: red;" ><%= @phanmon.chuong_trinh_dao_tao.tenctdt %></h4>
+              <h4 style="color: red;" ><%= @phanmon.hocky %></h4>
+              <h4 style="color: red;" ><%= I18n.l @phanmon.ngaybatdau, format: :day_month_year %></h4>
+              <h4 style="color: red;" ><%= I18n.l @phanmon.ngayketthuc, format: :day_month_year %></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="box box-info">
+          <div class="box-header with-border">
+            <h3 class="box-title">Thông Tin Về Lớp Và Môn Học</h3>
+          </div>
+          <div class="box-body with-border">
+            <div class="col-md-6" style="text-align: -webkit-right;">
+              <h4>Tên Lớp :</h4>
+              <h4>Tên Môn Học :</h4>
+              <h4>Loại Môn Học :</h4>
+              <h4>Số Tiết Dạy Trong 1 Tuần :</h4>
+              <h4>Là Môn Học :</h4>
+            </div>
+            <div class="col-md-6">
+              <h4 style="color: red;" ><%= @phanmon.lop.tenlop %></h4>
+              <h4 style="color: red;" ><%= @phanmon.mon_hoc.tenmonhoc %></h4>
+              <h4 style="color: red;" ><%= @phanmon.mon_hoc.loai_mon_hoc.ten %></h4>
+              <h4 style="color: red;" ><%= @phanmon.sotiet %></h4>
+              <h4 style="color: red;" ><%= @phanmon.mon_hoc.decorate.chuyenmon_show_display %></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="col-md-12">
+        <div class="box box-info">
+          <div class="box-header with-border">
+            <h3 class="box-title">Thông Tin Và Đánh Giá</h3>
+          </div>
+          <div class="box-body no-padding">
+            <ul id="items1" class="nav nav-pills nav-stacked min-height-200">
+              <%= render "lichgiang_danhgia_form", lichgiang: @lichgiang %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= content_for :specific_page_js do %>
+  <script type="text/javascript">
+    <%= render "lichgiang_form.js" %>
+  </script>
+<% end %>

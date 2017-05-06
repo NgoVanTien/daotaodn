@@ -179,11 +179,12 @@ ActiveRecord::Schema.define(version: 20170505105152) do
 
   create_table "thong_bao", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "tieu_de"
-    t.text     "noi_dung",   limit: 65535
+    t.text     "noi_dung_khai_quat", limit: 65535
+    t.text     "noi_dung",           limit: 16777215
     t.string   "anh"
-    t.integer  "type"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "loai_hien_thi"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_foreign_key "chi_tiet_dao_tao", "chuong_trinh_dao_tao"

@@ -9,5 +9,15 @@ class Admin::PhanMonDecorator < Draper::Decorator
   #       object.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
+  def chuyenmon_show_display
+    binding.pry
+    if loai == "lythuyet_thuchanh"
+      "Lý Thuyết Và Thực Hành"
+    elsif loai == "lythuyet"
+      "Lý Thuyết"
+    elsif loai == "thuchanh"
+      "Thực Hành"
+    end
+  end
 
 end

@@ -15,7 +15,7 @@ del, dfn, em, font, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+table, caption, tfoot{
 	margin:0;
 	padding:0;
 	border:0;
@@ -24,16 +24,12 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	font-style:inherit;
 	font-size:100%;
 	font-family:inherit;
-	vertical-align:baseline;
+
 }
 body {
 	line-height:1;
 	color:black;
 	background:white;
-}
-table {
-	border-collapse:separate;
-	border-spacing:0;
 }
 caption, th, td {
 	text-align:left;
@@ -160,7 +156,6 @@ Supports Thumbs: false
 	display:inline-block;
 	width:22px;
 	height:22px;
-	background:url(bullets.png) no-repeat;
 	text-indent:-9999px;
 	border:0;
 	margin: 5px 2px 0 2px;
@@ -274,7 +269,6 @@ Supports Thumbs: true
 	display:inline-block;
 	width:10px;
 	height:10px;
-	background:url(bullets.png) no-repeat 0 2px;
 	text-indent:-9999px;
 	border:0;
 	margin: 0 2px;
@@ -378,7 +372,6 @@ Supports Thumbs: true
 	display:inline-block;
 	width:22px;
 	height:22px;
-	background:url(bullets.png) no-repeat;
 	text-indent:-9999px;
 	border:0;
 	margin: 0 2px;
@@ -477,7 +470,6 @@ Supports Thumbs: true
 	display:inline-block;
 	width:10px;
 	height:10px;
-	background:url(bullets.png) no-repeat;
 	text-indent:-9999px;
 	border:0;
 	margin: 0 2px;

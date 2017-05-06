@@ -8,7 +8,7 @@
         <div class="input-group-addon">
           <i class="fa fa-calendar"></i>
         </div>
-        <%= f.text_field :ngayday, class: "form-control",  id: "datetimepicker-namsinh", placeholder: "Chọn Ngày Dạy" %>
+        <%= f.text_field :ngayday, class: "form-control",  id: "datetimepicker-namsinh", placeholder: "Chọn Ngày Dạy", readonly: true %>
       </div>
       <div class="col-sm-2"></div>
     </div>
@@ -16,7 +16,7 @@
     <div class="form-group">
       <label for="inputEmail3" class="col-sm-2 control-label">Tên Phòng Học</label>
       <div class="col-sm-8">
-        <%= f.text_field :phonghoc, class: "form-control", placeholder: "Nhập Tên Môn Học" %>
+        <%= f.text_field :phonghoc, class: "form-control", placeholder: "Nhập Tên Môn Học", readonly: true %>
       </div>
       <div class="col-md-2">
       </div>
@@ -25,7 +25,7 @@
     <div class="form-group">
       <label for="inputEmail3" class="col-sm-2 control-label">Tiết Bắt Đầu</label>
       <div class="col-sm-8">
-        <%= f.number_field :tietbatday, class: "form-control", placeholder: "Nhập Tên Viết Tắt" %>
+        <%= f.number_field :tietbatday, class: "form-control", placeholder: "Nhập Tên Viết Tắt", readonly: true %>
       </div>
       <div class="col-md-2">
       </div>
@@ -34,7 +34,7 @@
     <div class="form-group">
       <label for="inputEmail3" class="col-sm-2 control-label">Tiết Kết Thúc</label>
       <div class="col-sm-8">
-        <%= f.number_field :tietketthuc, class: "form-control", placeholder: "Nhập Tên Viết Tắt" %>
+        <%= f.number_field :tietketthuc, class: "form-control", placeholder: "Nhập Tên Viết Tắt", readonly: true %>
       </div>
       <div class="col-md-2">
       </div>
@@ -44,19 +44,28 @@
       <label for="inputEmail3" class="col-sm-2 control-label">Nội Dung Dạy</label>
       <div class="col-sm-8">
         <%= f.text_area :noidungday, size: 80, class: "form-control", rows: 10,
-          placeholder: "Nhập dội dung dạy" %>
+          placeholder: "Nhập dội dung dạy", readonly: true %>
       </div>
       <div class="col-md-2">
       </div>
     </div>
-    <%= f.hidden_field :phan_mon_id, value: @phanmon.id, class: "form-control", placeholder: "Nhập Tên Viết Tắt" %>
+    <%= f.hidden_field :phan_mon_id, value: @phanmon.id, class: "form-control", placeholder: "Nhập Tên Viết Tắt", readonly: true %>
 
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Đặc Tính Môn Học</label>
+      <div class="col-sm-8">
+        <%= f.collection_select :danhgia, lichgiang.decorate.lichgiang_display, :last, :first,
+          {include_blank: "Đánh Giá"}, {class: "form-control"} %>
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
 
   </div>
   <div class="box-footer">
     <%= link_to "Trở Về", admin_mon_hocs_path, class: "btn btn-default btn-warning" %>
     <% if lichgiang.persisted?%>
-      <%= f.submit "Chỉnh Sửa", class: "btn btn-info pull-right load-alert" %>
+      <%= f.submit "Đánh Giá", class: "btn btn-info pull-right load-alert" %>
     <% else %>
       <%= f.submit "Tạo Mới", class: "btn btn-info pull-right load-alert" %>
     <% end %>

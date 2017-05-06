@@ -240,66 +240,17 @@
                 </div>
 
                 <div class="barbig left padright">
-                  <div class="ban_smal">
+                  <div class="ban_smal" id="img-show-index">
+                    <h3 style="color:red;">
+                      <%= @thongbao.tieu_de %>
+                    </h3>
+                    <h6 class="pull-right">
+                      <%= @thongbao.created_at.to_date %>
+                    </h6>
+                    <hr>
+                    <%= @thongbao.noi_dung.html_safe %>
 
 
-                    <% @trangchu_thongbao.each do |thongbao| %>
-                      <div class="well" style="background-color: #ffffff; padding: 0px;">
-                        <div class="panel panel-default">
-                          <div class="panel-body">
-                            <div class="pull-right"><br>
-                              <b><a href="https://www.facebook.com/DLZYagiz"> <%= thongbao.created_at.to_date %> </a></b>
-                            </div><br><br><br>
-                            <center>
-                              <h4> <%= thongbao.tieu_de %></h4>
-                            </center>
-
-                              <%= thongbao.noi_dung_khai_quat.html_safe %>
-
-                              <div class="pull-left">
-                                <%= link_to static_page_path(thongbao.id), class: "", style: "font-size: 13px; " do %>
-                                  <span class="glyphicon btn-glyphicon glyphicon-open-file img-circle text-success"></span>
-                                  Đọc Tiếp..
-                                <% end %>
-                              </div>
-                              <div class="pull-right">
-                                <a href="https://www.facebook.com/DLZYagiz"><i class="fa fa-2x fa fa-facebook-square"></i></a>  
-                                <a><i class="fa fa-2x fa fa-google-plus-square"></i></a>  
-                                <a><i class="fa fa-2x fa fa-twitter-square"></i></a>  
-                              </div>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    <% end %>
-
-                    <span href="#" class="title-item list-group-item active">
-                      Tin Tức Sự Kiện
-                    </span>
-
-                    <% @trangchu_sukien.each do |sukien| %>
-                      <div class="well" id="post">
-                        <div class="media">
-
-                      		<div class="media-body">
-                            <a class="pull-left" href="#" style="margin-right: 15px;">
-                          		<img class="media-object" src="<%= sukien.anh %>">
-                        		</a>
-                      		  <h4 class="media-heading" style="color: red;"><%= sukien.tieu_de %></h4>
-                            <p class="text-right"><%= sukien.created_at.to_date %></p>
-                            <%= sukien.noi_dung_khai_quat.html_safe %>
-                            <ul class="list-inline list-unstyled"></ul>
-                            <ul class="list-inline list-unstyled pull-right">
-                  			      <li><span><i class="glyphicon glyphicon-calendar"></i>
-                                <%= link_to static_page_path(sukien.id) do %>
-                                  Đọc Tiếp ..
-                                <% end %>
-                              </span></li>
-                			      </ul>
-                          </div>
-                        </div>
-                      </div>
-                    <% end %>
                   </div>
                 </div>
                 <div class="barsmall right">
@@ -610,11 +561,11 @@
 
             <div class="navi_bottom">
             	<ul>
-                	 <li>
-                     <%= link_to root_path, class: "txthover" do %>
-                        Trang Chủ
-                     <% end %>
-                   </li>
+                    <li>
+                      <%= link_to root_path, class: "txthover" do %>
+                         Trang Chủ
+                      <% end %>
+                    </li>
                     <li><a href="#" class="txthover">Tin Tức</a></li>
                     <li><a href="events.html" class="txthover">Văn Bản</a></li>
                     <li><a href="#" class="txthover">Khoa CM</a></li>

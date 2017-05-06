@@ -2369,7 +2369,7 @@ a.readmore {
 	Table Rules
 =======================================================================
 */
-.tables {
+/*.tables {
 	width:465px;
 	padding:15px;
 	border-bottom:#e2e2e2 solid 1px;
@@ -2379,15 +2379,15 @@ a.readmore {
 }
 table{
 	width:100%;
-}
-table tr{
+}*/
+/*table tr{
 	border-radius:4px;
 	background:#f3f3f3;
 	margin-bottom:5px;
 	width:100%;
 	float:left;
-}
-table th{
+}*/
+/*table th{
 	padding:1%;
 	text-align:left;
 	width:31.3%;
@@ -2398,7 +2398,7 @@ table td{
 	text-align:left;
 	width:31.3%;
 	float:left;
-}
+}*/
 /*
 =======================================================================
 	Other Options Rules

@@ -1,6 +1,6 @@
 class Admin::ThongBaosController < Admin::ApplicationController
   before_action :load_thongbao, only: %i(show destroy edit update)
-  before_action :set_form, except: :destroy
+
 
   def index
     @search = ThongBao.search params[:q]
@@ -50,14 +50,10 @@ class Admin::ThongBaosController < Admin::ApplicationController
   private
 
   def thongbao_params
-    current_params = params.require(:thong_bao).permit(:tieu_de, :noi_dung, :anh)
+    current_params = params.require(:thong_bao).permit(:tieu_de, :noi_dung_khai_quat, :noi_dung, :anh, :loai_hien_thi)
   end
 
   def load_thongbao
     @thongbao = ThongBao.find_by id: params[:id]
-  end
-
-  def set_form
-    @form = Support::ThongBaoForm.new
   end
 end
