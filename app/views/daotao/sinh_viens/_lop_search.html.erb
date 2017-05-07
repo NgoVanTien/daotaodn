@@ -1,0 +1,6 @@
+<div class="col-md-12 form-group filter_tenctdt display-none">
+  <div class="col-md-6">
+    <%= select_tag :ten_lop, options_from_collection_for_select(lops, "id", "tenlop"), class: "form-control",
+      placeholder: "Chọn Chương Trình Đào Tạo", include_blank: "Chọn CTĐT", data: {ctdt: "3"} %>
+  </div>
+</div>

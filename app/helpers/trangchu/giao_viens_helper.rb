@@ -1,0 +1,2 @@
+module Trangchu::GiaoViensHelper
+end

@@ -1,0 +1,47 @@
+<%= render "static_pages/header" %>
+  <div class="clear"></div>
+    <div id="contentsec">
+    	<div class="inner">
+          <%= render "static_pages/text_chay" %>
+            <div class="clear"></div>
+            <div class="columns">
+              <%= render "static_pages/menu_left" %>
+                <div class="barbig left padright">
+                  <div class="ban_smal">
+
+
+                    <div class="col-md-12 form-group">
+                      <div class="row">
+
+                      <div class="col-md-12">
+                        <h1 style="color: red; text-align: center;">Thông Tin Giáo Viên</h1>
+                      </div>
+                      <hr>
+                        <%= select_tag :ten_khoa, options_from_collection_for_select(@khoas, "id", "tenkhoa"), class: "form-control",
+                          placeholder: "Chọn Khoa", include_blank: "Chọn Khoa", data: {khoa: "1"} %>
+                        </div>
+                    </div>
+
+                    <div class="table-giaovien">
+                    </div>
+
+                  </div>
+                </div>
+                  <%= render "static_pages/menu_right" %>
+                <div class="bigadv left">
+                	<div class="widget"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+<div class="clear"></div>
+<%= render "static_pages/footer" %>
+
+
+<%= content_for :specific_page_js do %>
+  <script type="text/javascript">
+    <%= render "search_khoa.js" %>
+  </script>
+<% end %>
