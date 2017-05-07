@@ -10,7 +10,6 @@ class Admin::PhanMonDecorator < Draper::Decorator
   #     end
   #   end
   def chuyenmon_show_display
-    binding.pry
     if loai == "lythuyet_thuchanh"
       "Lý Thuyết Và Thực Hành"
     elsif loai == "lythuyet"

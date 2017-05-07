@@ -19,3 +19,18 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+
+
+# Others.
+config/database.yml
+public/*
+!public/coorporate
+.env
+coverage/
+.rspec
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
+npm-debug.log

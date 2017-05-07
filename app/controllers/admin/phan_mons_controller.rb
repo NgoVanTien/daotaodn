@@ -30,11 +30,12 @@ class Admin::PhanMonsController < Admin::ApplicationController
     @kyhoc = params[:kyhoc]
 
     @all_phanmon_cualop = PhanMon.where(hocky: @kyhoc, chuong_trinh_dao_tao_id: @chuongtrinhdaotao, lop_id: @lop)
-    @all_phanmon_cualop_chuan = PhanMon.select("phan_mon.id, phan_mon.hocky, phan_mon.sotiet, GROUP_CONCAT(giao_vien_id) as ma_giao_vien, phan_mon.chuong_trinh_dao_tao_id, phan_mon.mon_hoc_id, phan_mon.lop_id")
-      .joins("INNER JOIN giao_vien on giao_vien.id = phan_mon.giao_vien_id")
-      .where("phan_mon.hocky = #{@kyhoc} AND phan_mon.chuong_trinh_dao_tao_id = #{@chuongtrinhdaotao.id} And phan_mon.lop_id = #{@lop.id}")
-      .group("phan_mon.mon_hoc_id")
-
+    if @all_phanmon_cualop.present?
+      @all_phanmon_cualop_chuan = PhanMon.select("phan_mon.id, phan_mon.hocky, phan_mon.sotiet, GROUP_CONCAT(giao_vien_id) as ma_giao_vien, phan_mon.chuong_trinh_dao_tao_id, phan_mon.mon_hoc_id, phan_mon.lop_id")
+        .joins("INNER JOIN giao_vien on giao_vien.id = phan_mon.giao_vien_id")
+        .where("phan_mon.hocky = #{@kyhoc} AND phan_mon.chuong_trinh_dao_tao_id = #{@chuongtrinhdaotao.id} And phan_mon.lop_id = #{@lop.id}")
+        .group("phan_mon.mon_hoc_id")
+    end
     @all_phanmon_cualop_cachocky = PhanMon.where(chuong_trinh_dao_tao_id: @chuongtrinhdaotao, lop_id: @lop)
 
     chitietdaotaos_daphanmon = ChiTietDaoTao.where(chuong_trinh_dao_tao_id: @chuongtrinhdaotao, mon_hoc_id: @all_phanmon_cualop_cachocky.pluck(:mon_hoc_id))
