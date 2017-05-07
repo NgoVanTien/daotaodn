@@ -1,0 +1,40 @@
+<% if chuongtrinhdaotaos.present? %>
+  <table class="table table-hover table-striped">
+    <thead class="thead-inverse">
+      <th>Số Thức Tự</th>
+      <th>Mã CTĐT</th>
+      <th>Tên CTĐT</th>
+      <th>Số Tín Chỉ</th>
+      <th>Bậc Đào Tạo</th>
+      <th>Khóa Học</th>
+      <th>Chi Tiết ĐT</th>
+    </thead>
+    <tbody>
+      <% chuongtrinhdaotaos.each_with_index do |chuongtrinhdaotao, index| %>
+        <tr>
+          <td> <%= index %> </td>
+          <td> <%= chuongtrinhdaotao.mactdt %> </td>
+          <td> <%= chuongtrinhdaotao.tenctdt %> </td>
+          <td> <%= chuongtrinhdaotao.sotinchi %> </td>
+          <td> <%= chuongtrinhdaotao.bac_dao_tao.tenbacdaotao %> </td>
+          <td> <%= chuongtrinhdaotao.khoa_hoc.tenkhoahoc %> </td>
+          <% if chuongtrinhdaotao.chi_tiet_dao_taos.present? %>
+            <td>
+              <%= link_to daotao_chuong_trinh_dao_tao_path(chuongtrinhdaotao.id), class: "button-show" do %>
+                    <span class="button-inner">
+                      <button class="btn button button-show-small">
+                        <span class="text">Chi Tiết</span>
+                      </button>
+                    </span>
+              <% end %>
+            </td>
+          <% else %>
+            <td>Chưa có</td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <h3 class="text-center">Khoa Chưa Có Chương Trình Đào Tạo.</h3>
+<% end %>

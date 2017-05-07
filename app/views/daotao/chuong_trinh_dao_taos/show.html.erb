@@ -1,0 +1,20 @@
+<div class="tab-content">
+  <table class="table table-hover table-striped">
+    <thead class="thead-inverse">
+      <th>Số Thức Tự</th>
+      <th>Kỳ Học</th>
+      <th>Môn Học</th>
+      <th>Số Tín Chỉ</th>
+    </thead>
+    <tbody>
+      <% @chitietdaotaos.each_with_index do |chitietdaotao, index| %>
+        <tr>
+          <td> <%= index %> </td>
+          <td> <%= chitietdaotao.kyhoc %> </td>
+          <td> <%= chitietdaotao.mon_hoc.tenmonhoc %> </td>
+          <td> <%= chitietdaotao.mon_hoc.hesotinchi %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

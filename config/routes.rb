@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   namespace :daotao do
+    get 'chuong_trinh_dao_taos/index'
+  end
+
+  namespace :daotao do
     get 'sinh_viens/index'
   end
 
@@ -43,6 +47,7 @@ Rails.application.routes.draw do
   namespace :daotao do
     root "static_pages#index"
     resources :sinh_viens, only: [:show, :index]
+    resources :chuong_trinh_dao_taos, only: [:show, :index]
   end
   root "static_pages#index"
   resources :static_pages, only: [:show, :index]

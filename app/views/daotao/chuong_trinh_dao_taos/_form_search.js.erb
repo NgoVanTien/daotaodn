@@ -1,0 +1,11 @@
+$(document).ready(function(){
+  $("#ten_khoa").on("change", function(){
+    let id_khoa = $("#ten_khoa").val();
+    submit_search_form({id_khoa: id_khoa});
+  });
+
+  function submit_search_form(data) {
+    $.get("/daotao/chuong_trinh_dao_taos", data, null, "script");
+    return false;
+  }
+});
