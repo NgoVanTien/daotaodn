@@ -1,0 +1,2 @@
+module Admin::LopHocPhansHelper
+end

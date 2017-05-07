@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :quyens
     resources :lich_giangs
     resources :thong_baos
+    resources :lop_hoc_phans
   end
 
   namespace :daotao do

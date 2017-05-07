@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ma_lhp: MyString
+  tenlop: MyString
+  chuong_trinh_dao_tao_id: 1
+
+two:
+  ma_lhp: MyString
+  tenlop: MyString
+  chuong_trinh_dao_tao_id: 1
