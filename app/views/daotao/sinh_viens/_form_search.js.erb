@@ -1,0 +1,11 @@
+$(document).ready(function(){
+  $("#ten_khoa").on("change", function(){
+    let id_khoa = $("#ten_khoa").val();
+    submit_search_form({id_khoa: id_khoa, item: "1"});
+  });
+
+  function submit_search_form(data) {
+    $.get("/daotao/sinh_viens", data, null, "script");
+    return false;
+  }
+});

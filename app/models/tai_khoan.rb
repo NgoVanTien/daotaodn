@@ -2,7 +2,8 @@ class TaiKhoan < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   self.table_name = "tai_khoan"
-
+  has_one :giao_vien, class_name: GiaoVien.name
+  has_one :sinh_vien, class_name: SinhVien.name
   attr_accessor :login
 
   devise :database_authenticatable, :registerable,

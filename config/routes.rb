@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  namespace :daotao do
+    get 'sinh_viens/index'
+  end
+
+  namespace :daotao do
+    get 'sinh_viens/show'
+  end
+
+  namespace :trangchu do
+    get 'giao_viens/index'
+  end
+
+  namespace :trangchu do
+    get 'giao_viens/show'
+  end
+
   mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :tai_khoans, controllers: {sessions: "tai_khoans/sessions", registrations: "tai_khoans/registrations"}
@@ -26,7 +42,12 @@ Rails.application.routes.draw do
 
   namespace :daotao do
     root "static_pages#index"
+    resources :sinh_viens, only: [:show, :index]
   end
   root "static_pages#index"
   resources :static_pages, only: [:show, :index]
+
+  namespace :trangchu do
+    resources :giao_viens, only: [:show, :index]
+  end
 end

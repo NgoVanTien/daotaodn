@@ -3523,6 +3523,7 @@ input[type="submit"].btn.btn-mini {
 }
 .tab-content {
   overflow: auto;
+  min-height: 400px;
 }
 .tabs-below > .nav-tabs,
 .tabs-right > .nav-tabs,
@@ -7554,7 +7555,7 @@ body > #body-container {
   background-color: #fcfcfc;
   z-index: 900;
   height: 100px;
-  margin-top: -100px;
+  margin-top: 100px;
   clear: both;
   position: relative;
 }

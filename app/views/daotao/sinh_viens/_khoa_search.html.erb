@@ -1,0 +1,15 @@
+
+  <div class="box">
+    <div class="box-body">
+      <div class="col-md-12 form-group">
+        <div class="col-md-6">
+          <%= select_tag :ten_khoa, options_from_collection_for_select(@khoas, "id", "tenkhoa"), class: "form-control",
+            placeholder: "Chọn Khoa", include_blank: "Chọn Khoa", data: {khoa: "1"} %>
+        </div>
+      </div>
+
+      <div class="ten_lop">
+
+      </div>
+    </div>
+  </div>

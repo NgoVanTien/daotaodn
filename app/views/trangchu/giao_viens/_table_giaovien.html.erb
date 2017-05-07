@@ -1,0 +1,23 @@
+<% if giaoviens.present? %>
+<table class="table table-bordered" style="font-size: 13px;">
+  <tbody><tr>
+    <th>Tên Giáo Viên</th>
+    <th>Năm Sinh</th>
+    <th>Mã Giáo Viên</th>
+  </tr>
+  <% giaoviens.each do |giaovien| %>
+    <tr>
+      <td> <%= giaovien.tengiaovien %> </td>
+      <td> <%= giaovien.namsinh %> </td>
+      <% if giaovien.tai_khoan.present? %>
+        <td> <%= giaovien.tai_khoan.username %> </td>
+      <% else %>
+        <td>Chưa có</td>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<% else %>
+  Chưa có thông tin giáo viên nào.
+<% end %>
