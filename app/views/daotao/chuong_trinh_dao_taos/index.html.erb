@@ -1,0 +1,11 @@
+<div class="tab-content">
+  <%= render "chuongtrinhdaotao_search", khoas: @khoas %>
+  <div class="table_show_chuongtrinhdaotao">
+  </div>
+</div>
+
+<%= content_for :specific_page_js do %>
+  <script type="text/javascript">
+    <%= render "form_search.js" %>
+  </script>
+<% end %>

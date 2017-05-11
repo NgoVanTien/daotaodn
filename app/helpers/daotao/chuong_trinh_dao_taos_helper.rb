@@ -1,0 +1,2 @@
+module Daotao::ChuongTrinhDaoTaosHelper
+end
