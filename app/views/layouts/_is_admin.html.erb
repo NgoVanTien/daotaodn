@@ -12,20 +12,13 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li>
-            <%= link_to "" do %>
-              <i class="fa fa-circle-o"></i>
-              Ngành Nghề
-            <% end %>
-          </li>
+          <li><a><i class="fa fa-circle-o"></i>Phòng</a></li>
           <li>
             <%= link_to admin_khoas_path do %>
               <i class="fa fa-circle-o"></i>
               Khoa
             <% end %>
           </li>
-          <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i>Phòng</a></li>
-          <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Công Tác Sinh Viên</a></li>
         </ul>
       </li>
 
@@ -63,12 +56,6 @@
                 Ủy Quyền
               <% end %>
              </li>
-
-          <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Các Công Thức Xét Duyệt</a></li>
-          <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Danh Sách Lớp Chưa Nhập Điểm</a></li>
-          <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Danh Sách Lớp Chưa Phân Môn</a></li>
-          <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Theo Giỏi Dử Liệu Thay Đổi</a></li>
-          <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Đăng Ký Coi Thi</a></li>
         </ul>
       </li>
 
@@ -140,36 +127,6 @@
 
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-laptop"></i>
-          <span>Phân Học Phần</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li>
-            <%= link_to admin_lop_hoc_phans_path do %>
-              <i class="fa fa-circle-o"></i>
-              Lớp Học Phần
-            <% end %>
-           </li>
-          <li>
-            <%= link_to "" do %>
-              <i class="fa fa-circle-o"></i>
-              Sinh Viên Học Phần
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "" do %>
-              <i class="fa fa-circle-o"></i>
-              Phân Học Phần
-            <% end %>
-          </li>
-        </ul>
-      </li>
-
-      <li class="treeview">
-        <a href="#">
           <i class="fa fa-edit"></i> <span>Lịch Báo Giảng</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
@@ -182,40 +139,7 @@
               Lịch Giảng
             <% end %>
           </li>
-          <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-          <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
         </ul>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-table"></i> <span>Nhập Điểm</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-          <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="pages/calendar.html">
-          <i class="fa fa-calendar"></i> <span>Xét Duyệt</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-red">3</small>
-            <small class="label pull-right bg-blue">17</small>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="pages/mailbox/mailbox.html">
-          <i class="fa fa-envelope"></i> <span>Tốt Nghiệp</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-yellow">12</small>
-            <small class="label pull-right bg-green">16</small>
-            <small class="label pull-right bg-red">5</small>
-          </span>
-        </a>
       </li>
       <li>
         <%= link_to admin_thong_baos_path do %>
@@ -223,18 +147,6 @@
           <span class="pull-right-container">
           </span>
         <% end %>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-table"></i> <span>Báo Cáo Tổng Kết</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-          <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
-        </ul>
       </li>
     </ul>
   </section>

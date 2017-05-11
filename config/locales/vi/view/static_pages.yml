@@ -3,3 +3,6 @@ vi:
     index:
       sign_in: "Đăng Nhập"
       sign_out: "Đăng Xuất"
+    header:
+      sign_in: "Đăng Nhập"
+      sign_out: "Đăng Xuất"
